@@ -8,7 +8,6 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.*;
 
 public class DicePoolTest {
-
     private static final Random randomNumberGenerator = new Random();
     private static final DiceColor[] allDiceColors = {DiceColor.White, DiceColor.Blue, DiceColor.Brown, DiceColor.Green, DiceColor.Purple, DiceColor.Red, DiceColor.Yellow};
     private DicePool thisDicePool;
@@ -72,4 +71,16 @@ public class DicePoolTest {
         assertThat(dicePoolContents[2]).as("Third color should be brown").isEqualTo(DiceColor.Brown);
     }
 
+    @Test
+    public void removeDice_TestAddingADiceAndRemovingIt_TheDiceThatWasAddedShouldBeTheSameDiceAsTheOneRemovedAndTheDicePoolShouldBeEmpty(){
+        DiceColor thisDiceColor = allDiceColors[randomNumberGenerator.nextInt(allDiceColors.length - 1)];
+        firstDice = new Dice(thisDiceColor);
+
+        thisDicePool.add(firstDice);
+        Dice removedDice = thisDicePool.remove(thisDiceColor);
+        DiceColor[] dicePoolContents = thisDicePool.contains();
+
+        assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(0);
+        assertThat(removedDice.getColor()).as("Removed dice color should equal added color").isEqualTo(thisDiceColor);
+    }
 }
