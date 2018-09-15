@@ -13,7 +13,7 @@ public class DicePool {
         diceByColor = new HashMap<DiceColor, ArrayList<Dice>>();
     }
 
-    public void add(Dice thisDice) {
+    public void addDice(Dice thisDice) {
         if (diceByColor.containsKey(thisDice.getColor())){
             diceByColor.get(thisDice.getColor()).add(thisDice);
         } else {
@@ -23,7 +23,7 @@ public class DicePool {
         }
     }
 
-    public DiceColor[] contains() {
+    public DiceColor[] getContentsByDiceColor() {
         ArrayList<DiceColor> diceInPoolByDiceColor = new ArrayList<DiceColor>();
 
         Set<DiceColor> allColorsInPool = diceByColor.keySet();
@@ -39,7 +39,7 @@ public class DicePool {
         return diceInPoolByDiceColor.toArray(new DiceColor[diceInPoolByDiceColor.size()]);
     }
 
-    public Dice remove(DiceColor thisDiceColor) {
+    public Dice removeDice(DiceColor thisDiceColor) {
         if(diceByColor.containsKey(thisDiceColor)){
             return diceByColor.get(thisDiceColor).remove(0);
         } else {
