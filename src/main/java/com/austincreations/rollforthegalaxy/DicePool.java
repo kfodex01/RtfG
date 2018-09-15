@@ -40,6 +40,10 @@ public class DicePool {
     }
 
     public Dice remove(DiceColor thisDiceColor) {
-        return new Dice(DiceColor.Brown);
+        if(diceByColor.containsKey(thisDiceColor)){
+            return diceByColor.get(thisDiceColor).remove(0);
+        } else {
+            return new Dice();
+        }
     }
 }
