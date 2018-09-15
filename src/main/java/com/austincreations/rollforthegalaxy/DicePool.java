@@ -1,6 +1,7 @@
 package com.austincreations.rollforthegalaxy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DicePool {
 
@@ -15,6 +16,7 @@ public class DicePool {
     }
 
     public DiceColor[] contains() {
+        Collections.sort(theseDiceColors);
         return theseDiceColors.toArray(new DiceColor[theseDiceColors.size()]);
     }
 
