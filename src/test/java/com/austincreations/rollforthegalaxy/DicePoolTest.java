@@ -83,4 +83,13 @@ public class DicePoolTest {
         assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(0);
         assertThat(removedDice.getColor()).as("Removed dice color should equal added color").isEqualTo(thisDiceColor);
     }
+
+    @Test
+    public void removeDice_RemoveDiceThatIsNotInPool_ShouldReturnADiceWithNullValues(){
+        DiceColor thisDiceColor = allDiceColors[randomNumberGenerator.nextInt(allDiceColors.length - 1)];
+
+        Dice removedDice = thisDicePool.remove(thisDiceColor);
+
+        assertThat(removedDice.getColor()).isEqualTo(null);
+    }
 }
