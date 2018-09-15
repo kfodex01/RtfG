@@ -38,6 +38,10 @@ public class Dice {
         return diceFaces;
     }
 
+    public Dice(){
+
+    }
+
     public Dice(DiceColor thisColor){
         color = thisColor;
         faces = Dice.getDiceFaces(thisColor);
