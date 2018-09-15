@@ -7,5 +7,3 @@ q
 Asrc/main/java/com/austincreations/rollforthegalaxy/DiceColor.java,1\b\1bdc94a0f9b6ee09c38f196e8d314ee77917e800
 l
 <src/main/java/com/austincreations/rollforthegalaxy/Dice.java,0\9\09d377ee70bbc939afac394f5297996884b342c0
-K
-src/test/java/DiceTest.java,5\a\5aa01d7a0e9cc21f0ddd7c561e7e0c3ff5afbc46

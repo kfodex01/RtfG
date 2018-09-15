@@ -1,5 +1,5 @@
-import com.austincreations.rollforthegalaxy.DiceColor;
-import com.austincreations.rollforthegalaxy.*;
+package com.austincreations.rollforthegalaxy;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

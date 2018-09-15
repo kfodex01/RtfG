@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="" />
+    <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="Re">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DicePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DicePool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/DicePoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/DicePoolTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -9,6 +13,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Roll_for_the_Galaxy$com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy.ic" NAME="com.austincreations.rollforthegalaxy in Roll for the Galaxy Coverage Results" MODIFIED="1537014333053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.austincreations.rollforthegalaxy.*</FILTER>
+    </SUITE>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1650723238">
@@ -20,83 +29,72 @@
           <entry key="project.open.time.27" value="3" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.48" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.61" value="1" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="11" />
+          <entry key="java" value="14" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="14" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="40" />
-          <entry key="java" value="2970" />
+          <entry key="dummy" value="56" />
+          <entry key="java" value="6709" />
+          <entry key="txt" value="360" />
           <entry key="xml" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2970" />
-          <entry key="PLAIN_TEXT" value="40" />
+          <entry key="JAVA" value="6709" />
+          <entry key="PLAIN_TEXT" value="416" />
           <entry key="XML" value="105" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Dice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/DiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/DicePoolTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+            <state relative-caret-position="315">
+              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DiceColor.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DicePool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DiceFace.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="221">
+              <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#241#242#0" expanded="true" />
+                <element signature="e#312#313#0" expanded="true" />
+                <element signature="e#508#514#0" expanded="true" />
+                <element signature="e#418#429#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,7 +109,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Rftg" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -121,8 +124,11 @@
         <option value="$PROJECT_DIR$/src/DiceTest.java" />
         <option value="$PROJECT_DIR$/src/Dice.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Dice.java" />
         <option value="$PROJECT_DIR$/src/test/java/DiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/DiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Dice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DicePool.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/DicePoolTest.java" />
       </list>
     </option>
   </component>
@@ -132,12 +138,16 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,6 +162,48 @@
             </path>
             <path>
               <item name="Roll for the Galaxy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Roll for the Galaxy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Roll for the Galaxy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Roll for the Galaxy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Roll for the Galaxy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Roll for the Galaxy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rollforthegalaxy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Roll for the Galaxy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Roll for the Galaxy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Roll for the Galaxy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Roll for the Galaxy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Roll for the Galaxy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Roll for the Galaxy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="rollforthegalaxy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Roll for the Galaxy" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -159,22 +211,24 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536886735007" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537014332451" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.austincreations.rollforthegalaxy" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.austincreations.rollforthegalaxy" />
     </key>
@@ -195,18 +249,53 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.com.austincreations.rollforthegalaxy in Roll for the Galaxy">
     <configuration name="DiceTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="Roll for the Galaxy" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DiceTest" />
+      <option name="PACKAGE_NAME" value="com.austincreations.rollforthegalaxy" />
+      <option name="MAIN_CLASS_NAME" value="com.austincreations.rollforthegalaxy.DiceTest" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DicePoolTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Roll for the Galaxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.austincreations.rollforthegalaxy" />
+      <option name="MAIN_CLASS_NAME" value="com.austincreations.rollforthegalaxy.DicePoolTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Roll for the Galaxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.austincreations.rollforthegalaxy" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android JUnit.DiceTest" />
+      <item itemvalue="JUnit.DicePoolTest" />
+      <item itemvalue="JUnit.com.austincreations.rollforthegalaxy in Roll for the Galaxy" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.austincreations.rollforthegalaxy in Roll for the Galaxy" />
+        <item itemvalue="JUnit.DicePoolTest" />
         <item itemvalue="Android JUnit.DiceTest" />
       </list>
     </recent_temporary>
@@ -222,44 +311,95 @@
       <option name="presentableId" value="Default" />
       <updated>1533066133973</updated>
     </task>
+    <task id="LOCAL-00001" summary="Moved DiceTest to match location and package of Dice.">
+      <created>1536887856119</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536887856120</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changed contains method so that it sorts the dice prior to output.">
+      <created>1537009641409</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1537009641409</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactored DicePoolTest.">
+      <created>1537009983082</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1537009983082</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Restructured DicePool.">
+      <created>1537012613213</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537012613213</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added default constructor for Dice. This will be used to avoid null pointer exceptions.">
+      <created>1537012959302</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1537012959302</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed remove function in DicePool.">
+      <created>1537013255240</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1537013255240</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added test for empty dice.">
+      <created>1537013634606</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1537013634606</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DiceTest - 2018.09.11 at 18h 28m 03s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 10m 33s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 18h 28m 52s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 12m 37s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 18h 30m 12s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 21m 55s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 18h 30m 41s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 26m 50s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 18h 35m 28s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 53m 37s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 19h 38m 47s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 54m 16s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 19h 40m 49s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 54m 59s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 19h 41m 16s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 06h 55m 03s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 19h 48m 49s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 07h 05m 23s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.09.11 at 19h 52m 11s.xml">
-      <configuration name="DiceTest" configurationId="AndroidJUnit" />
+    <history-entry file="DicePoolTest - 2018.09.15 at 07h 12m 49s.xml">
+      <configuration name="DicePoolTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.271855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27452025" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -268,7 +408,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -291,19 +431,29 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Moved DiceTest to match location and package of Dice." />
+    <MESSAGE value="Changed contains method so that it sorts the dice prior to output." />
+    <MESSAGE value="Refactored DicePoolTest." />
+    <MESSAGE value="Restructured DicePool." />
+    <MESSAGE value="Added default constructor for Dice. This will be used to avoid null pointer exceptions." />
+    <MESSAGE value="Fixed remove function in DicePool." />
+    <MESSAGE value="Added test for empty dice." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test for empty dice." />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Dice.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DiceFace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Dice.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/DiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -314,19 +464,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DiceFace.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="323">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        <state relative-caret-position="680">
+          <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DicePool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#508#514#0" expanded="true" />
+            <element signature="e#418#429#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/DicePoolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
           </folding>
         </state>
       </provider>
