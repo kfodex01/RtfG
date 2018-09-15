@@ -1,5 +1,6 @@
 package com.austincreations.rollforthegalaxy;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -10,14 +11,22 @@ public class DicePoolTest {
 
     private static final Random randomNumberGenerator = new Random();
     private static final DiceColor[] allDiceColors = {DiceColor.White, DiceColor.Blue, DiceColor.Brown, DiceColor.Green, DiceColor.Purple, DiceColor.Red, DiceColor.Yellow};
+    private DicePool thisDicePool;
+    private Dice firstDice;
+    private Dice secondDice;
+    private Dice thirdDice;
+
+    @BeforeEach
+    public void setup(){
+        thisDicePool = new DicePool();
+    }
 
     @Test
     public void add_TestAddingOneDice_DicePoolShouldContainOneRandomDiceOfCorrectColor(){
         DiceColor thisDiceColor = allDiceColors[randomNumberGenerator.nextInt(allDiceColors.length - 1)];
-        Dice thisDice = new Dice(thisDiceColor);
-        DicePool thisDicePool = new DicePool();
+        firstDice = new Dice(thisDiceColor);
 
-        thisDicePool.add(thisDice);
+        thisDicePool.add(firstDice);
         DiceColor[] dicePoolContents = thisDicePool.contains();
 
         assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(1);
@@ -28,9 +37,8 @@ public class DicePoolTest {
     public void add_TestAddingTwoDice_DicePoolShouldContainTwoRandomDiceOfCorrectColors(){
         DiceColor firstDiceColor = allDiceColors[randomNumberGenerator.nextInt(allDiceColors.length - 1)];
         DiceColor secondDiceColor = allDiceColors[randomNumberGenerator.nextInt(allDiceColors.length - 1)];
-        Dice firstDice = new Dice(firstDiceColor);
-        Dice secondDice = new Dice(secondDiceColor);
-        DicePool thisDicePool = new DicePool();
+        firstDice = new Dice(firstDiceColor);
+        secondDice = new Dice(secondDiceColor);
         int firstDiceIndex = 0;
         int secondDiceIndex = 1;
 
@@ -49,10 +57,9 @@ public class DicePoolTest {
 
     @Test
     public void contains_TestAddingThreeDice_DicePoolShouldReturnThreeDiceInSortedOrder(){
-        Dice firstDice = new Dice(DiceColor.Brown);
-        Dice secondDice = new Dice(DiceColor.Red);
-        Dice thirdDice = new Dice(DiceColor.Brown);
-        DicePool thisDicePool = new DicePool();
+        firstDice = new Dice(DiceColor.Brown);
+        secondDice = new Dice(DiceColor.Red);
+        thirdDice = new Dice(DiceColor.Brown);
 
         thisDicePool.add(firstDice);
         thisDicePool.add(secondDice);
