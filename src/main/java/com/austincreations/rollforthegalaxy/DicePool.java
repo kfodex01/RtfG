@@ -13,7 +13,11 @@ public class DicePool {
         diceByColor = new HashMap<DiceColor, ArrayList<Dice>>();
     }
 
-    public void addDice(Dice thisDice) {
+    public boolean addDice(Dice thisDice) {
+        if (thisDice.getColor() == null) {
+            return false;
+        }
+
         if (diceByColor.containsKey(thisDice.getColor())){
             diceByColor.get(thisDice.getColor()).add(thisDice);
         } else {
@@ -21,6 +25,7 @@ public class DicePool {
             listOfDiceForThisColor.add(thisDice);
             diceByColor.put(thisDice.getColor(), listOfDiceForThisColor);
         }
+        return true;
     }
 
     public DiceColor[] getContentsByDiceColor() {

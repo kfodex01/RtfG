@@ -21,7 +21,16 @@ public class DicePoolTest {
     }
 
     @Test
-    public void addDice_TestAddingOneDice_DicePoolShouldContainOneRandomDiceOfCorrectColor(){
+    public void addDice_AddEmptyDice_ShouldReturnFalse() {
+        Dice emptyDice = new Dice();
+
+        boolean diceWasAdded = thisDicePool.addDice(emptyDice);
+
+        assertThat(diceWasAdded).isEqualTo(false);
+    }
+
+    @Test
+    public void addDice_AddOneDice_ShouldContainOneRandomDiceOfCorrectColor() {
         DiceColor thisDiceColor = getRandomDiceColor();
         firstDice = new Dice(thisDiceColor);
 
@@ -33,7 +42,7 @@ public class DicePoolTest {
     }
 
     @Test
-    public void addDice_TestAddingTwoDice_DicePoolShouldContainTwoRandomDiceOfCorrectColors(){
+    public void addDice_AddTwoDice_ShouldContainTwoRandomDiceOfCorrectColors() {
         DiceColor firstDiceColor = getRandomDiceColor();
         DiceColor secondDiceColor = getRandomDiceColor();
         firstDice = new Dice(firstDiceColor);
@@ -49,7 +58,7 @@ public class DicePoolTest {
     }
 
     @Test
-    public void getContentsByDiceColor_TestAddingThreeDice_DicePoolShouldReturnThreeDiceInSortedOrder(){
+    public void getContentsByDiceColor_AddThreeDice_ShouldReturnThreeDiceInSortedOrder() {
         firstDice = new Dice(DiceColor.Brown);
         secondDice = new Dice(DiceColor.Red);
         thirdDice = new Dice(DiceColor.Brown);
@@ -66,7 +75,7 @@ public class DicePoolTest {
     }
 
     @Test
-    public void removeDice_AddingADiceAndRemovingIt_TheDiceThatWasAddedShouldBeTheSameColorAsTheRemovedOneAndTheDicePoolShouldBeEmpty(){
+    public void removeDice_AddADiceAndRemoveIt_DiceAddedShouldBeTheSameColorAsTheRemovedOneAndTheDicePoolShouldBeEmpty() {
         DiceColor thisDiceColor = getRandomDiceColor();
         firstDice = new Dice(thisDiceColor);
 
