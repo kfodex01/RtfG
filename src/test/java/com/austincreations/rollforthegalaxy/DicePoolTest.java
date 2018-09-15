@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DicePoolTest {
     private static final Random randomNumberGenerator = new Random();
@@ -38,20 +38,14 @@ public class DicePoolTest {
         DiceColor secondDiceColor = getRandomDiceColor();
         firstDice = new Dice(firstDiceColor);
         secondDice = new Dice(secondDiceColor);
-        int firstDiceIndex = 0;
-        int secondDiceIndex = 1;
 
         thisDicePool.addDice(firstDice);
         thisDicePool.addDice(secondDice);
         DiceColor[] dicePoolContents = thisDicePool.getContentsByDiceColor();
-        if (dicePoolContents[0] != firstDiceColor){
-            firstDiceIndex = 1;
-            secondDiceIndex = 0;
-        }
 
         assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(2);
-        assertThat(dicePoolContents[firstDiceIndex]).as("Color 1st Dice in DicePool").isEqualTo(firstDiceColor);
-        assertThat(dicePoolContents[secondDiceIndex]).as("Color 2nd Dice in DicePool").isEqualTo(secondDiceColor);
+        assertThat(dicePoolContents).as("Color 1st Dice in DicePool").contains(firstDiceColor);
+        assertThat(dicePoolContents).as("Color 2nd Dice in DicePool").contains(secondDiceColor);
     }
 
     @Test
