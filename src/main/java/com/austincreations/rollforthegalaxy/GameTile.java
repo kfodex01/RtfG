@@ -1,6 +1,7 @@
 package com.austincreations.rollforthegalaxy;
 
 public enum GameTile {
-    GalacticDemand_DesertedAlienOutpost,
-    GalacticReserves_RebelHideout
+    GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST,
+    GALACTIC_RESERVES_REBEL_HIDEOUT,
+    ISOLATION_POLICY_PLANETARY_NEBULA
 }

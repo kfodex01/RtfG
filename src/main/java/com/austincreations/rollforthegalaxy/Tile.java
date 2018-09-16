@@ -9,18 +9,23 @@ public class Tile {
 
     public Tile(GameTile thisGameTile) {
         switch (thisGameTile) {
-            case GalacticDemand_DesertedAlienOutpost:
+            case GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST:
                 developName = "Galactic Demand";
-                settleName = "Deserted Alien Outpost";
                 developPoints = 2;
+                settleName = "Deserted Alien Outpost";
                 settlePoints = 4;
                 break;
-            case GalacticReserves_RebelHideout:
+            case GALACTIC_RESERVES_REBEL_HIDEOUT:
                 developName = "Galactic Reserves";
-                settleName = "Rebel Hideout";
                 developPoints = 6;
+                settleName = "Rebel Hideout";
                 settlePoints = 2;
                 break;
+            case ISOLATION_POLICY_PLANETARY_NEBULA:
+                developName = "Isolation Policy";
+                developPoints = 3;
+                settleName = "Planetary Nebula";
+                settlePoints = 3;
         }
     }
 
