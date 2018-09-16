@@ -9,11 +9,20 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DicePoolTest {
     private static final Random randomNumberGenerator = new Random();
-    private static final DiceColor[] allDiceColors = {DiceColor.White, DiceColor.Blue, DiceColor.Brown, DiceColor.Green, DiceColor.Purple, DiceColor.Red, DiceColor.Yellow};
+    private static final DieColor[] ALL_DIE_COLORS = {
+            DieColor.White,
+            DieColor.Blue,
+            DieColor.Brown,
+            DieColor.Green,
+            DieColor.Purple,
+            DieColor.Red,
+            DieColor.Yellow
+    };
+
     private DicePool thisDicePool;
-    private Dice firstDice;
-    private Dice secondDice;
-    private Dice thirdDice;
+    private Die firstDie;
+    private Die secondDie;
+    private Die thirdDie;
 
     @BeforeEach
     public void setup(){
@@ -21,73 +30,82 @@ public class DicePoolTest {
     }
 
     @Test
-    public void addDice_TestAddingOneDice_DicePoolShouldContainOneRandomDiceOfCorrectColor(){
-        DiceColor thisDiceColor = getRandomDiceColor();
-        firstDice = new Dice(thisDiceColor);
+    public void addDie_AddEmptyDice_ShouldReturnFalse() {
+        Die emptyDie = new Die();
 
-        thisDicePool.addDice(firstDice);
-        DiceColor[] dicePoolContents = thisDicePool.getContentsByDiceColor();
+        boolean diceWasAdded = thisDicePool.addDie(emptyDie);
 
-        assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(1);
-        assertThat(dicePoolContents[0]).as("Color 1st Dice in DicePool").isEqualTo(thisDiceColor);
+        assertThat(diceWasAdded).isEqualTo(false);
     }
 
     @Test
-    public void addDice_TestAddingTwoDice_DicePoolShouldContainTwoRandomDiceOfCorrectColors(){
-        DiceColor firstDiceColor = getRandomDiceColor();
-        DiceColor secondDiceColor = getRandomDiceColor();
-        firstDice = new Dice(firstDiceColor);
-        secondDice = new Dice(secondDiceColor);
+    public void addDie_AddOneDie_ShouldContainOneRandomDieOfCorrectColor() {
+        DieColor thisDieColor = getRandomDieColor();
+        firstDie = new Die(thisDieColor);
 
-        thisDicePool.addDice(firstDice);
-        thisDicePool.addDice(secondDice);
-        DiceColor[] dicePoolContents = thisDicePool.getContentsByDiceColor();
+        thisDicePool.addDie(firstDie);
+        DieColor[] dicePoolContents = thisDicePool.getContentsByDieColor();
 
-        assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(2);
-        assertThat(dicePoolContents).as("Color 1st Dice in DicePool").contains(firstDiceColor);
-        assertThat(dicePoolContents).as("Color 2nd Dice in DicePool").contains(secondDiceColor);
+        assertThat(dicePoolContents.length).as("Number of Die in DicePool").isEqualTo(1);
+        assertThat(dicePoolContents[0]).as("Color 1st Die in DicePool").isEqualTo(thisDieColor);
     }
 
     @Test
-    public void getContentsByDiceColor_TestAddingThreeDice_DicePoolShouldReturnThreeDiceInSortedOrder(){
-        firstDice = new Dice(DiceColor.Brown);
-        secondDice = new Dice(DiceColor.Red);
-        thirdDice = new Dice(DiceColor.Brown);
+    public void addDie_AddTwoDice_ShouldContainTwoRandomDiceOfCorrectColors() {
+        DieColor firstDieColor = getRandomDieColor();
+        DieColor secondDieColor = getRandomDieColor();
+        firstDie = new Die(firstDieColor);
+        secondDie = new Die(secondDieColor);
 
-        thisDicePool.addDice(firstDice);
-        thisDicePool.addDice(secondDice);
-        thisDicePool.addDice(thirdDice);
-        DiceColor[] dicePoolContents = thisDicePool.getContentsByDiceColor();
+        thisDicePool.addDie(firstDie);
+        thisDicePool.addDie(secondDie);
+        DieColor[] dicePoolContents = thisDicePool.getContentsByDieColor();
 
-        assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(3);
-        assertThat(dicePoolContents[0]).as("First color should be red").isEqualTo(DiceColor.Red);
-        assertThat(dicePoolContents[1]).as("Second color should be brown").isEqualTo(DiceColor.Brown);
-        assertThat(dicePoolContents[2]).as("Third color should be brown").isEqualTo(DiceColor.Brown);
+        assertThat(dicePoolContents.length).as("Number of Die in DicePool").isEqualTo(2);
+        assertThat(dicePoolContents).as("Color 1st Die in DicePool").contains(firstDieColor);
+        assertThat(dicePoolContents).as("Color 2nd Die in DicePool").contains(secondDieColor);
     }
 
     @Test
-    public void removeDice_AddingADiceAndRemovingIt_TheDiceThatWasAddedShouldBeTheSameColorAsTheRemovedOneAndTheDicePoolShouldBeEmpty(){
-        DiceColor thisDiceColor = getRandomDiceColor();
-        firstDice = new Dice(thisDiceColor);
+    public void getContentsByDieColor_AddThreeDice_ShouldReturnThreeDiceInSortedOrder() {
+        firstDie = new Die(DieColor.Brown);
+        secondDie = new Die(DieColor.Red);
+        thirdDie = new Die(DieColor.Brown);
 
-        thisDicePool.addDice(firstDice);
-        Dice removedDice = thisDicePool.removeDice(thisDiceColor);
-        DiceColor[] dicePoolContents = thisDicePool.getContentsByDiceColor();
+        thisDicePool.addDie(firstDie);
+        thisDicePool.addDie(secondDie);
+        thisDicePool.addDie(thirdDie);
+        DieColor[] dicePoolContents = thisDicePool.getContentsByDieColor();
 
-        assertThat(dicePoolContents.length).as("Number of Dice in DicePool").isEqualTo(0);
-        assertThat(removedDice.getColor()).as("Removed dice color should equal added color").isEqualTo(thisDiceColor);
+        assertThat(dicePoolContents.length).as("Number of Die in DicePool").isEqualTo(3);
+        assertThat(dicePoolContents[0]).as("First color should be red").isEqualTo(DieColor.Red);
+        assertThat(dicePoolContents[1]).as("Second color should be brown").isEqualTo(DieColor.Brown);
+        assertThat(dicePoolContents[2]).as("Third color should be brown").isEqualTo(DieColor.Brown);
     }
 
     @Test
-    public void removeDice_RemoveDiceThatIsNotInPool_ShouldReturnADiceWithNullValues(){
-        DiceColor thisDiceColor = getRandomDiceColor();
+    public void removeDie_AddADieAndRemoveIt_DieAddedShouldBeTheSameColorAsTheRemovedOneAndTheDicePoolShouldBeEmpty() {
+        DieColor thisDieColor = getRandomDieColor();
+        firstDie = new Die(thisDieColor);
 
-        Dice removedDice = thisDicePool.removeDice(thisDiceColor);
+        thisDicePool.addDie(firstDie);
+        Die removedDie = thisDicePool.removeDie(thisDieColor);
+        DieColor[] dicePoolContents = thisDicePool.getContentsByDieColor();
 
-        assertThat(removedDice.getColor()).isEqualTo(null);
+        assertThat(dicePoolContents.length).as("Number of Die in DicePool").isEqualTo(0);
+        assertThat(removedDie.getColor()).as("Removed dice color should equal added color").isEqualTo(thisDieColor);
     }
 
-    private DiceColor getRandomDiceColor() {
-        return allDiceColors[randomNumberGenerator.nextInt(allDiceColors.length - 1)];
+    @Test
+    public void removeDie_RemoveDieThatIsNotInPool_ShouldReturnADieWithNullValues() {
+        DieColor thisDieColor = getRandomDieColor();
+
+        Die removedDie = thisDicePool.removeDie(thisDieColor);
+
+        assertThat(removedDie.getColor()).isEqualTo(null);
+    }
+
+    private DieColor getRandomDieColor() {
+        return ALL_DIE_COLORS[randomNumberGenerator.nextInt(ALL_DIE_COLORS.length - 1)];
     }
 }

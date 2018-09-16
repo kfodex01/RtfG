@@ -7,43 +7,48 @@ import java.util.Set;
 
 public class DicePool {
 
-    private HashMap<DiceColor, ArrayList<Dice>> diceByColor;
+    private HashMap<DieColor, ArrayList<Die>> diceByColor;
 
     public DicePool() {
-        diceByColor = new HashMap<DiceColor, ArrayList<Dice>>();
+        diceByColor = new HashMap<DieColor, ArrayList<Die>>();
     }
 
-    public void addDice(Dice thisDice) {
-        if (diceByColor.containsKey(thisDice.getColor())){
-            diceByColor.get(thisDice.getColor()).add(thisDice);
-        } else {
-            ArrayList<Dice> listOfDiceForThisColor = new ArrayList<Dice>();
-            listOfDiceForThisColor.add(thisDice);
-            diceByColor.put(thisDice.getColor(), listOfDiceForThisColor);
+    public boolean addDie(Die thisDie) {
+        if (thisDie.getColor() == null) {
+            return false;
         }
+
+        if (diceByColor.containsKey(thisDie.getColor())) {
+            diceByColor.get(thisDie.getColor()).add(thisDie);
+        } else {
+            ArrayList<Die> listOfDiceForThisColor = new ArrayList<Die>();
+            listOfDiceForThisColor.add(thisDie);
+            diceByColor.put(thisDie.getColor(), listOfDiceForThisColor);
+        }
+        return true;
     }
 
-    public DiceColor[] getContentsByDiceColor() {
-        ArrayList<DiceColor> diceInPoolByDiceColor = new ArrayList<DiceColor>();
+    public DieColor[] getContentsByDieColor() {
+        ArrayList<DieColor> diceInPoolByDieColor = new ArrayList<DieColor>();
 
-        Set<DiceColor> allColorsInPool = diceByColor.keySet();
-        for (DiceColor currentColor : allColorsInPool) {
+        Set<DieColor> allColorsInPool = diceByColor.keySet();
+        for (DieColor currentColor : allColorsInPool) {
             int numberOfDiceInPoolWithCurrentColor = diceByColor.get(currentColor).size();
 
             for(int i = 0; i < numberOfDiceInPoolWithCurrentColor; i++){
-                diceInPoolByDiceColor.add(currentColor);
+                diceInPoolByDieColor.add(currentColor);
             }
         }
-        Collections.sort(diceInPoolByDiceColor);
+        Collections.sort(diceInPoolByDieColor);
 
-        return diceInPoolByDiceColor.toArray(new DiceColor[diceInPoolByDiceColor.size()]);
+        return diceInPoolByDieColor.toArray(new DieColor[diceInPoolByDieColor.size()]);
     }
 
-    public Dice removeDice(DiceColor thisDiceColor) {
-        if(diceByColor.containsKey(thisDiceColor)){
-            return diceByColor.get(thisDiceColor).remove(0);
+    public Die removeDie(DieColor thisDieColor) {
+        if (diceByColor.containsKey(thisDieColor)) {
+            return diceByColor.get(thisDieColor).remove(0);
         } else {
-            return new Dice();
+            return new Die();
         }
     }
 }

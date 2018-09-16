@@ -8,47 +8,47 @@ import static org.mockito.Mockito.*;
 
 public class CupTest {
     Cup thisCup;
-    Dice firstDice;
-    Dice secondDice;
+    Die firstDie;
+    Die secondDie;
 
     @BeforeEach
     public void setup() {
         thisCup = new Cup();
-        firstDice = mock(Dice.class);
-        secondDice = mock(Dice.class);
+        firstDie = mock(Die.class);
+        secondDie = mock(Die.class);
     }
 
     @Test
-    public void rollCupDice_RollEmptyCup_ShouldReturnAnEmptyArray() {
-        Dice[] returnedDice = thisCup.rollDice();
+    public void rollDice_RollEmptyCup_ShouldReturnAnEmptyArray() {
+        Die[] returnedDie = thisCup.rollDice();
 
-        assertThat(returnedDice.length).isEqualTo(0);
+        assertThat(returnedDie.length).isEqualTo(0);
     }
 
     @Test
-    public void rollCupDice_AddDiceAndRoll_CupShouldBeEmpty() {
-        when(firstDice.getColor()).thenReturn(DiceColor.Brown);
-        when(secondDice.getColor()).thenReturn(DiceColor.Red);
+    public void rollDice_AddDiceAndRoll_CupShouldBeEmpty() {
+        when(firstDie.getColor()).thenReturn(DieColor.Brown);
+        when(secondDie.getColor()).thenReturn(DieColor.Red);
 
-        thisCup.addDice(firstDice);
-        thisCup.addDice(secondDice);
+        thisCup.addDie(firstDie);
+        thisCup.addDie(secondDie);
         thisCup.rollDice();
 
-        assertThat(thisCup.getContentsByDiceColor().length).isEqualTo(0);
+        assertThat(thisCup.getContentsByDieColor().length).isEqualTo(0);
     }
 
     @Test
-    public void rollCupDice_AddDiceAndRoll_ShouldRollAllDiceInCupAndReturnThem() {
-        when(firstDice.getColor()).thenReturn(DiceColor.Brown);
-        when(secondDice.getColor()).thenReturn(DiceColor.Red);
+    public void rollDice_AddDiceAndRoll_ShouldRollAllDiceInCupAndReturnThem() {
+        when(firstDie.getColor()).thenReturn(DieColor.Brown);
+        when(secondDie.getColor()).thenReturn(DieColor.Red);
 
-        thisCup.addDice(firstDice);
-        thisCup.addDice(secondDice);
-        Dice[] returnedDice = thisCup.rollDice();
+        thisCup.addDie(firstDie);
+        thisCup.addDie(secondDie);
+        Die[] returnedDie = thisCup.rollDice();
 
-        verify(firstDice, times(1)).rollDice();
-        verify(secondDice, times(1)).rollDice();
-        assertThat(returnedDice).as("First dice is in returned list.").contains(firstDice);
-        assertThat(returnedDice).as("Second dice is in returned list.").contains(secondDice);
+        verify(firstDie, times(1)).rollDie();
+        verify(secondDie, times(1)).rollDie();
+        assertThat(returnedDie).as("First dice is in returned list.").contains(firstDie);
+        assertThat(returnedDie).as("Second dice is in returned list.").contains(secondDie);
     }
 }

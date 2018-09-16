@@ -1,6 +1,6 @@
 package com.austincreations.rollforthegalaxy;
 
-public enum DiceFace{
+public enum DieFace {
     Explore,
     Develop,
     Settle,
