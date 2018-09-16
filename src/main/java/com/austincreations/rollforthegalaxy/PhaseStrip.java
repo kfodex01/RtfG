@@ -9,63 +9,63 @@ public class PhaseStrip {
     private DicePool shipPool = new DicePool();
     private DicePool unassignedPool = new DicePool();
 
-    public boolean addDice(Dice[] dice) {
+    public boolean addDice(Die[] dice) {
         if (dice.length == 0) {
             return false;
         }
-        for (Dice thisDice : dice) {
-            addToCorrectPool(thisDice);
+        for (Die thisDie : dice) {
+            addToPool(thisDie);
         }
         return true;
     }
 
-    private void addToCorrectPool(Dice thisDice) {
-        DiceFace thisDiceFace = thisDice.getCurrentFace();
-        if (thisDiceFace == null) {
+    private void addToPool(Die thisDie) {
+        DieFace thisDieFace = thisDie.getCurrentFace();
+        if (thisDieFace == null) {
             return;
         }
-        switch (thisDiceFace) {
+        switch (thisDieFace) {
             case Explore:
-                explorePool.addDice(thisDice);
+                explorePool.addDie(thisDie);
                 break;
             case Develop:
-                developPool.addDice(thisDice);
+                developPool.addDie(thisDie);
                 break;
             case Settle:
-                settlePool.addDice(thisDice);
+                settlePool.addDie(thisDie);
                 break;
             case Produce:
-                producePool.addDice(thisDice);
+                producePool.addDie(thisDie);
                 break;
             case Ship:
-                shipPool.addDice(thisDice);
+                shipPool.addDie(thisDie);
                 break;
             case Wild:
-                unassignedPool.addDice(thisDice);
+                unassignedPool.addDie(thisDie);
                 break;
         }
     }
 
-    public DiceColor[] getDiceFromPool(DiceFace thisDiceFace) {
-        DiceColor[] diceByColorInPool = {};
-        switch (thisDiceFace) {
+    public DieColor[] getDiceFromPool(DieFace thisDieFace) {
+        DieColor[] diceByColorInPool = {};
+        switch (thisDieFace) {
             case Explore:
-                diceByColorInPool = explorePool.getContentsByDiceColor();
+                diceByColorInPool = explorePool.getContentsByDieColor();
                 break;
             case Develop:
-                diceByColorInPool = developPool.getContentsByDiceColor();
+                diceByColorInPool = developPool.getContentsByDieColor();
                 break;
             case Settle:
-                diceByColorInPool = settlePool.getContentsByDiceColor();
+                diceByColorInPool = settlePool.getContentsByDieColor();
                 break;
             case Produce:
-                diceByColorInPool = producePool.getContentsByDiceColor();
+                diceByColorInPool = producePool.getContentsByDieColor();
                 break;
             case Ship:
-                diceByColorInPool = shipPool.getContentsByDiceColor();
+                diceByColorInPool = shipPool.getContentsByDieColor();
                 break;
             case Wild:
-                diceByColorInPool = unassignedPool.getContentsByDiceColor();
+                diceByColorInPool = unassignedPool.getContentsByDieColor();
                 break;
         }
         return diceByColorInPool;

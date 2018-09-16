@@ -3,14 +3,14 @@ package com.austincreations.rollforthegalaxy;
 import java.util.ArrayList;
 
 public class Cup extends DicePool {
-    public Dice[] rollDice() {
-        DiceColor[] diceListByColor = this.getContentsByDiceColor();
-        ArrayList<Dice> rolledDice = new ArrayList<Dice>();
-        for (DiceColor thisDiceColor : diceListByColor) {
-            Dice thisDice = this.removeDice(thisDiceColor);
-            thisDice.rollDice();
-            rolledDice.add(thisDice);
+    public Die[] rollDice() {
+        DieColor[] diceListByColor = this.getContentsByDieColor();
+        ArrayList<Die> rolledDie = new ArrayList<Die>();
+        for (DieColor thisDieColor : diceListByColor) {
+            Die thisDie = this.removeDie(thisDieColor);
+            thisDie.rollDie();
+            rolledDie.add(thisDie);
         }
-        return rolledDice.toArray(new Dice[rolledDice.size()]);
+        return rolledDie.toArray(new Die[rolledDie.size()]);
     }
 }

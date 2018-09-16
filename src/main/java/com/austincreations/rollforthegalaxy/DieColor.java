@@ -1,6 +1,6 @@
 package com.austincreations.rollforthegalaxy;
 
-public enum DiceColor{
+public enum DieColor {
     White,
     Red,
     Purple,
