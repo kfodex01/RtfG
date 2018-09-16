@@ -9,6 +9,12 @@ public class Tile {
 
     public Tile(GameTile thisGameTile) {
         switch (thisGameTile) {
+            case ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD:
+                developName = "Advanced Logistics";
+                developPoints = 1;
+                settleName = "Designer Species, Ultd.";
+                settlePoints = 5;
+                break;
             case GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST:
                 developName = "Galactic Demand";
                 developPoints = 2;

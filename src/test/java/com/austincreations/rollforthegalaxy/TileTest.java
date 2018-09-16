@@ -8,6 +8,13 @@ public class TileTest {
     Tile firstTile;
 
     @Test
+    public void getName_CreateAdvancedLogisticsTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+
+        assertThat(firstTile.getName()).isEqualTo("Advanced Logistics");
+    }
+
+    @Test
     public void getName_CreateGalacticDemandTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
 
@@ -43,6 +50,13 @@ public class TileTest {
     }
 
     @Test
+    public void getPoints_CreateAdvancedLogisticsTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(1);
+    }
+
+    @Test
     public void getPoints_CreateGalacticDemandTile_ShouldEqualCorrectPoints() {
         firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
 
@@ -75,6 +89,16 @@ public class TileTest {
         firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
 
         assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
+    public void flipTile_CreateAdvancedLogisticsTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Designer Species, Ultd.");
+        assertThat(firstTile.getPoints()).isEqualTo(5);
     }
 
     @Test
