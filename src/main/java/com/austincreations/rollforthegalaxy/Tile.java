@@ -27,6 +27,12 @@ public class Tile {
                 settleName = "Rebel Hideout";
                 settlePoints = 2;
                 break;
+            case HOMEWORLD_PATRIOTISM_PLAGUE_WORLD:
+                developName = "Homeworld Patriotism";
+                developPoints = 3;
+                settleName = "Plague World";
+                settlePoints = 3;
+                break;
             case ISOLATION_POLICY_PLANETARY_NEBULA:
                 developName = "Isolation Policy";
                 developPoints = 3;
@@ -39,7 +45,6 @@ public class Tile {
                 settleName = "";
                 settlePoints = 0;
                 break;
-
         }
     }
 

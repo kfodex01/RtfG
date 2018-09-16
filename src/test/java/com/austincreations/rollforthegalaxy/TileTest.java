@@ -29,6 +29,13 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateHomeworldPatriotismTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Homeworld Patriotism");
+    }
+
+    @Test
     public void getName_CreateIsolationPolicyTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
 
@@ -54,6 +61,13 @@ public class TileTest {
         firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
 
         assertThat(firstTile.getPoints()).isEqualTo(6);
+    }
+
+    @Test
+    public void getPoints_CreateHomeworldPatriotismTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(3);
     }
 
     @Test
@@ -91,6 +105,16 @@ public class TileTest {
 
         assertThat(firstTile.getName()).isEqualTo("Rebel Hideout");
         assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void flipTile_CreateHomeworldPatriotismTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Plague World");
+        assertThat(firstTile.getPoints()).isEqualTo(3);
     }
 
     @Test
