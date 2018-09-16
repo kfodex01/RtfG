@@ -37,7 +37,6 @@ public class PhaseStripTest {
     public void setup() {
         thisPhaseStrip = new PhaseStrip();
         firstDice = mock(Dice.class);
-        secondDice = mock(Dice.class);
     }
 
     @Test
@@ -149,26 +148,21 @@ public class PhaseStripTest {
     }
 
     @Test
-    public void addDice_AddTwoRandomDiceWithRandomFaces_ShouldContainDiceOfCorrectColorsInCorrectPools() {
+    public void addDice_AddTwoRandomDiceFromCupRoll_ShouldContainDiceOfCorrectColorsInCorrectPools() {
         DiceColor firstDiceColor = getRandomDiceColor();
         DiceColor secondDiceColor = getRandomDiceColor();
-        DiceFace firstDiceFace = getRandomDiceFace();
-        DiceFace secondDiceFace = getRandomDiceFace();
-        when(firstDice.getColor()).thenReturn(firstDiceColor);
-        when(firstDice.getCurrentFace()).thenReturn(firstDiceFace);
-        when(secondDice.getColor()).thenReturn(secondDiceColor);
-        when(secondDice.getCurrentFace()).thenReturn(secondDiceFace);
+        firstDice = new Dice(firstDiceColor);
+        secondDice = new Dice(secondDiceColor);
 
-        thisPhaseStrip.addDice(new Dice[]{firstDice, secondDice});
+        Cup thisCup = new Cup();
+        thisCup.addDice(firstDice);
+        thisCup.addDice(secondDice);
+        thisPhaseStrip.addDice(thisCup.rollDice());
 
-        assertThat(thisPhaseStrip.getDiceFromPool(firstDiceFace).length).as("First dice array contains at least one die").isGreaterThan(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(firstDiceFace)).as("First dice array contains the first die color").contains(firstDiceColor);
-        assertThat(thisPhaseStrip.getDiceFromPool(secondDiceFace).length).as("Second dice array contains at least one die").isGreaterThan(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(secondDiceFace)).as("Second dice array contains the first die color").contains(secondDiceColor);
-    }
-
-    private DiceFace getRandomDiceFace() {
-        return allDiceFaces[randomNumberGenerator.nextInt(allDiceFaces.length - 1)];
+        assertThat(thisPhaseStrip.getDiceFromPool(firstDice.getCurrentFace()).length).as("First dice array contains at least one die").isGreaterThan(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(firstDice.getCurrentFace())).as("First dice array contains the first die color").contains(firstDiceColor);
+        assertThat(thisPhaseStrip.getDiceFromPool(secondDice.getCurrentFace()).length).as("Second dice array contains at least one die").isGreaterThan(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(secondDice.getCurrentFace())).as("Second dice array contains the first die color").contains(secondDiceColor);
     }
 
     private DiceColor getRandomDiceColor() {
