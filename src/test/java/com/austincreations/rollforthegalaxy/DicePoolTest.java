@@ -9,7 +9,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DicePoolTest {
     private static final Random randomNumberGenerator = new Random();
-    private static final DiceColor[] allDiceColors = {DiceColor.White, DiceColor.Blue, DiceColor.Brown, DiceColor.Green, DiceColor.Purple, DiceColor.Red, DiceColor.Yellow};
+    private static final DiceColor[] allDiceColors = {
+            DiceColor.White,
+            DiceColor.Blue,
+            DiceColor.Brown,
+            DiceColor.Green,
+            DiceColor.Purple,
+            DiceColor.Red,
+            DiceColor.Yellow
+    };
+
     private DicePool thisDicePool;
     private Dice firstDice;
     private Dice secondDice;
