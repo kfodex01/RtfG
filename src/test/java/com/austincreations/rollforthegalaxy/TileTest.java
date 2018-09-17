@@ -657,4 +657,35 @@ public class TileTest {
 
         assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
     }
+
+    @Test
+    public void getName_CreateDoomedWorldTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(HomeWorldTile.DOOMED_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Doomed World");
+    }
+
+    @Test
+    public void getPoints_CreateDoomedWorldTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(HomeWorldTile.DOOMED_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void flipTile_CreateDoomedWorldTileAndFlipAttempted_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(HomeWorldTile.DOOMED_WORLD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Doomed World");
+        assertThat(firstTile.getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void getSettleColor_CreateDoomedWorldTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(HomeWorldTile.DOOMED_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
 }

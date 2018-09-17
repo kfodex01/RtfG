@@ -1,0 +1,5 @@
+package com.austincreations.rollforthegalaxy;
+
+public enum HomeWorldTile {
+    DOOMED_WORLD
+}

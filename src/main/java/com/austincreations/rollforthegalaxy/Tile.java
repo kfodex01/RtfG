@@ -143,6 +143,14 @@ public class Tile {
         }
     }
 
+    public Tile(HomeWorldTile thisHomeWorldTile) {
+        canFlip = false;
+        developSideIsUp = false;
+        settleName = "Doomed World";
+        settlePoints = 0;
+        thisPlanetColor = PlanetColor.GRAY;
+    }
+
     public Tile(FactionTile thisFactionTile, boolean isLeftSide) {
         canFlip = false;
 
