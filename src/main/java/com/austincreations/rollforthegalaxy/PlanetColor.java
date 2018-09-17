@@ -1,11 +1,9 @@
 package com.austincreations.rollforthegalaxy;
 
-public enum DieColor {
+public enum PlanetColor {
     BLUE,
     BROWN,
+    GRAY,
     GREEN,
-    PURPLE,
-    RED,
-    YELLOW,
-    WHITE
+    YELLOW
 }

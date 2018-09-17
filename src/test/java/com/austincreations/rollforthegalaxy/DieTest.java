@@ -12,57 +12,57 @@ public class DieTest {
 
     @Test
     public void getColor_TestBlueDiceColor(){
-        Die thisDie = new Die(DieColor.Blue);
+        Die thisDie = new Die(DieColor.BLUE);
 
-        assertThat(thisDie.getColor()).isEqualTo(DieColor.Blue);
+        assertThat(thisDie.getColor()).isEqualTo(DieColor.BLUE);
     }
 
     @Test
     public void getColor_TestWhiteDiceColor(){
-        Die thisDie = new Die(DieColor.White);
+        Die thisDie = new Die(DieColor.WHITE);
 
-        assertThat(thisDie.getColor()).isEqualTo(DieColor.White);
+        assertThat(thisDie.getColor()).isEqualTo(DieColor.WHITE);
     }
 
     @Test
     public void getColor_TestRedDiceColor(){
-        Die thisDie = new Die(DieColor.Red);
+        Die thisDie = new Die(DieColor.RED);
 
-        assertThat(thisDie.getColor()).isEqualTo(DieColor.Red);
+        assertThat(thisDie.getColor()).isEqualTo(DieColor.RED);
     }
 
     @Test
     public void getColor_TestPurpleDiceColor(){
-        Die thisDie = new Die(DieColor.Purple);
+        Die thisDie = new Die(DieColor.PURPLE);
 
-        assertThat(thisDie.getColor()).isEqualTo(DieColor.Purple);
+        assertThat(thisDie.getColor()).isEqualTo(DieColor.PURPLE);
     }
 
     @Test
     public void getColor_TestBrownDiceColor(){
-        Die thisDie = new Die(DieColor.Brown);
+        Die thisDie = new Die(DieColor.BROWN);
 
-        assertThat(thisDie.getColor()).isEqualTo(DieColor.Brown);
+        assertThat(thisDie.getColor()).isEqualTo(DieColor.BROWN);
     }
 
     @Test
     public void getColor_TestGreenDiceColor(){
-        Die thisDie = new Die(DieColor.Green);
+        Die thisDie = new Die(DieColor.GREEN);
 
-        assertThat(thisDie.getColor()).isEqualTo(DieColor.Green);
+        assertThat(thisDie.getColor()).isEqualTo(DieColor.GREEN);
     }
 
     @Test
     public void getColor_TestYellowDiceColor(){
-        Die thisDie = new Die(DieColor.Yellow);
+        Die thisDie = new Die(DieColor.YELLOW);
 
-        assertThat(thisDie.getColor()).isEqualTo(DieColor.Yellow);
+        assertThat(thisDie.getColor()).isEqualTo(DieColor.YELLOW);
     }
 
     @Test
     public void getDieFaces_CheckWhiteFaces() {
-        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.White)));
-        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.Explore, DieFace.Explore, DieFace.Develop, DieFace.Settle, DieFace.Produce, DieFace.Ship));
+        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.WHITE)));
+        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.EXPLORE, DieFace.EXPLORE, DieFace.DEVELOP, DieFace.SETTLE, DieFace.PRODUCE, DieFace.SHIP));
 
         int numberOfFaces = currentDieFaceList.size();
         RemoveCorrectDieFacesFromCurrentDieFaceList(currentDieFaceList, correctList);
@@ -73,8 +73,8 @@ public class DieTest {
 
     @Test
     public void getDieFaces_CheckRedFaces() {
-        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.Red)));
-        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.Explore, DieFace.Develop, DieFace.Develop, DieFace.Settle, DieFace.Settle, DieFace.Wild));
+        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.RED)));
+        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.EXPLORE, DieFace.DEVELOP, DieFace.DEVELOP, DieFace.SETTLE, DieFace.SETTLE, DieFace.WILD));
 
         int numberOfFaces = currentDieFaceList.size();
         RemoveCorrectDieFacesFromCurrentDieFaceList(currentDieFaceList, correctList);
@@ -85,8 +85,8 @@ public class DieTest {
 
     @Test
     public void getDieFaces_CheckPurpleFaces() {
-        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.Purple)));
-        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.Explore, DieFace.Develop, DieFace.Ship, DieFace.Ship, DieFace.Ship, DieFace.Wild));
+        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.PURPLE)));
+        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.EXPLORE, DieFace.DEVELOP, DieFace.SHIP, DieFace.SHIP, DieFace.SHIP, DieFace.WILD));
 
         int numberOfFaces = currentDieFaceList.size();
         RemoveCorrectDieFacesFromCurrentDieFaceList(currentDieFaceList, correctList);
@@ -97,8 +97,8 @@ public class DieTest {
 
     @Test
     public void getDieFaces_CheckBlueFaces() {
-        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.Blue)));
-        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.Explore, DieFace.Produce, DieFace.Produce, DieFace.Ship, DieFace.Ship, DieFace.Wild));
+        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.BLUE)));
+        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.EXPLORE, DieFace.PRODUCE, DieFace.PRODUCE, DieFace.SHIP, DieFace.SHIP, DieFace.WILD));
 
         int numberOfFaces = currentDieFaceList.size();
         RemoveCorrectDieFacesFromCurrentDieFaceList(currentDieFaceList, correctList);
@@ -109,8 +109,8 @@ public class DieTest {
 
     @Test
     public void getDieFaces_CheckBrownFaces() {
-        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.Brown)));
-        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.Explore, DieFace.Develop, DieFace.Develop, DieFace.Produce, DieFace.Ship, DieFace.Wild));
+        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.BROWN)));
+        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.EXPLORE, DieFace.DEVELOP, DieFace.DEVELOP, DieFace.PRODUCE, DieFace.SHIP, DieFace.WILD));
 
         int numberOfFaces = currentDieFaceList.size();
         RemoveCorrectDieFacesFromCurrentDieFaceList(currentDieFaceList, correctList);
@@ -121,8 +121,8 @@ public class DieTest {
 
     @Test
     public void getDieFaces_CheckGreenFaces() {
-        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.Green)));
-        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.Explore, DieFace.Settle, DieFace.Settle, DieFace.Produce, DieFace.Wild, DieFace.Wild));
+        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.GREEN)));
+        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.EXPLORE, DieFace.SETTLE, DieFace.SETTLE, DieFace.PRODUCE, DieFace.WILD, DieFace.WILD));
 
         int numberOfFaces = currentDieFaceList.size();
         RemoveCorrectDieFacesFromCurrentDieFaceList(currentDieFaceList, correctList);
@@ -133,8 +133,8 @@ public class DieTest {
 
     @Test
     public void getDieFaces_CheckYellowFaces() {
-        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.Yellow)));
-        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.Develop, DieFace.Settle, DieFace.Produce, DieFace.Wild, DieFace.Wild, DieFace.Wild));
+        ArrayList<DieFace> currentDieFaceList = new ArrayList(Arrays.asList(Die.getDieFaces(DieColor.YELLOW)));
+        ArrayList<DieFace> correctList = new ArrayList<DieFace>(asList(DieFace.DEVELOP, DieFace.SETTLE, DieFace.PRODUCE, DieFace.WILD, DieFace.WILD, DieFace.WILD));
 
         int numberOfFaces = currentDieFaceList.size();
         RemoveCorrectDieFacesFromCurrentDieFaceList(currentDieFaceList, correctList);
@@ -145,7 +145,7 @@ public class DieTest {
 
     @Test
     public void rollDie_TestWhiteRoll() {
-        DieColor thisColor = DieColor.White;
+        DieColor thisColor = DieColor.WHITE;
 
         ArrayList<DieFace> dieFaceList = rollAndRemoveDieResultsFromDieFaceList(thisColor);
 
@@ -154,7 +154,7 @@ public class DieTest {
 
     @Test
     public void rollDie_TestRedRoll() {
-        DieColor thisColor = DieColor.Red;
+        DieColor thisColor = DieColor.RED;
 
         ArrayList<DieFace> dieFaceList = rollAndRemoveDieResultsFromDieFaceList(thisColor);
 
@@ -163,7 +163,7 @@ public class DieTest {
 
     @Test
     public void rollDie_TestPurpleRoll() {
-        DieColor thisColor = DieColor.Purple;
+        DieColor thisColor = DieColor.PURPLE;
 
         ArrayList<DieFace> dieFaceList = rollAndRemoveDieResultsFromDieFaceList(thisColor);
 
@@ -172,7 +172,7 @@ public class DieTest {
 
     @Test
     public void rollDie_TestBlueRoll() {
-        DieColor thisColor = DieColor.Blue;
+        DieColor thisColor = DieColor.BLUE;
 
         ArrayList<DieFace> dieFaceList = rollAndRemoveDieResultsFromDieFaceList(thisColor);
 
@@ -181,7 +181,7 @@ public class DieTest {
 
     @Test
     public void rollDie_TestBrownRoll() {
-        DieColor thisColor = DieColor.Brown;
+        DieColor thisColor = DieColor.BROWN;
 
         ArrayList<DieFace> dieFaceList = rollAndRemoveDieResultsFromDieFaceList(thisColor);
 
@@ -190,7 +190,7 @@ public class DieTest {
 
     @Test
     public void rollDie_TestGreenRoll() {
-        DieColor thisColor = DieColor.Green;
+        DieColor thisColor = DieColor.GREEN;
 
         ArrayList<DieFace> dieFaceList = rollAndRemoveDieResultsFromDieFaceList(thisColor);
 
@@ -199,7 +199,7 @@ public class DieTest {
 
     @Test
     public void rollDie_TestYellowRoll() {
-        DieColor thisColor = DieColor.Yellow;
+        DieColor thisColor = DieColor.YELLOW;
 
         ArrayList<DieFace> dieFaceList = rollAndRemoveDieResultsFromDieFaceList(thisColor);
 

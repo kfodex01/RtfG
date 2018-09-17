@@ -27,8 +27,8 @@ public class CupTest {
 
     @Test
     public void rollDice_AddDiceAndRoll_CupShouldBeEmpty() {
-        when(firstDie.getColor()).thenReturn(DieColor.Brown);
-        when(secondDie.getColor()).thenReturn(DieColor.Red);
+        when(firstDie.getColor()).thenReturn(DieColor.BROWN);
+        when(secondDie.getColor()).thenReturn(DieColor.RED);
 
         thisCup.addDie(firstDie);
         thisCup.addDie(secondDie);
@@ -39,8 +39,8 @@ public class CupTest {
 
     @Test
     public void rollDice_AddDiceAndRoll_ShouldRollAllDiceInCupAndReturnThem() {
-        when(firstDie.getColor()).thenReturn(DieColor.Brown);
-        when(secondDie.getColor()).thenReturn(DieColor.Red);
+        when(firstDie.getColor()).thenReturn(DieColor.BROWN);
+        when(secondDie.getColor()).thenReturn(DieColor.RED);
 
         thisCup.addDie(firstDie);
         thisCup.addDie(secondDie);

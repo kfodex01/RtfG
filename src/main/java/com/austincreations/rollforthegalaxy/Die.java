@@ -23,26 +23,26 @@ public class Die {
     public static DieFace[] getDieFaces(DieColor thisColor) {
         DieFace[] dieFaces = new DieFace[]{};
         switch (thisColor){
-            case White:
-                dieFaces = new DieFace[]{DieFace.Explore, DieFace.Explore, DieFace.Develop, DieFace.Settle, DieFace.Produce, DieFace.Ship};
+            case WHITE:
+                dieFaces = new DieFace[]{DieFace.EXPLORE, DieFace.EXPLORE, DieFace.DEVELOP, DieFace.SETTLE, DieFace.PRODUCE, DieFace.SHIP};
                 break;
-            case Red:
-                dieFaces = new DieFace[]{DieFace.Explore, DieFace.Develop, DieFace.Develop, DieFace.Settle, DieFace.Settle, DieFace.Wild};
+            case RED:
+                dieFaces = new DieFace[]{DieFace.EXPLORE, DieFace.DEVELOP, DieFace.DEVELOP, DieFace.SETTLE, DieFace.SETTLE, DieFace.WILD};
                 break;
-            case Purple:
-                dieFaces = new DieFace[]{DieFace.Explore, DieFace.Develop, DieFace.Ship, DieFace.Ship, DieFace.Ship, DieFace.Wild};
+            case PURPLE:
+                dieFaces = new DieFace[]{DieFace.EXPLORE, DieFace.DEVELOP, DieFace.SHIP, DieFace.SHIP, DieFace.SHIP, DieFace.WILD};
                 break;
-            case Blue:
-                dieFaces = new DieFace[]{DieFace.Explore, DieFace.Produce, DieFace.Produce, DieFace.Ship, DieFace.Ship, DieFace.Wild};
+            case BLUE:
+                dieFaces = new DieFace[]{DieFace.EXPLORE, DieFace.PRODUCE, DieFace.PRODUCE, DieFace.SHIP, DieFace.SHIP, DieFace.WILD};
                 break;
-            case Brown:
-                dieFaces = new DieFace[]{DieFace.Explore, DieFace.Develop, DieFace.Develop, DieFace.Produce, DieFace.Ship, DieFace.Wild};
+            case BROWN:
+                dieFaces = new DieFace[]{DieFace.EXPLORE, DieFace.DEVELOP, DieFace.DEVELOP, DieFace.PRODUCE, DieFace.SHIP, DieFace.WILD};
                 break;
-            case Green:
-                dieFaces = new DieFace[]{DieFace.Explore, DieFace.Settle, DieFace.Settle, DieFace.Produce, DieFace.Wild, DieFace.Wild};
+            case GREEN:
+                dieFaces = new DieFace[]{DieFace.EXPLORE, DieFace.SETTLE, DieFace.SETTLE, DieFace.PRODUCE, DieFace.WILD, DieFace.WILD};
                 break;
-            case Yellow:
-                dieFaces = new DieFace[]{DieFace.Develop, DieFace.Settle, DieFace.Produce, DieFace.Wild, DieFace.Wild, DieFace.Wild};
+            case YELLOW:
+                dieFaces = new DieFace[]{DieFace.DEVELOP, DieFace.SETTLE, DieFace.PRODUCE, DieFace.WILD, DieFace.WILD, DieFace.WILD};
                 break;
         }
         return dieFaces;
