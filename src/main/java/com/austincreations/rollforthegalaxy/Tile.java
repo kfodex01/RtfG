@@ -101,6 +101,13 @@ public class Tile {
                 settlePoints = 3;
                 thisPlanetColor = PlanetColor.BROWN;
                 break;
+            case REPLICANT_ROBOTS_SPACE_PORT:
+                developName = "Replicant Robots";
+                developPoints = 4;
+                settleName = "Space Port";
+                settlePoints = 2;
+                thisPlanetColor = PlanetColor.BLUE;
+                break;
             case SPACE_DOCKS_ARMAMENTS_WORLD:
                 developName = "Space Docks";
                 developPoints = 2;

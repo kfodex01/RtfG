@@ -411,6 +411,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateReplicantRobotsTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.REPLICANT_ROBOTS_SPACE_PORT);
+
+        assertThat(firstTile.getName()).isEqualTo("Replicant Robots");
+    }
+
+    @Test
+    public void getPoints_CreateReplicantRobotsTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.REPLICANT_ROBOTS_SPACE_PORT);
+
+        assertThat(firstTile.getPoints()).isEqualTo(4);
+    }
+
+    @Test
+    public void flipTile_CreateReplicantRobotsTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.REPLICANT_ROBOTS_SPACE_PORT);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Space Port");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void getSettleColor_CreateReplicantRobotsTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.REPLICANT_ROBOTS_SPACE_PORT);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BLUE);
+    }
+
+    @Test
     public void getName_CreateSpaceDocksTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
 
