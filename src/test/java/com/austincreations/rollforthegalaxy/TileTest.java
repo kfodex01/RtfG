@@ -533,4 +533,66 @@ public class TileTest {
 
         assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
     }
+
+    @Test
+    public void getName_CreateHiddenFortressTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, false);
+
+        assertThat(firstTile.getName()).isEqualTo("Hidden Fortress");
+    }
+
+    @Test
+    public void getPoints_CreateHiddenFortressTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, false);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void flipTile_CreateHiddenFortressTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, false);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Hidden Fortress");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void getSettleColor_CreateHiddenFortressTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, false);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
+    public void getName_CreateSpacePiracyTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        assertThat(firstTile.getName()).isEqualTo("Space Piracy");
+    }
+
+    @Test
+    public void getPoints_CreateSpacePiracyTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        assertThat(firstTile.getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void flipTile_CreateSpacePiracyTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Space Piracy");
+        assertThat(firstTile.getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void getSettleColor_CreateSpacePiracyTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(null);
+    }
 }

@@ -1,7 +1,8 @@
 package com.austincreations.rollforthegalaxy;
 
 public class Tile {
-    boolean developSideIsUp = true;
+    boolean developSideIsUp;
+    boolean canFlip;
     private String developName;
     private String settleName;
     private int developPoints;
@@ -9,6 +10,9 @@ public class Tile {
     private PlanetColor thisPlanetColor;
 
     public Tile(GameTile thisGameTile) {
+        developSideIsUp = true;
+        canFlip = true;
+
         switch (thisGameTile) {
             case ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD:
                 developName = "Advanced Logistics";
@@ -139,6 +143,30 @@ public class Tile {
         }
     }
 
+    public Tile(FactionTile thisFactionTile, boolean isLeftSide) {
+        canFlip = false;
+
+        if (isLeftSide) {
+            createLeftSide(thisFactionTile);
+        } else {
+            createRightSide(thisFactionTile);
+        }
+    }
+
+    private void createLeftSide(FactionTile thisFactionTile) {
+        developSideIsUp = true;
+        developName = "Space Piracy";
+        developPoints = 0;
+        thisPlanetColor = null;
+    }
+
+    private void createRightSide(FactionTile thisFactionTile) {
+        developSideIsUp = false;
+        settleName = "Hidden Fortress";
+        settlePoints = 2;
+        thisPlanetColor = PlanetColor.GRAY;
+    }
+
     public String getName() {
         if (developSideIsUp) {
             return developName;
@@ -156,7 +184,9 @@ public class Tile {
     }
 
     public void flipTile() {
-        developSideIsUp = !developSideIsUp;
+        if (canFlip) {
+            developSideIsUp = !developSideIsUp;
+        }
     }
 
     public PlanetColor getSettleColor() {
