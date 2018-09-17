@@ -59,6 +59,13 @@ public class Tile {
                 settlePoints = 3;
                 thisPlanetColor = PlanetColor.BROWN;
                 break;
+            case SPACE_DOCKS_ARMAMENTS_WORLD:
+                developName = "Space Docks";
+                developPoints = 2;
+                settleName = "Armaments World";
+                settlePoints = 4;
+                thisPlanetColor = PlanetColor.BROWN;
+                break;
             default:
                 developName = "";
                 developPoints = 0;

@@ -57,6 +57,13 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateSpaceDocksTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Space Docks");
+    }
+
+    @Test
     public void getPoints_CreateAdvancedLogisticsTile_ShouldEqualCorrectPoints() {
         firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
 
@@ -103,6 +110,13 @@ public class TileTest {
         firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
 
         assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
+    public void getPoints_CreateSpaceDocksTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
     }
 
     @Test
@@ -176,6 +190,16 @@ public class TileTest {
     }
 
     @Test
+    public void flipTile_CreateSpaceDocksTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Armaments World");
+        assertThat(firstTile.getPoints()).isEqualTo(4);
+    }
+
+    @Test
     public void getSettleColor_CreateAdvancedLogisticsTile_ShouldEqualCorrectPlanetColor() {
         firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
 
@@ -220,6 +244,13 @@ public class TileTest {
     @Test
     public void getSettleColor_CreateIsolationPolicyTile_ShouldEqualCorrectPlanetColor() {
         firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
+    }
+
+    @Test
+    public void getSettleColor_CreateSpaceDocksTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
 
         assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
     }
