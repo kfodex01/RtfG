@@ -25,22 +25,22 @@ public class PhaseStrip {
             return;
         }
         switch (thisDieFace) {
-            case Explore:
+            case EXPLORE:
                 explorePool.addDie(thisDie);
                 break;
-            case Develop:
+            case DEVELOP:
                 developPool.addDie(thisDie);
                 break;
-            case Settle:
+            case SETTLE:
                 settlePool.addDie(thisDie);
                 break;
-            case Produce:
+            case PRODUCE:
                 producePool.addDie(thisDie);
                 break;
-            case Ship:
+            case SHIP:
                 shipPool.addDie(thisDie);
                 break;
-            case Wild:
+            case WILD:
                 unassignedPool.addDie(thisDie);
                 break;
         }
@@ -49,22 +49,22 @@ public class PhaseStrip {
     public DieColor[] getDiceFromPool(DieFace thisDieFace) {
         DieColor[] diceByColorInPool = {};
         switch (thisDieFace) {
-            case Explore:
+            case EXPLORE:
                 diceByColorInPool = explorePool.getContentsByDieColor();
                 break;
-            case Develop:
+            case DEVELOP:
                 diceByColorInPool = developPool.getContentsByDieColor();
                 break;
-            case Settle:
+            case SETTLE:
                 diceByColorInPool = settlePool.getContentsByDieColor();
                 break;
-            case Produce:
+            case PRODUCE:
                 diceByColorInPool = producePool.getContentsByDieColor();
                 break;
-            case Ship:
+            case SHIP:
                 diceByColorInPool = shipPool.getContentsByDieColor();
                 break;
-            case Wild:
+            case WILD:
                 diceByColorInPool = unassignedPool.getContentsByDieColor();
                 break;
         }

@@ -1,11 +1,11 @@
 package com.austincreations.rollforthegalaxy;
 
 public enum DieColor {
-    White,
-    Red,
-    Purple,
-    Blue,
-    Brown,
-    Green,
-    Yellow
+    BLUE,
+    BROWN,
+    GREEN,
+    PURPLE,
+    RED,
+    YELLOW,
+    WHITE
 }

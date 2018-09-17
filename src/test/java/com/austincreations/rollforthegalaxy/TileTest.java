@@ -117,7 +117,7 @@ public class TileTest {
 
         firstTile.flipTile();
 
-        assertThat(firstTile.getName()).isEqualTo("Alien Robot Scout Ship");
+        assertThat(firstTile.getName()).isEqualTo("Alien Robot Scout SHIP");
         assertThat(firstTile.getPoints()).isEqualTo(4);
     }
 
@@ -149,5 +149,47 @@ public class TileTest {
 
         assertThat(firstTile.getName()).isEqualTo("Planetary Nebula");
         assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
+    public void getSettleColor_CreateAdvancedLogisticsTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
+    public void getSettleColor_CreateGalacticDemandTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.YELLOW);
+    }
+
+    @Test
+    public void getSettleColor_CreateGalacticRecyclingTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.YELLOW);
+    }
+
+    @Test
+    public void getSettleColor_CreateGalacticReservesTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
+    public void getSettleColor_CreateHomeworldPatriotismTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
+    public void getSettleColor_CreateIsolationPolicyTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.PURPLE);
     }
 }

@@ -10,13 +10,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DicePoolTest {
     private static final Random randomNumberGenerator = new Random();
     private static final DieColor[] ALL_DIE_COLORS = {
-            DieColor.White,
-            DieColor.Blue,
-            DieColor.Brown,
-            DieColor.Green,
-            DieColor.Purple,
-            DieColor.Red,
-            DieColor.Yellow
+            DieColor.WHITE,
+            DieColor.BLUE,
+            DieColor.BROWN,
+            DieColor.GREEN,
+            DieColor.PURPLE,
+            DieColor.RED,
+            DieColor.YELLOW
     };
 
     private DicePool thisDicePool;
@@ -68,9 +68,9 @@ public class DicePoolTest {
 
     @Test
     public void getContentsByDieColor_AddThreeDice_ShouldReturnThreeDiceInSortedOrder() {
-        firstDie = new Die(DieColor.Brown);
-        secondDie = new Die(DieColor.Red);
-        thirdDie = new Die(DieColor.Brown);
+        firstDie = new Die(DieColor.BROWN);
+        secondDie = new Die(DieColor.RED);
+        thirdDie = new Die(DieColor.BROWN);
 
         thisDicePool.addDie(firstDie);
         thisDicePool.addDie(secondDie);
@@ -78,9 +78,9 @@ public class DicePoolTest {
         DieColor[] dicePoolContents = thisDicePool.getContentsByDieColor();
 
         assertThat(dicePoolContents.length).as("Number of Die in DicePool").isEqualTo(3);
-        assertThat(dicePoolContents[0]).as("First color should be red").isEqualTo(DieColor.Red);
-        assertThat(dicePoolContents[1]).as("Second color should be brown").isEqualTo(DieColor.Brown);
-        assertThat(dicePoolContents[2]).as("Third color should be brown").isEqualTo(DieColor.Brown);
+        assertThat(dicePoolContents[0]).as("First color should be brown").isEqualTo(DieColor.BROWN);
+        assertThat(dicePoolContents[1]).as("Second color should be brown").isEqualTo(DieColor.BROWN);
+        assertThat(dicePoolContents[2]).as("Third color should be red").isEqualTo(DieColor.RED);
     }
 
     @Test

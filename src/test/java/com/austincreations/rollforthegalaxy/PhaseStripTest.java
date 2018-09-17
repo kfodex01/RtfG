@@ -12,21 +12,21 @@ import static org.mockito.Mockito.when;
 public class PhaseStripTest {
     private static final Random randomNumberGenerator = new Random();
     private static final DieFace[] ALL_DIE_FACES = new DieFace[]{
-            DieFace.Explore,
-            DieFace.Develop,
-            DieFace.Settle,
-            DieFace.Produce,
-            DieFace.Ship,
-            DieFace.Wild
+            DieFace.EXPLORE,
+            DieFace.DEVELOP,
+            DieFace.SETTLE,
+            DieFace.PRODUCE,
+            DieFace.SHIP,
+            DieFace.WILD
     };
     private static final DieColor[] ALL_DIE_COLORS = {
-            DieColor.White,
-            DieColor.Blue,
-            DieColor.Brown,
-            DieColor.Green,
-            DieColor.Purple,
-            DieColor.Red,
-            DieColor.Yellow
+            DieColor.WHITE,
+            DieColor.BLUE,
+            DieColor.BROWN,
+            DieColor.GREEN,
+            DieColor.PURPLE,
+            DieColor.RED,
+            DieColor.YELLOW
     };
 
     private PhaseStrip thisPhaseStrip;
@@ -48,7 +48,7 @@ public class PhaseStripTest {
 
     @Test
     public void addDice_AddDie_ShouldReturnTrue() {
-        when(firstDie.getCurrentFace()).thenReturn(DieFace.Explore);
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.EXPLORE);
 
         boolean diceWereAdded = thisPhaseStrip.addDice(new Die[]{firstDie});
 
@@ -58,11 +58,11 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddExploreDie_ShouldContainDieOfCorrectColorInExplorePool() {
         DieColor thisDieColor = getRandomDiceColor();
-        when(firstDie.getCurrentFace()).thenReturn(DieFace.Explore);
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.EXPLORE);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.Explore);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.EXPLORE);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -71,11 +71,11 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddDevelopDie_ShouldContainDieOfCorrectColorInDevelopPool() {
         DieColor thisDieColor = getRandomDiceColor();
-        when(firstDie.getCurrentFace()).thenReturn(DieFace.Develop);
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.DEVELOP);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.Develop);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.DEVELOP);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -84,11 +84,11 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddSettleDie_ShouldContainDieOfCorrectColorInSettlePool() {
         DieColor thisDieColor = getRandomDiceColor();
-        when(firstDie.getCurrentFace()).thenReturn(DieFace.Settle);
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.SETTLE);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.Settle);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.SETTLE);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -97,11 +97,11 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddProduceDie_ShouldContainDieOfCorrectColorInProducePool() {
         DieColor thisDieColor = getRandomDiceColor();
-        when(firstDie.getCurrentFace()).thenReturn(DieFace.Produce);
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.PRODUCE);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.Produce);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.PRODUCE);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -110,11 +110,11 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddShipDie_ShouldContainDieOfCorrectColorInShipPool() {
         DieColor thisDieColor = getRandomDiceColor();
-        when(firstDie.getCurrentFace()).thenReturn(DieFace.Ship);
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.SHIP);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.Ship);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.SHIP);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -123,11 +123,11 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddWildDie_ShouldContainDieOfCorrectColorInUnassignedPool() {
         DieColor thisDieColor = getRandomDiceColor();
-        when(firstDie.getCurrentFace()).thenReturn(DieFace.Wild);
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.WILD);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.Wild);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.WILD);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -139,12 +139,12 @@ public class PhaseStripTest {
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
 
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.Explore).length).as("Explore pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.Develop).length).as("Develop pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.Settle).length).as("Settle pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.Produce).length).as("Produce pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.Ship).length).as("Ship pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.Wild).length).as("Unassigned pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.EXPLORE).length).as("EXPLORE pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.DEVELOP).length).as("DEVELOP pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.SETTLE).length).as("SETTLE pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.PRODUCE).length).as("PRODUCE pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.SHIP).length).as("SHIP pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.WILD).length).as("Unassigned pool is empty").isEqualTo(0);
     }
 
     @Test
