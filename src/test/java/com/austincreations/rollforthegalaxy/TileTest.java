@@ -39,6 +39,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateColonialAffinityTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS);
+
+        assertThat(firstTile.getName()).isEqualTo("Colonial Affinity");
+    }
+
+    @Test
+    public void getPoints_CreateColonialAffinityTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void flipTile_CreateColonialAffinityTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Malevolent Lifeforms");
+        assertThat(firstTile.getPoints()).isEqualTo(4);
+    }
+
+    @Test
+    public void getSettleColor_CreateColonialAffinityTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
     public void getName_CreateDiversificationTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.DIVERSIFICATION_LOST_SPECIES_ARK_WORLD);
 

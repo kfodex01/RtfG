@@ -17,6 +17,13 @@ public class Tile {
                 settlePoints = 5;
                 thisPlanetColor = PlanetColor.GREEN;
                 break;
+            case COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS:
+                developName = "Colonial Affinity";
+                developPoints = 2;
+                settleName = "Malevolent Lifeforms";
+                settlePoints = 4;
+                thisPlanetColor = PlanetColor.GREEN;
+                break;
             case DIVERSIFICATION_LOST_SPECIES_ARK_WORLD:
                 developName = "Diversification";
                 developPoints = 1;
