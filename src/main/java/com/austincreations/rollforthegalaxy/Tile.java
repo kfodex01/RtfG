@@ -66,6 +66,13 @@ public class Tile {
                 settlePoints = 4;
                 thisPlanetColor = PlanetColor.BROWN;
                 break;
+            case TRADE_LEVIES_COMET_ZONE:
+                developName = "Trade Levies";
+                developPoints = 3;
+                settleName = "Comet Zone";
+                settlePoints = 3;
+                thisPlanetColor = PlanetColor.BROWN;
+                break;
             default:
                 developName = "";
                 developPoints = 0;

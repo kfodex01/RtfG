@@ -254,4 +254,35 @@ public class TileTest {
 
         assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
     }
+
+    @Test
+    public void getName_CreateTradeLeviesTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.TRADE_LEVIES_COMET_ZONE);
+
+        assertThat(firstTile.getName()).isEqualTo("Trade Levies");
+    }
+
+    @Test
+    public void getPoints_CreateTradeLeviesTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.TRADE_LEVIES_COMET_ZONE);
+
+        assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
+    public void flipTile_CreateTradeLeviesTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.TRADE_LEVIES_COMET_ZONE);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Comet Zone");
+        assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
+    public void getSettleColor_CreateTradeLeviesTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.TRADE_LEVIES_COMET_ZONE);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
+    }
 }
