@@ -154,17 +154,53 @@ public class Tile {
     }
 
     private void createLeftSide(FactionTile thisFactionTile) {
-        developSideIsUp = true;
-        developName = "Space Piracy";
-        developPoints = 0;
-        thisPlanetColor = null;
+        switch (thisFactionTile) {
+            case ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD:
+                developSideIsUp = true;
+                developName = "Alien Archaeology";
+                developPoints = 1;
+                thisPlanetColor = null;
+                break;
+            case SPACE_PIRACY_HIDDEN_FORTRESS:
+                developSideIsUp = true;
+                developName = "Space Piracy";
+                developPoints = 0;
+                thisPlanetColor = null;
+                break;
+            default:
+                developSideIsUp = true;
+                developName = "";
+                developPoints = 0;
+                settleName = "";
+                settlePoints = 0;
+                thisPlanetColor = null;
+                break;
+        }
     }
 
     private void createRightSide(FactionTile thisFactionTile) {
-        developSideIsUp = false;
-        settleName = "Hidden Fortress";
-        settlePoints = 2;
-        thisPlanetColor = PlanetColor.GRAY;
+        switch (thisFactionTile) {
+            case ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD:
+                developSideIsUp = false;
+                settleName = "Alien Rosetta Stone World";
+                settlePoints = 1;
+                thisPlanetColor = PlanetColor.GRAY;
+                break;
+            case SPACE_PIRACY_HIDDEN_FORTRESS:
+                developSideIsUp = false;
+                settleName = "Hidden Fortress";
+                settlePoints = 2;
+                thisPlanetColor = PlanetColor.GRAY;
+                break;
+            default:
+                developSideIsUp = true;
+                developName = "";
+                developPoints = 0;
+                settleName = "";
+                settlePoints = 0;
+                thisPlanetColor = null;
+                break;
+        }
     }
 
     public String getName() {

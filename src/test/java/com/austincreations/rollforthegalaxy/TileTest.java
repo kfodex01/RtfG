@@ -535,6 +535,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateSpacePiracyTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        assertThat(firstTile.getName()).isEqualTo("Space Piracy");
+    }
+
+    @Test
+    public void getPoints_CreateSpacePiracyTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        assertThat(firstTile.getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void flipTile_CreateSpacePiracyTileAndFlipAttempt_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Space Piracy");
+        assertThat(firstTile.getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void getSettleColor_CreateSpacePiracyTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(null);
+    }
+
+    @Test
     public void getName_CreateHiddenFortressTile_ShouldEqualCorrectName() {
         firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, false);
 
@@ -549,7 +580,7 @@ public class TileTest {
     }
 
     @Test
-    public void flipTile_CreateHiddenFortressTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+    public void flipTile_CreateHiddenFortressTileAndFlipAttempt_ShouldEqualCorrectNameAndPoints() {
         firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, false);
 
         firstTile.flipTile();
@@ -566,33 +597,64 @@ public class TileTest {
     }
 
     @Test
-    public void getName_CreateSpacePiracyTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+    public void getName_CreateAlienArchaeologyTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, true);
 
-        assertThat(firstTile.getName()).isEqualTo("Space Piracy");
+        assertThat(firstTile.getName()).isEqualTo("Alien Archaeology");
     }
 
     @Test
-    public void getPoints_CreateSpacePiracyTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+    public void getPoints_CreateAlienArchaeologyTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, true);
 
-        assertThat(firstTile.getPoints()).isEqualTo(0);
+        assertThat(firstTile.getPoints()).isEqualTo(1);
     }
 
     @Test
-    public void flipTile_CreateSpacePiracyTileAndFlip_ShouldEqualCorrectNameAndPoints() {
-        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+    public void flipTile_CreateAlienArchaeologyTileAndFlipAttempt_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, true);
 
         firstTile.flipTile();
 
-        assertThat(firstTile.getName()).isEqualTo("Space Piracy");
-        assertThat(firstTile.getPoints()).isEqualTo(0);
+        assertThat(firstTile.getName()).isEqualTo("Alien Archaeology");
+        assertThat(firstTile.getPoints()).isEqualTo(1);
     }
 
     @Test
-    public void getSettleColor_CreateSpacePiracyTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS, true);
+    public void getSettleColor_CreateAlienArchaeologyTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, true);
 
         assertThat(firstTile.getSettleColor()).isEqualTo(null);
+    }
+
+    @Test
+    public void getName_CreateAlienRosettaStoneWorldTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, false);
+
+        assertThat(firstTile.getName()).isEqualTo("Alien Rosetta Stone World");
+    }
+
+    @Test
+    public void getPoints_CreateAlienRosettaStoneWorldTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, false);
+
+        assertThat(firstTile.getPoints()).isEqualTo(1);
+    }
+
+    @Test
+    public void flipTile_CreateAlienRosettaStoneWorldTileAndFlipAttempt_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, false);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Alien Rosetta Stone World");
+        assertThat(firstTile.getPoints()).isEqualTo(1);
+    }
+
+    @Test
+    public void getSettleColor_CreateAlienRosettaStoneWorldTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD, false);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
     }
 }
