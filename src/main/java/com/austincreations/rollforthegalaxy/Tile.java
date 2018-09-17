@@ -17,6 +17,13 @@ public class Tile {
                 settlePoints = 5;
                 thisPlanetColor = PlanetColor.GREEN;
                 break;
+            case DIVERSIFICATION_LOST_SPECIES_ARK_WORLD:
+                developName = "Diversification";
+                developPoints = 1;
+                settleName = "Lost Species Ark World";
+                settlePoints = 5;
+                thisPlanetColor = PlanetColor.GREEN;
+                break;
             case EXECUTIVE_POWER_TRADING_WORLD:
                 developName = "Executive Power";
                 developPoints = 3;

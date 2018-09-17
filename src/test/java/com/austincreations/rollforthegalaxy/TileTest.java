@@ -39,6 +39,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateDiversificationTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.DIVERSIFICATION_LOST_SPECIES_ARK_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Diversification");
+    }
+
+    @Test
+    public void getPoints_CreateDiversificationTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.DIVERSIFICATION_LOST_SPECIES_ARK_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(1);
+    }
+
+    @Test
+    public void flipTile_CreateDiversificationTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.DIVERSIFICATION_LOST_SPECIES_ARK_WORLD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Lost Species Ark World");
+        assertThat(firstTile.getPoints()).isEqualTo(5);
+    }
+
+    @Test
+    public void getSettleColor_CreateDiversificationTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.DIVERSIFICATION_LOST_SPECIES_ARK_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
     public void getName_CreateExecutivePowerTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
 
