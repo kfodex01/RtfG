@@ -45,6 +45,13 @@ public class Tile {
                 settlePoints = 3;
                 thisPlanetColor = PlanetColor.GRAY;
                 break;
+            case EXPORT_DUTIES_SILICON_WORLD:
+                developName = "Export Duties";
+                developPoints = 2;
+                settleName = "Silicon World";
+                settlePoints = 4;
+                thisPlanetColor = PlanetColor.BROWN;
+                break;
             case FREE_TRADE_ASSOCIATION_SENTIENT_ROBOTS:
                 developName = "Free Trade Association";
                 developPoints = 6;

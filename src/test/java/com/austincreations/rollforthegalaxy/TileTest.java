@@ -163,6 +163,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateExportDutiesTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.EXPORT_DUTIES_SILICON_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Export Duties");
+    }
+
+    @Test
+    public void getPoints_CreateExportDutiesTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.EXPORT_DUTIES_SILICON_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void flipTile_CreateExportDutiesTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.EXPORT_DUTIES_SILICON_WORLD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Silicon World");
+        assertThat(firstTile.getPoints()).isEqualTo(4);
+    }
+
+    @Test
+    public void getSettleColor_CreateExportDutiesTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.EXPORT_DUTIES_SILICON_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
+    }
+
+    @Test
     public void getName_CreateFreeTradeAssociationTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.FREE_TRADE_ASSOCIATION_SENTIENT_ROBOTS);
 
