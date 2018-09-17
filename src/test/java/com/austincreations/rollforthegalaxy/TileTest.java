@@ -15,6 +15,13 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateExecutivePowerTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Executive Power");
+    }
+
+    @Test
     public void getName_CreateGalacticDemandTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
 
@@ -54,6 +61,13 @@ public class TileTest {
         firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
 
         assertThat(firstTile.getPoints()).isEqualTo(1);
+    }
+
+    @Test
+    public void getPoints_CreateExecutivePowerTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(3);
     }
 
     @Test
@@ -99,6 +113,16 @@ public class TileTest {
 
         assertThat(firstTile.getName()).isEqualTo("Designer Species, Ultd.");
         assertThat(firstTile.getPoints()).isEqualTo(5);
+    }
+
+    @Test
+    public void flipTile_CreateExecutivePowerTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Trading World");
+        assertThat(firstTile.getPoints()).isEqualTo(3);
     }
 
     @Test
@@ -159,6 +183,13 @@ public class TileTest {
     }
 
     @Test
+    public void getSettleColor_CreateExecutivePowerTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
     public void getSettleColor_CreateGalacticDemandTile_ShouldEqualCorrectPlanetColor() {
         firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
 
@@ -190,6 +221,6 @@ public class TileTest {
     public void getSettleColor_CreateIsolationPolicyTile_ShouldEqualCorrectPlanetColor() {
         firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
 
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.PURPLE);
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
     }
 }

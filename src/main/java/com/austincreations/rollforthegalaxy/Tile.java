@@ -17,6 +17,13 @@ public class Tile {
                 settlePoints = 5;
                 thisPlanetColor = PlanetColor.GREEN;
                 break;
+            case EXECUTIVE_POWER_TRADING_WORLD:
+                developName = "Executive Power";
+                developPoints = 3;
+                settleName = "Trading World";
+                settlePoints = 3;
+                thisPlanetColor = PlanetColor.GRAY;
+                break;
             case GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST:
                 developName = "Galactic Demand";
                 developPoints = 2;
@@ -50,7 +57,7 @@ public class Tile {
                 developPoints = 3;
                 settleName = "Planetary Nebula";
                 settlePoints = 3;
-                thisPlanetColor = PlanetColor.PURPLE;
+                thisPlanetColor = PlanetColor.BROWN;
                 break;
             default:
                 developName = "";
