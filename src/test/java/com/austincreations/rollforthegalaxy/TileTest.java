@@ -688,4 +688,35 @@ public class TileTest {
 
         assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
     }
+
+    @Test
+    public void getName_CreateSeparatistColonyTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(HomeWorldTile.SEPARATIST_COLONY);
+
+        assertThat(firstTile.getName()).isEqualTo("Separatist Colony");
+    }
+
+    @Test
+    public void getPoints_CreateSeparatistColonyTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(HomeWorldTile.SEPARATIST_COLONY);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void flipTile_CreateSeparatistColonyTileAndFlipAttempted_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(HomeWorldTile.SEPARATIST_COLONY);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Separatist Colony");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void getSettleColor_CreateSeparatistColonyTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(HomeWorldTile.SEPARATIST_COLONY);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
 }

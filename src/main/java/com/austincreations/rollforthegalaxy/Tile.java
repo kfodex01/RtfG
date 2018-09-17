@@ -146,9 +146,24 @@ public class Tile {
     public Tile(HomeWorldTile thisHomeWorldTile) {
         canFlip = false;
         developSideIsUp = false;
-        settleName = "Doomed World";
-        settlePoints = 0;
-        thisPlanetColor = PlanetColor.GRAY;
+
+        switch (thisHomeWorldTile) {
+            case DOOMED_WORLD:
+                settleName = "Doomed World";
+                settlePoints = 0;
+                thisPlanetColor = PlanetColor.GRAY;
+                break;
+            case SEPARATIST_COLONY:
+                settleName = "Separatist Colony";
+                settlePoints = 2;
+                thisPlanetColor = PlanetColor.GRAY;
+                break;
+            default:
+                settleName = "";
+                settlePoints = 0;
+                thisPlanetColor = null;
+                break;
+        }
     }
 
     public Tile(FactionTile thisFactionTile, boolean isLeftSide) {
