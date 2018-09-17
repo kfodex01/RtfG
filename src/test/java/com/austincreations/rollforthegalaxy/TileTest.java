@@ -256,6 +256,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateGalacticInvestorsTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.GALACTIC_INVESTORS_NEW_VINLAND);
+
+        assertThat(firstTile.getName()).isEqualTo("Galactic Investors");
+    }
+
+    @Test
+    public void getPoints_CreateGalacticInvestorsTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.GALACTIC_INVESTORS_NEW_VINLAND);
+
+        assertThat(firstTile.getPoints()).isEqualTo(5);
+    }
+
+    @Test
+    public void flipTile_CreateGalacticInvestorsTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.GALACTIC_INVESTORS_NEW_VINLAND);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("New Vinland");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void getSettleColor_CreateGalacticInvestorsTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_INVESTORS_NEW_VINLAND);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BLUE);
+    }
+
+    @Test
     public void getName_CreateGalacticRecyclingTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
 
