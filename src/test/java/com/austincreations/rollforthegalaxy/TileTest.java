@@ -15,108 +15,10 @@ public class TileTest {
     }
 
     @Test
-    public void getName_CreateExecutivePowerTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
-
-        assertThat(firstTile.getName()).isEqualTo("Executive Power");
-    }
-
-    @Test
-    public void getName_CreateGalacticDemandTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
-
-        assertThat(firstTile.getName()).isEqualTo("Galactic Demand");
-    }
-
-    @Test
-    public void getName_CreateGalacticRecyclingTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
-
-        assertThat(firstTile.getName()).isEqualTo("Galactic Recycling");
-    }
-
-    @Test
-    public void getName_CreateGalacticReservesTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
-
-        assertThat(firstTile.getName()).isEqualTo("Galactic Reserves");
-    }
-
-    @Test
-    public void getName_CreateHomeworldPatriotismTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
-
-        assertThat(firstTile.getName()).isEqualTo("Homeworld Patriotism");
-    }
-
-    @Test
-    public void getName_CreateIsolationPolicyTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
-
-        assertThat(firstTile.getName()).isEqualTo("Isolation Policy");
-    }
-
-    @Test
-    public void getName_CreateSpaceDocksTile_ShouldEqualCorrectName() {
-        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
-
-        assertThat(firstTile.getName()).isEqualTo("Space Docks");
-    }
-
-    @Test
     public void getPoints_CreateAdvancedLogisticsTile_ShouldEqualCorrectPoints() {
         firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
 
         assertThat(firstTile.getPoints()).isEqualTo(1);
-    }
-
-    @Test
-    public void getPoints_CreateExecutivePowerTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
-
-        assertThat(firstTile.getPoints()).isEqualTo(3);
-    }
-
-    @Test
-    public void getPoints_CreateGalacticDemandTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
-
-        assertThat(firstTile.getPoints()).isEqualTo(2);
-    }
-
-    @Test
-    public void getPoints_CreateGalacticRecyclingTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
-
-        assertThat(firstTile.getPoints()).isEqualTo(2);
-    }
-
-    @Test
-    public void getPoints_CreateGalacticReservesTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
-
-        assertThat(firstTile.getPoints()).isEqualTo(6);
-    }
-
-    @Test
-    public void getPoints_CreateHomeworldPatriotismTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
-
-        assertThat(firstTile.getPoints()).isEqualTo(3);
-    }
-
-    @Test
-    public void getPoints_CreateIsolationPolicyTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
-
-        assertThat(firstTile.getPoints()).isEqualTo(3);
-    }
-
-    @Test
-    public void getPoints_CreateSpaceDocksTile_ShouldEqualCorrectPoints() {
-        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
-
-        assertThat(firstTile.getPoints()).isEqualTo(2);
     }
 
     @Test
@@ -130,6 +32,27 @@ public class TileTest {
     }
 
     @Test
+    public void getSettleColor_CreateAdvancedLogisticsTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
+    public void getName_CreateExecutivePowerTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Executive Power");
+    }
+
+    @Test
+    public void getPoints_CreateExecutivePowerTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
     public void flipTile_CreateExecutivePowerTileAndFlip_ShouldEqualCorrectNameAndPoints() {
         firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
 
@@ -137,6 +60,27 @@ public class TileTest {
 
         assertThat(firstTile.getName()).isEqualTo("Trading World");
         assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
+    public void getSettleColor_CreateExecutivePowerTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
+    public void getName_CreateGalacticDemandTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
+
+        assertThat(firstTile.getName()).isEqualTo("Galactic Demand");
+    }
+
+    @Test
+    public void getPoints_CreateGalacticDemandTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
     }
 
     @Test
@@ -150,6 +94,27 @@ public class TileTest {
     }
 
     @Test
+    public void getSettleColor_CreateGalacticDemandTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.YELLOW);
+    }
+
+    @Test
+    public void getName_CreateGalacticRecyclingTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
+
+        assertThat(firstTile.getName()).isEqualTo("Galactic Recycling");
+    }
+
+    @Test
+    public void getPoints_CreateGalacticRecyclingTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
     public void flipTile_CreateGalacticRecyclingTileAndFlip_ShouldEqualCorrectNameAndPoints() {
         firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
 
@@ -157,6 +122,27 @@ public class TileTest {
 
         assertThat(firstTile.getName()).isEqualTo("Alien Robot Scout SHIP");
         assertThat(firstTile.getPoints()).isEqualTo(4);
+    }
+
+    @Test
+    public void getSettleColor_CreateGalacticRecyclingTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.YELLOW);
+    }
+
+    @Test
+    public void getName_CreateGalacticReservesTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
+
+        assertThat(firstTile.getName()).isEqualTo("Galactic Reserves");
+    }
+
+    @Test
+    public void getPoints_CreateGalacticReservesTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
+
+        assertThat(firstTile.getPoints()).isEqualTo(6);
     }
 
     @Test
@@ -170,12 +156,54 @@ public class TileTest {
     }
 
     @Test
+    public void getSettleColor_CreateGalacticReservesTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
+    public void getName_CreateHomeworldPatriotismTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Homeworld Patriotism");
+    }
+
+    @Test
+    public void getPoints_CreateHomeworldPatriotismTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
     public void flipTile_CreateHomeworldPatriotismTileAndFlip_ShouldEqualCorrectNameAndPoints() {
         firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
 
         firstTile.flipTile();
 
         assertThat(firstTile.getName()).isEqualTo("Plague World");
+        assertThat(firstTile.getPoints()).isEqualTo(3);
+    }
+
+    @Test
+    public void getSettleColor_CreateHomeworldPatriotismTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
+    public void getName_CreateIsolationPolicyTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
+
+        assertThat(firstTile.getName()).isEqualTo("Isolation Policy");
+    }
+
+    @Test
+    public void getPoints_CreateIsolationPolicyTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
+
         assertThat(firstTile.getPoints()).isEqualTo(3);
     }
 
@@ -190,6 +218,27 @@ public class TileTest {
     }
 
     @Test
+    public void getSettleColor_CreateIsolationPolicyTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
+    }
+
+    @Test
+    public void getName_CreateSpaceDocksTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Space Docks");
+    }
+
+    @Test
+    public void getPoints_CreateSpaceDocksTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
     public void flipTile_CreateSpaceDocksTileAndFlip_ShouldEqualCorrectNameAndPoints() {
         firstTile = new Tile(GameTile.SPACE_DOCKS_ARMAMENTS_WORLD);
 
@@ -197,55 +246,6 @@ public class TileTest {
 
         assertThat(firstTile.getName()).isEqualTo("Armaments World");
         assertThat(firstTile.getPoints()).isEqualTo(4);
-    }
-
-    @Test
-    public void getSettleColor_CreateAdvancedLogisticsTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
-    }
-
-    @Test
-    public void getSettleColor_CreateExecutivePowerTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(GameTile.EXECUTIVE_POWER_TRADING_WORLD);
-
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
-    }
-
-    @Test
-    public void getSettleColor_CreateGalacticDemandTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
-
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.YELLOW);
-    }
-
-    @Test
-    public void getSettleColor_CreateGalacticRecyclingTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(GameTile.GALACTIC_RECYCLING_ALIEN_ROBOT_SCOUT_SHIP);
-
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.YELLOW);
-    }
-
-    @Test
-    public void getSettleColor_CreateGalacticReservesTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(GameTile.GALACTIC_RESERVES_REBEL_HIDEOUT);
-
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
-    }
-
-    @Test
-    public void getSettleColor_CreateHomeworldPatriotismTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(GameTile.HOMEWORLD_PATRIOTISM_PLAGUE_WORLD);
-
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GREEN);
-    }
-
-    @Test
-    public void getSettleColor_CreateIsolationPolicyTile_ShouldEqualCorrectPlanetColor() {
-        firstTile = new Tile(GameTile.ISOLATION_POLICY_PLANETARY_NEBULA);
-
-        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BROWN);
     }
 
     @Test
