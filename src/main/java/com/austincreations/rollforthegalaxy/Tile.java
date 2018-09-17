@@ -38,6 +38,13 @@ public class Tile {
                 settlePoints = 3;
                 thisPlanetColor = PlanetColor.GRAY;
                 break;
+            case FREE_TRADE_ASSOCIATION_SENTIENT_ROBOTS:
+                developName = "Free Trade Association";
+                developPoints = 6;
+                settleName = "Sentient Robots";
+                settlePoints = 2;
+                thisPlanetColor = PlanetColor.GRAY;
+                break;
             case GALACTIC_BANKERS_FORMER_PENAL_COLONY:
                 developName = "Galactic Bankers";
                 developPoints = 6;

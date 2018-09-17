@@ -132,6 +132,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateFreeTradeAssociationTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.FREE_TRADE_ASSOCIATION_SENTIENT_ROBOTS);
+
+        assertThat(firstTile.getName()).isEqualTo("Free Trade Association");
+    }
+
+    @Test
+    public void getPoints_CreateFreeTradeAssociationTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.FREE_TRADE_ASSOCIATION_SENTIENT_ROBOTS);
+
+        assertThat(firstTile.getPoints()).isEqualTo(6);
+    }
+
+    @Test
+    public void flipTile_CreateFreeTradeAssociationTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.FREE_TRADE_ASSOCIATION_SENTIENT_ROBOTS);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Sentient Robots");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void getSettleColor_CreateFreeTradeAssociationTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.FREE_TRADE_ASSOCIATION_SENTIENT_ROBOTS);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
     public void getName_CreateGalacticBankersTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.GALACTIC_BANKERS_FORMER_PENAL_COLONY);
 
