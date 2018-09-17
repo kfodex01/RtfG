@@ -31,6 +31,13 @@ public class Tile {
                 settlePoints = 3;
                 thisPlanetColor = PlanetColor.GRAY;
                 break;
+            case GALACTIC_BANKERS_FORMER_PENAL_COLONY:
+                developName = "Galactic Bankers";
+                developPoints = 6;
+                settleName = "Former Penal Colony";
+                settlePoints = 1;
+                thisPlanetColor = PlanetColor.BLUE;
+                break;
             case GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST:
                 developName = "Galactic Demand";
                 developPoints = 2;

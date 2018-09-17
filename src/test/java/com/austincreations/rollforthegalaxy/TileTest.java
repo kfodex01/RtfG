@@ -101,6 +101,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateGalacticBankersTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.GALACTIC_BANKERS_FORMER_PENAL_COLONY);
+
+        assertThat(firstTile.getName()).isEqualTo("Galactic Bankers");
+    }
+
+    @Test
+    public void getPoints_CreateGalacticBankersTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.GALACTIC_BANKERS_FORMER_PENAL_COLONY);
+
+        assertThat(firstTile.getPoints()).isEqualTo(6);
+    }
+
+    @Test
+    public void flipTile_CreateGalacticBankersTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.GALACTIC_BANKERS_FORMER_PENAL_COLONY);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Former Penal Colony");
+        assertThat(firstTile.getPoints()).isEqualTo(1);
+    }
+
+    @Test
+    public void getSettleColor_CreateGalacticBankersTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.GALACTIC_BANKERS_FORMER_PENAL_COLONY);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BLUE);
+    }
+
+    @Test
     public void getName_CreateGalacticDemandTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.GALACTIC_DEMAND_DESERTED_ALIEN_OUTPOST);
 
