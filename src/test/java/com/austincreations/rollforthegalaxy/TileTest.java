@@ -39,6 +39,37 @@ public class TileTest {
     }
 
     @Test
+    public void getName_CreateAlienResearchShipTile_ShouldEqualCorrectName() {
+        firstTile = new Tile(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        assertThat(firstTile.getName()).isEqualTo("Alien Research Ship");
+    }
+
+    @Test
+    public void getPoints_CreateAlienResearchShipTile_ShouldEqualCorrectPoints() {
+        firstTile = new Tile(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        assertThat(firstTile.getPoints()).isEqualTo(5);
+    }
+
+    @Test
+    public void flipTile_CreateAlienResearchShipTileAndFlip_ShouldEqualCorrectNameAndPoints() {
+        firstTile = new Tile(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        firstTile.flipTile();
+
+        assertThat(firstTile.getName()).isEqualTo("Spice World");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void getSettleColor_CreateAlienResearchShipTile_ShouldEqualCorrectPlanetColor() {
+        firstTile = new Tile(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        assertThat(firstTile.getSettleColor()).isEqualTo(PlanetColor.BLUE);
+    }
+
+    @Test
     public void getName_CreateColonialAffinityTile_ShouldEqualCorrectName() {
         firstTile = new Tile(GameTile.COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS);
 

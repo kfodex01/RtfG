@@ -17,6 +17,13 @@ public class Tile {
                 settlePoints = 5;
                 thisPlanetColor = PlanetColor.GREEN;
                 break;
+            case ALIEN_RESEARCH_SHIP_SPICE_WORLD:
+                developName = "Alien Research Ship";
+                developPoints = 5;
+                settleName = "Spice World";
+                settlePoints = 2;
+                thisPlanetColor = PlanetColor.BLUE;
+                break;
             case COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS:
                 developName = "Colonial Affinity";
                 developPoints = 2;
