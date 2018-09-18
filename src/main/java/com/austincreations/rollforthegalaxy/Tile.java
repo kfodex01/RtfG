@@ -1,8 +1,8 @@
 package com.austincreations.rollforthegalaxy;
 
 public class Tile {
-    boolean developSideIsUp;
-    boolean canFlip;
+    private boolean developSideIsUp;
+    private boolean canFlip;
     private String developName;
     private String settleName;
     private int developPoints;
