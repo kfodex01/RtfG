@@ -363,4 +363,24 @@ public class SettleTileTest {
 
         assertThat(firstTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
     }
+
+    @Test
+    public void getFactionTiles_CreateHiddenFortressTile_ShouldEqualCorrectName() {
+        SettleTile[] factionArray = SettleTile.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
+
+        assertThat(factionArray.length).isEqualTo(1);
+        assertThat(factionArray[0].getName()).isEqualTo("Hidden Fortress");
+        assertThat(factionArray[0].getPoints()).isEqualTo(2);
+        assertThat(factionArray[0].getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
+    public void getFactionTiles_CreateAlienRosettaStoneWorldTile_ShouldEqualCorrectName() {
+        SettleTile[] factionArray = SettleTile.getFactionTiles(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD);
+
+        assertThat(factionArray.length).isEqualTo(1);
+        assertThat(factionArray[0].getName()).isEqualTo("Alien Rosetta Stone World");
+        assertThat(factionArray[0].getPoints()).isEqualTo(1);
+        assertThat(factionArray[0].getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+    }
 }

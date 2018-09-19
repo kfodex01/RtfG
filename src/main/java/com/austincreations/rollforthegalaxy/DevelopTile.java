@@ -4,6 +4,33 @@ public class DevelopTile implements Tile {
     private String name;
     private int points;
 
+    private DevelopTile(String name, int points) {
+        this.name = name;
+        this.points = points;
+    }
+
+    public static DevelopTile[] getFactionTiles(FactionTile thisFactionTile) {
+        DevelopTile thisTile;
+        DevelopTile[] returnValue;
+        switch (thisFactionTile) {
+            case SPACE_PIRACY_HIDDEN_FORTRESS:
+                thisTile = new DevelopTile("Space Piracy", 0);
+                break;
+            case ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD:
+                thisTile = new DevelopTile("Alien Archaeology", 1);
+                break;
+            default:
+                thisTile = null;
+                break;
+        }
+        if (thisTile == null) {
+            returnValue = new DevelopTile[]{};
+        } else {
+            returnValue = new DevelopTile[]{thisTile};
+        }
+        return returnValue;
+    }
+
     public DevelopTile(GameTile thisGameTile) {
         switch (thisGameTile) {
             case ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD:

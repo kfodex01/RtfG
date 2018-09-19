@@ -244,4 +244,22 @@ public class DevelopTileTest {
 
         assertThat(firstTile.getPoints()).isEqualTo(3);
     }
+
+    @Test
+    public void getFactionTiles_CreateSpacePiracyTile_ShouldEqualCorrectName() {
+        DevelopTile[] factionArray = DevelopTile.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
+
+        assertThat(factionArray.length).isEqualTo(1);
+        assertThat(factionArray[0].getName()).isEqualTo("Space Piracy");
+        assertThat(factionArray[0].getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void getFactionTiles_CreateAlienArchaeologyTile_ShouldEqualCorrectName() {
+        DevelopTile[] factionArray = DevelopTile.getFactionTiles(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD);
+
+        assertThat(factionArray.length).isEqualTo(1);
+        assertThat(factionArray[0].getName()).isEqualTo("Alien Archaeology");
+        assertThat(factionArray[0].getPoints()).isEqualTo(1);
+    }
 }

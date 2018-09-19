@@ -5,6 +5,34 @@ public class SettleTile implements Tile {
     private int points;
     private PlanetColor planetColor;
 
+    private SettleTile(String name, int points, PlanetColor planetColor) {
+        this.name = name;
+        this.points = points;
+        this.planetColor = planetColor;
+    }
+
+    public static SettleTile[] getFactionTiles(FactionTile thisFactionTile) {
+        SettleTile thisTile;
+        SettleTile[] returnValue;
+        switch (thisFactionTile) {
+            case SPACE_PIRACY_HIDDEN_FORTRESS:
+                thisTile = new SettleTile("Hidden Fortress", 2, PlanetColor.GRAY);
+                break;
+            case ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD:
+                thisTile = new SettleTile("Alien Rosetta Stone World", 1, PlanetColor.GRAY);
+                break;
+            default:
+                thisTile = null;
+                break;
+        }
+        if (thisTile == null) {
+            returnValue = new SettleTile[]{};
+        } else {
+            returnValue = new SettleTile[]{thisTile};
+        }
+        return returnValue;
+    }
+
     public SettleTile(GameTile thisGameTile) {
         switch (thisGameTile) {
             case ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD:
@@ -99,7 +127,7 @@ public class SettleTile implements Tile {
                 break;
         }
     }
-    
+
     public String getName() {
         return name;
     }
