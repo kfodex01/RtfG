@@ -5,6 +5,22 @@ public class SettleTile implements Tile {
     private int points;
     private PlanetColor planetColor;
 
+    public static SettleTile getHomeWorldTiles(HomeWorldTile thisHomeWorldTile) {
+        SettleTile thisTile;
+        switch (thisHomeWorldTile) {
+            case DOOMED_WORLD:
+                thisTile = new SettleTile("Doomed World", 0, PlanetColor.GRAY);
+                break;
+            case SEPARATIST_COLONY:
+                thisTile = new SettleTile("Separatist Colony", 2, PlanetColor.GRAY);
+                break;
+            default:
+                thisTile = null;
+                break;
+        }
+        return thisTile;
+    }
+
     private SettleTile(String name, int points, PlanetColor planetColor) {
         this.name = name;
         this.points = points;

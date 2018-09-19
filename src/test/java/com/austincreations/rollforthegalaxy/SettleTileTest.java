@@ -365,7 +365,7 @@ public class SettleTileTest {
     }
 
     @Test
-    public void getFactionTiles_CreateHiddenFortressTile_ShouldEqualCorrectName() {
+    public void getFactionTiles_CreateHiddenFortressTile_ShouldEqualCorrectNamePointsAndColor() {
         SettleTile[] factionArray = SettleTile.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
 
         assertThat(factionArray.length).isEqualTo(1);
@@ -375,12 +375,54 @@ public class SettleTileTest {
     }
 
     @Test
-    public void getFactionTiles_CreateAlienRosettaStoneWorldTile_ShouldEqualCorrectName() {
+    public void getFactionTiles_CreateAlienRosettaStoneWorldTile_ShouldEqualCorrectNamePointsAndColor() {
         SettleTile[] factionArray = SettleTile.getFactionTiles(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD);
 
         assertThat(factionArray.length).isEqualTo(1);
         assertThat(factionArray[0].getName()).isEqualTo("Alien Rosetta Stone World");
         assertThat(factionArray[0].getPoints()).isEqualTo(1);
         assertThat(factionArray[0].getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
+    public void getHomeWorldTiles_CreateDoomedWorldTile_ShouldEqualCorrectName() {
+        SettleTile homeWorldTile = SettleTile.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);
+
+        assertThat(homeWorldTile.getName()).isEqualTo("Doomed World");
+    }
+
+    @Test
+    public void getHomeWorldTiles_CreateDoomedWorldTile_ShouldEqualCorrectPoints() {
+        SettleTile homeWorldTile = SettleTile.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);
+
+        assertThat(homeWorldTile.getPoints()).isEqualTo(0);
+    }
+
+    @Test
+    public void getHomeWorldTiles_CreateDoomedWorldTile_ShouldEqualCorrectPlanetColor() {
+        SettleTile homeWorldTile = SettleTile.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);
+
+        assertThat(homeWorldTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
+    public void getHomeWorldTiles_CreateSeparatistColonyTile_ShouldEqualCorrectName() {
+        SettleTile homeWorldTile = SettleTile.getHomeWorldTiles(HomeWorldTile.SEPARATIST_COLONY);
+
+        assertThat(homeWorldTile.getName()).isEqualTo("Separatist Colony");
+    }
+
+    @Test
+    public void getHomeWorldTiles_CreateSeparatistColonyTile_ShouldEqualCorrectPoints() {
+        SettleTile homeWorldTile = SettleTile.getHomeWorldTiles(HomeWorldTile.SEPARATIST_COLONY);
+
+        assertThat(homeWorldTile.getPoints()).isEqualTo(2);
+    }
+
+    @Test
+    public void getHomeWorldTiles_CreateSeparatistColonyTile_ShouldEqualCorrectPlanetColor() {
+        SettleTile homeWorldTile = SettleTile.getHomeWorldTiles(HomeWorldTile.SEPARATIST_COLONY);
+
+        assertThat(homeWorldTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
     }
 }
