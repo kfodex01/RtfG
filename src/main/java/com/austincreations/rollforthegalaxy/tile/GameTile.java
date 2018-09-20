@@ -1,4 +1,4 @@
-package com.austincreations.rollforthegalaxy;
+package com.austincreations.rollforthegalaxy.tile;
 
 public enum GameTile {
     ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD,

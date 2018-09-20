@@ -1,4 +1,4 @@
-package com.austincreations.rollforthegalaxy;
+package com.austincreations.rollforthegalaxy.tile;
 
 public enum FactionTile {
     SPACE_PIRACY_HIDDEN_FORTRESS,
