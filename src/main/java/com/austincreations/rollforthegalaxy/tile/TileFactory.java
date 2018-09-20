@@ -1,6 +1,9 @@
 package com.austincreations.rollforthegalaxy.tile;
 
 public class TileFactory {
+    private TileFactory() {
+    }
+
     public static Tile[] getGameTiles(GameTile gameTile) {
         Tile[] returnValue = new Tile[2];
         switch (gameTile) {
