@@ -1,6 +1,7 @@
 package com.austincreations.rollforthegalaxy;
 
 import com.austincreations.rollforthegalaxy.tile.FactionTile;
+import com.austincreations.rollforthegalaxy.tile.HomeWorldTile;
 import com.austincreations.rollforthegalaxy.tile.Tile;
 import com.austincreations.rollforthegalaxy.tile.TileFactory;
 
@@ -13,10 +14,12 @@ public class Game {
 
     private Player[] players;
     private ArrayList<FactionTile> factionTilePool;
+    private ArrayList<HomeWorldTile> homeWorldTilePool;
 
     public Game(int numberOfPlayers) {
         players = new Player[numberOfPlayers];
         factionTilePool = new ArrayList<FactionTile>(Arrays.asList(FactionTile.values()));
+        homeWorldTilePool = new ArrayList<HomeWorldTile>(Arrays.asList(HomeWorldTile.values()));
     }
 
     public int getNumberOfPlayers() {
@@ -29,5 +32,13 @@ public class Game {
         }
         int tileIndex = randomNumberGenerator.nextInt(factionTilePool.size());
         return TileFactory.getFactionTiles(factionTilePool.remove(tileIndex));
+    }
+
+    public Tile getHomeWorldTile() {
+        if (homeWorldTilePool.isEmpty()) {
+            return TileFactory.createEmptyTile();
+        }
+        int tileIndex = randomNumberGenerator.nextInt(homeWorldTilePool.size());
+        return TileFactory.getHomeWorldTiles(homeWorldTilePool.remove(tileIndex));
     }
 }

@@ -4,6 +4,10 @@ public class TileFactory {
     private TileFactory() {
     }
 
+    public static Tile createEmptyTile() {
+        return new DevelopTile("", -1);
+    }
+
     public static Tile[] getGameTiles(GameTile gameTile) {
         Tile[] returnValue = new Tile[2];
         switch (gameTile) {

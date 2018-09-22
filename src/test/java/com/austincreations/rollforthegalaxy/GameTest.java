@@ -1,6 +1,7 @@
 package com.austincreations.rollforthegalaxy;
 
 import com.austincreations.rollforthegalaxy.tile.FactionTile;
+import com.austincreations.rollforthegalaxy.tile.SettleTile;
 import com.austincreations.rollforthegalaxy.tile.Tile;
 import org.junit.jupiter.api.Test;
 
@@ -76,5 +77,34 @@ class GameTest {
 
         assertThat(foundDuplicate).isEqualTo(false);
         assertThat(allFactionTiles.size()).isEqualTo(numberOfFactionTiles);
+    }
+
+    @Test
+    public void getHomeWorldTile_GetTile_GetsAFactionTile() {
+        game = new Game(2);
+
+        Tile homeWorldTile = game.getHomeWorldTile();
+
+        assertThat(homeWorldTile).isInstanceOf(SettleTile.class);
+    }
+
+    @Test
+    public void getHomeWorldTile_GetAllTiles_NoHomeWorldTilesMatchAndPoolContainsTheCorrectNumber() {
+        game = new Game(2);
+        ArrayList<String> allHomeWorldTiles = new ArrayList<String>();
+        int numberOfHomeWorldTiles = FactionTile.values().length;
+        boolean foundDuplicate = false;
+
+        Tile homeWorldTile = game.getHomeWorldTile();
+        while (!homeWorldTile.getName().equals("") && !foundDuplicate) {
+            if (allHomeWorldTiles.contains(homeWorldTile.getName())) {
+                foundDuplicate = true;
+            }
+            allHomeWorldTiles.add(homeWorldTile.getName());
+            homeWorldTile = game.getHomeWorldTile();
+        }
+
+        assertThat(foundDuplicate).isEqualTo(false);
+        assertThat(allHomeWorldTiles.size()).isEqualTo(numberOfHomeWorldTiles);
     }
 }
