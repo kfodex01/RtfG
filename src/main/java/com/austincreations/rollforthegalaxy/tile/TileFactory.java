@@ -19,6 +19,10 @@ public class TileFactory {
                 returnValue[0] = new DevelopTile("Alien Research Ship", 5);
                 returnValue[1] = new SettleTile("Spice World", 2, PlanetColor.BLUE);
                 break;
+            case ALIEN_UPLIFT_BLUEPRINTS_INFORMATION_HUB:
+                returnValue[0] = new DevelopTile("Alien Uplift Blueprints", 3);
+                returnValue[1] = new SettleTile("Information Hub", 3, PlanetColor.BLUE);
+                break;
             case COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS:
                 returnValue[0] = new DevelopTile("Colonial Affinity", 2);
                 returnValue[1] = new SettleTile("Malevolent Lifeforms", 4, PlanetColor.GREEN);
@@ -80,8 +84,8 @@ public class TileFactory {
                 returnValue[1] = new SettleTile("Comet Zone", 3, PlanetColor.BROWN);
                 break;
             default:
-                returnValue[0] = new DevelopTile("", 0);
-                returnValue[1] = new SettleTile("", 0, null);
+                returnValue[0] = new DevelopTile("", -1);
+                returnValue[1] = new SettleTile("", -1, null);
                 break;
         }
         return returnValue;
@@ -99,8 +103,8 @@ public class TileFactory {
                 returnValue[1] = new SettleTile("Alien Rosetta Stone World", 1, PlanetColor.GRAY);
                 break;
             default:
-                returnValue[0] = new SettleTile("", 0, null);
-                returnValue[1] = new SettleTile("", 0, null);
+                returnValue[0] = new SettleTile("", -1, null);
+                returnValue[1] = new SettleTile("", -1, null);
                 break;
         }
         return returnValue;
@@ -116,7 +120,7 @@ public class TileFactory {
                 returnTile = new SettleTile("Separatist Colony", 2, PlanetColor.GRAY);
                 break;
             default:
-                returnTile = new SettleTile("", 0, null);
+                returnTile = new SettleTile("", -1, null);
                 break;
         }
         return returnTile;

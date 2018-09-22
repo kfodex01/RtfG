@@ -34,6 +34,20 @@ public class TileFactoryTest {
     }
 
     @Test
+    public void getGameTiles_AlienUpliftBlueprintsTile_HasCorrectValues() {
+        Tile[] tileArray = TileFactory.getGameTiles(GameTile.ALIEN_UPLIFT_BLUEPRINTS_INFORMATION_HUB);
+        DevelopTile firstTile = (DevelopTile) tileArray[0];
+        SettleTile secondTile = (SettleTile) tileArray[1];
+
+        assertThat(tileArray.length).isEqualTo(2);
+        assertThat(firstTile.getName()).isEqualTo("Alien Uplift Blueprints");
+        assertThat(firstTile.getPoints()).isEqualTo(3);
+        assertThat(secondTile.getName()).isEqualTo("Information Hub");
+        assertThat(secondTile.getPoints()).isEqualTo(3);
+        assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BLUE);
+    }
+
+    @Test
     public void getGameTiles_ColonialAffinityTile_HasCorrectValues() {
         Tile[] tileArray = TileFactory.getGameTiles(GameTile.COLONIAL_AFFINITY_MALEVOLENT_LIFEFORMS);
         DevelopTile firstTile = (DevelopTile) tileArray[0];
