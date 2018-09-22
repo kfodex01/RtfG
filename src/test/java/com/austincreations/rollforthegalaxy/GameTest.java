@@ -47,6 +47,42 @@ class GameTest {
     }
 
     @Test
+    public void constructor_TwoPlayerGame_CorrectNumberOfPointsAddedToPool() {
+        game = new Game(2);
+
+        int numberOfPointsInPool = game.getNumberOfPointsInPool();
+
+        assertThat(numberOfPointsInPool).isEqualTo(24);
+    }
+
+    @Test
+    public void constructor_ThreePlayerGame_CorrectNumberOfPointsAddedToPool() {
+        game = new Game(3);
+
+        int numberOfPointsInPool = game.getNumberOfPointsInPool();
+
+        assertThat(numberOfPointsInPool).isEqualTo(36);
+    }
+
+    @Test
+    public void constructor_FourPlayerGame_CorrectNumberOfPointsAddedToPool() {
+        game = new Game(4);
+
+        int numberOfPointsInPool = game.getNumberOfPointsInPool();
+
+        assertThat(numberOfPointsInPool).isEqualTo(48);
+    }
+
+    @Test
+    public void constructor_FivePlayerGame_CorrectNumberOfPointsAddedToPool() {
+        game = new Game(5);
+
+        int numberOfPointsInPool = game.getNumberOfPointsInPool();
+
+        assertThat(numberOfPointsInPool).isEqualTo(60);
+    }
+
+    @Test
     public void getFactionTile_GetTile_GetsAFactionTile() {
         game = new Game(2);
 

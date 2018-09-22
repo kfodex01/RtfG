@@ -13,12 +13,14 @@ public class Game {
     private ArrayList<FactionTile> factionTilePool;
     private ArrayList<HomeWorldTile> homeWorldTilePool;
     private ArrayList<GameTile> gameTilePool;
+    private int pointsInPool;
 
     public Game(int numberOfPlayers) {
         players = new Player[numberOfPlayers];
         factionTilePool = new ArrayList<FactionTile>(Arrays.asList(FactionTile.values()));
         homeWorldTilePool = new ArrayList<HomeWorldTile>(Arrays.asList(HomeWorldTile.values()));
         gameTilePool = new ArrayList<GameTile>(Arrays.asList(GameTile.values()));
+        pointsInPool = numberOfPlayers * 12;
     }
 
     public int getNumberOfPlayers() {
@@ -47,5 +49,9 @@ public class Game {
         }
         int tileIndex = randomNumberGenerator.nextInt(gameTilePool.size());
         return TileFactory.getGameTiles(gameTilePool.remove(tileIndex));
+    }
+
+    public int getNumberOfPointsInPool() {
+        return pointsInPool;
     }
 }
