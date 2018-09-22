@@ -1,6 +1,10 @@
 package com.austincreations.rollforthegalaxy;
 
+import com.austincreations.rollforthegalaxy.tile.FactionTile;
+import com.austincreations.rollforthegalaxy.tile.Tile;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,5 +45,36 @@ class GameTest {
         int numberOfPlayers = game.getNumberOfPlayers();
 
         assertThat(numberOfPlayers).isEqualTo(5);
+    }
+
+    @Test
+    public void getFactionTile_GetTile_GetsAFactionTile() {
+        game = new Game(2);
+
+        Tile[] factionTile = game.getFactionTile();
+
+        assertThat(factionTile.length).isEqualTo(2);
+    }
+
+    @Test
+    public void getFactionTile_GetAllTiles_NoFactionTilesMatchAndPoolContainsTheCorrectNumber() {
+        game = new Game(2);
+        ArrayList<String> allFactionTiles = new ArrayList<String>();
+        int numberOfFactionTiles = FactionTile.values().length * 2;
+        boolean foundDuplicate = false;
+
+        Tile[] factionTile = game.getFactionTile();
+        while (factionTile.length > 0 && !foundDuplicate) {
+            for (Tile tile : factionTile) {
+                if (allFactionTiles.contains(tile.getName())) {
+                    foundDuplicate = true;
+                }
+                allFactionTiles.add(tile.getName());
+            }
+            factionTile = game.getFactionTile();
+        }
+
+        assertThat(foundDuplicate).isEqualTo(false);
+        assertThat(allFactionTiles.size()).isEqualTo(numberOfFactionTiles);
     }
 }
