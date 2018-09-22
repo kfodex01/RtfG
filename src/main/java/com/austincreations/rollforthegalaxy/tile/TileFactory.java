@@ -102,8 +102,12 @@ public class TileFactory {
                 returnValue[0] = new DevelopTile("Alien Archaeology", 1);
                 returnValue[1] = new SettleTile("Alien Rosetta Stone World", 1, PlanetColor.GRAY);
                 break;
+            case CONSUMER_MARKETS_SPACE_MALL:
+                returnValue[0] = new DevelopTile("Consumer Markets", 3);
+                returnValue[1] = new SettleTile("Space Mall", 0, PlanetColor.BLUE);
+                break;
             default:
-                returnValue[0] = new SettleTile("", -1, null);
+                returnValue[0] = new DevelopTile("", -1);
                 returnValue[1] = new SettleTile("", -1, null);
                 break;
         }

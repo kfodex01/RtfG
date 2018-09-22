@@ -286,6 +286,20 @@ public class TileFactoryTest {
     }
 
     @Test
+    public void getFactionTiles_ConsumerMarketsTile_HasCorrectValues() {
+        Tile[] tileArray = TileFactory.getFactionTiles(FactionTile.CONSUMER_MARKETS_SPACE_MALL);
+        DevelopTile firstTile = (DevelopTile) tileArray[0];
+        SettleTile secondTile = (SettleTile) tileArray[1];
+
+        assertThat(tileArray.length).isEqualTo(2);
+        assertThat(firstTile.getName()).isEqualTo("Consumer Markets");
+        assertThat(firstTile.getPoints()).isEqualTo(3);
+        assertThat(secondTile.getName()).isEqualTo("Space Mall");
+        assertThat(secondTile.getPoints()).isEqualTo(0);
+        assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BLUE);
+    }
+
+    @Test
     public void getHomeWorldTiles_AlphaCentauri_HasCorrectValues() {
         SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
 
