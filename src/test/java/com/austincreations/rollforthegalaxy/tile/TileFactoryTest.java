@@ -286,6 +286,15 @@ public class TileFactoryTest {
     }
 
     @Test
+    public void getHomeWorldTiles_AlphaCentauri_HasCorrectValues() {
+        SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
+
+        assertThat(settleTile.getName()).isEqualTo("Alpha Centauri");
+        assertThat(settleTile.getPoints()).isEqualTo(1);
+        assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
+    }
+
+    @Test
     public void getHomeWorldTiles_DoomedWorld_HasCorrectValues() {
         SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);
 

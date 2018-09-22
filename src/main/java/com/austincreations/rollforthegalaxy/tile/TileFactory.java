@@ -113,6 +113,9 @@ public class TileFactory {
     public static SettleTile getHomeWorldTiles(HomeWorldTile thisHomeWorldTile) {
         SettleTile returnTile;
         switch (thisHomeWorldTile) {
+            case ALPHA_CENTAURI:
+                returnTile = new SettleTile("Alpha Centauri", 1, PlanetColor.BROWN);
+                break;
             case DOOMED_WORLD:
                 returnTile = new SettleTile("Doomed World", 0, PlanetColor.GRAY);
                 break;
