@@ -1,3 +1,21 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+x
+Hsrc/main/java/com/austincreations/rollforthegalaxy/tile/FactionTile.java,9\6\9629be4f80d2f94d7843ec74c40d500ef86af4b4
+u
+Esrc/main/java/com/austincreations/rollforthegalaxy/tile/GameTile.java,a\9\a9a6d40af5512847d782688e1cfcb87fa10fec32
+z
+Jsrc/main/java/com/austincreations/rollforthegalaxy/tile/HomeWorldTile.java,6\4\64cdd67d735ab47c060129a71edd845d9a55859b
+x
+Hsrc/main/java/com/austincreations/rollforthegalaxy/tile/PlanetColor.java,9\5\9579a0bf44d7a95deb833828a18672134713cfc5
+q
+Asrc/main/java/com/austincreations/rollforthegalaxy/tile/Tile.java,c\7\c7cf2311c0222e88d601f1b2d88bc45039b445e7
+x
+Hsrc/main/java/com/austincreations/rollforthegalaxy/tile/TileFactory.java,b\5\b5b3f29b138c9838be0247595c501907d33a34ac
+|
+Lsrc/test/java/com/austincreations/rollforthegalaxy/tile/TileFactoryTest.java,4\d\4d63affad33b353f51dc49ef00b6938524b1aa43
+x
+Hsrc/main/java/com/austincreations/rollforthegalaxy/tile/DevelopTile.java,a\3\a3d0bdcaf58671bb3abbe17b0a3e78e0fc256dbd
+w
+Gsrc/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java,c\8\c8cdd6aa8d4e1a41b768463c6e78680009706313
