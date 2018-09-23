@@ -104,7 +104,7 @@ public class TileFactory {
                 break;
             case CONSUMER_MARKETS_SPACE_MALL:
                 returnValue[0] = new DevelopTile("Consumer Markets", 3);
-                returnValue[1] = new SettleTile("Space Mall", 0, PlanetColor.BLUE, new SettleTileEffect[]{});
+                returnValue[1] = new SettleTile("Space Mall", 0, PlanetColor.BLUE, new SettleTileEffect[]{SettleTileEffect.ADD_BLUE_DIE_TO_CUP});
                 break;
             case IMPROVED_RECONNAISSANCE_WORMHOLE_STATION:
                 returnValue[0] = new DevelopTile("Improved Reconnaissance", 2);

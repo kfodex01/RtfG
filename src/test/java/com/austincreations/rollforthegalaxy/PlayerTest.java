@@ -95,6 +95,21 @@ public class PlayerTest {
     }
 
     @Test
+    public void setupPlayer_ConsumerMarkets_PlayerStartsWithBlueDieInCup() {
+        Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.CONSUMER_MARKETS_SPACE_MALL);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
+        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.runPreSetup();
+        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        DieColor[] cupColors = thisPlayer.getCupContentsByDieColor();
+
+        assertThat(cupColors.length).isEqualTo(4);
+        assertThat(cupColors[0]).isEqualTo(DieColor.BLUE);
+    }
+
+    @Test
     public void setupPlayer_AlphaCentauri_PlayerStartsWithBrownDieOnTile() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);

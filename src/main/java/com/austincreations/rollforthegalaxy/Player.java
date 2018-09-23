@@ -60,6 +60,9 @@ public class Player {
     private void applySettleTileEffects(SettleTile settleTile) {
         for (SettleTileEffect settleTileEffect : settleTile.getTileEffects()) {
             switch (settleTileEffect) {
+                case ADD_BLUE_DIE_TO_CUP:
+                    cup.addDie(new Die(DieColor.BLUE));
+                    break;
                 case ADD_BROWN_DIE_TO_WORLD:
                     settleTile.addDice(new Die(DieColor.BROWN));
                     break;

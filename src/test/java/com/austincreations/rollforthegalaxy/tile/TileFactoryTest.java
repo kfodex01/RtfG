@@ -301,6 +301,8 @@ public class TileFactoryTest {
         assertThat(secondTile.getName()).isEqualTo("Space Mall");
         assertThat(secondTile.getPoints()).isEqualTo(0);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BLUE);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_BLUE_DIE_TO_CUP);
     }
 
     @Test
