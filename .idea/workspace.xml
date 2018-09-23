@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="Created tile effects for Ancient Race and Alpha Centauri.">
+    <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/SettleTileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTileEffects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTileEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/TileFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/TileFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/TileFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/TileFactoryTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,28 +39,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="143" />
+          <entry key="java" value="144" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="143" />
+          <entry key="JAVA" value="144" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="73" />
-          <entry key="java" value="28298" />
-          <entry key="txt" value="1811" />
+          <entry key="java" value="29029" />
+          <entry key="txt" value="1854" />
           <entry key="xml" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="28298" />
-          <entry key="PLAIN_TEXT" value="1884" />
+          <entry key="JAVA" value="29029" />
+          <entry key="PLAIN_TEXT" value="1927" />
           <entry key="XML" value="105" />
         </counts>
       </usages-collector>
@@ -79,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+            <state relative-caret-position="190">
+              <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2042#2043#0" expanded="true" />
@@ -100,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="90" column="54" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
+            <state relative-caret-position="156">
+              <caret line="74" column="29" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/TileFactoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="382" column="96" selection-start-line="382" selection-start-column="96" selection-end-line="382" selection-end-column="96" />
+            <state relative-caret-position="17">
+              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -131,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            <state relative-caret-position="434">
+              <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding>
                 <element signature="e#548#549#0" expanded="true" />
                 <element signature="e#573#574#0" expanded="true" />
@@ -145,16 +142,21 @@
                 <element signature="e#611#612#0" expanded="true" />
                 <element signature="e#654#655#0" expanded="true" />
                 <element signature="e#688#689#0" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTileEffect.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/SettleTileTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="434">
+              <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,9 +167,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -226,7 +228,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DevelopTile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/SettleTile.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/SettleTileTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/SettleTileTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/DevelopTileTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/DevelopTile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/GameTile.java" />
@@ -237,13 +238,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/HomeWorldTile.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/GameTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/TileEffects.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTileEffects.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/TileFactoryTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/TileFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTileEffect.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Player.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/SettleTileTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java" />
       </list>
     </option>
   </component>
@@ -352,7 +354,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537678757604" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537680849937" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -363,7 +365,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.austincreations.rollforthegalaxy.tile" />
       <recent name="com.austincreations.rollforthegalaxy" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kevin\IdeaProjects\Roll for the Galaxy\src\test\java" />
+      <recent name="C:\Users\Kevin\IdeaProjects\Roll for the Galaxy\src\test" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.austincreations.rollforthegalaxy.tile" />
@@ -374,10 +381,6 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Kevin\IdeaProjects\Roll for the Galaxy\src\test\java" />
-      <recent name="C:\Users\Kevin\IdeaProjects\Roll for the Galaxy\src\test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -455,13 +458,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533066133973</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Refactored DicePool test.">
-      <created>1537019313705</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1537019313705</updated>
     </task>
     <task id="LOCAL-00010" summary="Fixed add function of DicePool so that it rejects empty Dice.">
       <created>1537055100315</created>
@@ -799,31 +795,17 @@
       <option name="project" value="LOCAL" />
       <updated>1537676776356</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added tile effects for Doomed World.">
+      <created>1537678831694</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1537678831694</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 42m 18s.xml">
-      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 43m 58s.xml">
-      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 49m 48s.xml">
-      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 50m 07s.xml">
-      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 55m 34s.xml">
-      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 56m 42s.xml">
-      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 57m 21s.xml">
-      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 58m 02s.xml">
       <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
     </history-entry>
@@ -831,6 +813,27 @@
       <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
     </history-entry>
     <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.22 at 23h 59m 20s.xml">
+      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.23 at 00h 14m 31s.xml">
+      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.23 at 00h 22m 38s.xml">
+      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.23 at 00h 23m 22s.xml">
+      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.23 at 00h 25m 46s.xml">
+      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.23 at 00h 26m 54s.xml">
+      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.23 at 00h 28m 13s.xml">
+      <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_austincreations_rollforthegalaxy_in_Roll_for_the_Galaxy - 2018.09.23 at 00h 30m 00s.xml">
       <configuration name="com.austincreations.rollforthegalaxy in Roll for the Galaxy" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -938,7 +941,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added Alien Archaeology/Alien Rosetta Stone World tile." />
     <MESSAGE value="Added Doomed World tile." />
     <MESSAGE value="Added Player pre-setup." />
     <MESSAGE value="Reconfigured Tiles." />
@@ -963,7 +965,8 @@
     <MESSAGE value="Added New Sparta tile." />
     <MESSAGE value="Modified player setup test." />
     <MESSAGE value="Created tile effects for Ancient Race and Alpha Centauri." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created tile effects for Ancient Race and Alpha Centauri." />
+    <MESSAGE value="Added tile effects for Doomed World." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tile effects for Doomed World." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1022,7 +1025,6 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/TilePoolTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/TilePool.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/TileTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/SettleTileTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/DevelopTileTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/DevelopTile.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1121,23 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/TileFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1149,20 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTileEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/TileFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="382" column="96" selection-start-line="382" selection-start-column="96" selection-end-line="382" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/DieColor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1170,20 +1141,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTileEffect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="90" column="54" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+        <state relative-caret-position="190">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2042#2043#0" expanded="true" />
@@ -1192,6 +1160,52 @@
             <element signature="e#2226#2227#0" expanded="true" />
             <element signature="e#2271#2272#0" expanded="true" />
             <element signature="e#2343#2344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/TileFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/tile/SettleTileTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="74" column="29" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding>
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
           </folding>
         </state>
       </provider>

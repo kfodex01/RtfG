@@ -65,6 +65,22 @@ public class PlayerTest {
     }
 
     @Test
+    public void setupPlayer_AlphaCentauri_PlayerStartsWithEightCredits() {
+        Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
+        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.runPreSetup();
+        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        SettleTile thirdTableauTile = (SettleTile) thisPlayer.getTilesInTableau()[2];
+        DieColor[] diceOnThirdTableauTile = thirdTableauTile.getDiceByDieColor();
+
+        assertThat(diceOnThirdTableauTile.length).isEqualTo(1);
+        assertThat(diceOnThirdTableauTile[0]).isEqualTo(DieColor.BROWN);
+    }
+
+    @Test
     public void setupPlayer_DoomedWorld_PlayerStartsWithEightCredits() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);

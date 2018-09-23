@@ -57,6 +57,9 @@ public class Player {
     private void applySettleTileEffects(SettleTile settleTile) {
         for (SettleTileEffect settleTileEffect : settleTile.getTileEffects()) {
             switch (settleTileEffect) {
+                case ADD_BROWN_DIE_TO_WORLD:
+                    settleTile.addDice(new Die(DieColor.BROWN));
+                    break;
                 case ADD_RED_DIE_TO_CITIZENRY:
                     citizenry.addDie(new Die(DieColor.RED));
                     break;
@@ -65,6 +68,7 @@ public class Player {
                     break;
                 case START_WITH_EIGHT_CREDITS:
                     creditAmount = 8;
+                    break;
             }
         }
     }
