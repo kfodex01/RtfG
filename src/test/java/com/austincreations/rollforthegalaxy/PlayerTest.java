@@ -131,9 +131,13 @@ public class PlayerTest {
         thisPlayer.runPreSetup();
         thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
         DieColor[] cupColors = thisPlayer.getCupContentsByDieColor();
+        ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
+
 
         assertThat(cupColors.length).isEqualTo(4);
         assertThat(cupColors[0]).isEqualTo(DieColor.BROWN);
+        assertThat(developTileEffects.contains(DevelopTileEffect.EXPLORE_MAY_PLACE_TILES_ON_TOP_OF_STACKS)).isEqualTo(true);
+
     }
 
     @Test

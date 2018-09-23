@@ -107,7 +107,7 @@ public class TileFactory {
                 returnValue[1] = new SettleTile("Space Mall", 0, PlanetColor.BLUE, new SettleTileEffect[]{SettleTileEffect.ADD_BLUE_DIE_TO_CUP});
                 break;
             case IMPROVED_RECONNAISSANCE_WORMHOLE_STATION:
-                returnValue[0] = new DevelopTile("Improved Reconnaissance", 2, new DevelopTileEffect[]{});
+                returnValue[0] = new DevelopTile("Improved Reconnaissance", 2, new DevelopTileEffect[]{DevelopTileEffect.EXPLORE_MAY_PLACE_TILES_ON_TOP_OF_STACKS});
                 returnValue[1] = new SettleTile("Wormhole Station", 3, PlanetColor.BROWN, new SettleTileEffect[]{SettleTileEffect.ADD_BROWN_DIE_TO_CUP});
                 break;
             case GENETICS_LAB_THE_LAST_OF_THE_GNARSSH:

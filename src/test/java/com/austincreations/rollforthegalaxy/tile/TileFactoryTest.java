@@ -320,6 +320,8 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Improved Reconnaissance");
         assertThat(firstTile.getPoints()).isEqualTo(2);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.EXPLORE_MAY_PLACE_TILES_ON_TOP_OF_STACKS);
         assertThat(secondTile.getName()).isEqualTo("Wormhole Station");
         assertThat(secondTile.getPoints()).isEqualTo(3);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
