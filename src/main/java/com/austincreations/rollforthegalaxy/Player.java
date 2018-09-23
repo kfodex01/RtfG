@@ -69,6 +69,9 @@ public class Player {
                 case ADD_BROWN_DIE_TO_WORLD:
                     settleTile.addDice(new Die(DieColor.BROWN));
                     break;
+                case ADD_GREEN_DIE_TO_CITIZENRY:
+                    citizenry.addDie(new Die(DieColor.GREEN));
+                    break;
                 case ADD_GREEN_DIE_TO_WORLD:
                     settleTile.addDice(new Die(DieColor.GREEN));
                     break;

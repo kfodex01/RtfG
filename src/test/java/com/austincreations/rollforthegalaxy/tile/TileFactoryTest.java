@@ -333,6 +333,8 @@ public class TileFactoryTest {
         assertThat(secondTile.getName()).isEqualTo("The Last of the Gnarssh");
         assertThat(secondTile.getPoints()).isEqualTo(0);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GREEN);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_GREEN_DIE_TO_CITIZENRY);
     }
 
     @Test

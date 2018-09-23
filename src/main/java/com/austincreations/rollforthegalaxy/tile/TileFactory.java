@@ -112,7 +112,7 @@ public class TileFactory {
                 break;
             case GENETICS_LAB_THE_LAST_OF_THE_GNARSSH:
                 returnValue[0] = new DevelopTile("Genetics Lab", 2);
-                returnValue[1] = new SettleTile("The Last of the Gnarssh", 0, PlanetColor.GREEN, new SettleTileEffect[]{});
+                returnValue[1] = new SettleTile("The Last of the Gnarssh", 0, PlanetColor.GREEN, new SettleTileEffect[]{SettleTileEffect.ADD_GREEN_DIE_TO_CITIZENRY});
                 break;
             default:
                 returnValue[0] = new DevelopTile("", -1);
