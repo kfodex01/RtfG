@@ -93,9 +93,13 @@ public class PlayerTest {
         thisPlayer.runPreSetup();
         thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
         DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
+        ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
+
 
         assertThat(citizenryColors.length).isEqualTo(3);
         assertThat(citizenryColors[2]).isEqualTo(DieColor.YELLOW);
+        assertThat(developTileEffects.contains(DevelopTileEffect.EXPLORE_FOUR_CREDITS_WHEN_STOCKING_WITH_A_YELLOW_DIE)).isEqualTo(true);
+
     }
 
     @Test

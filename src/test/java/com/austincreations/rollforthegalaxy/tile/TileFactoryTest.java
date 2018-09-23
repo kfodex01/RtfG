@@ -284,6 +284,8 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Alien Archaeology");
         assertThat(firstTile.getPoints()).isEqualTo(1);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.EXPLORE_FOUR_CREDITS_WHEN_STOCKING_WITH_A_YELLOW_DIE);
         assertThat(secondTile.getName()).isEqualTo("Alien Rosetta Stone World");
         assertThat(secondTile.getPoints()).isEqualTo(1);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
