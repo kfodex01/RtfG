@@ -285,6 +285,8 @@ public class TileFactoryTest {
         assertThat(secondTile.getName()).isEqualTo("Alien Rosetta Stone World");
         assertThat(secondTile.getPoints()).isEqualTo(1);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_YELLOW_DIE_TO_CITIZENRY);
     }
 
     @Test

@@ -100,7 +100,7 @@ public class TileFactory {
                 break;
             case ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD:
                 returnValue[0] = new DevelopTile("Alien Archaeology", 1);
-                returnValue[1] = new SettleTile("Alien Rosetta Stone World", 1, PlanetColor.GRAY, new SettleTileEffect[]{});
+                returnValue[1] = new SettleTile("Alien Rosetta Stone World", 1, PlanetColor.GRAY, new SettleTileEffect[]{SettleTileEffect.ADD_YELLOW_DIE_TO_CITIZENRY});
                 break;
             case CONSUMER_MARKETS_SPACE_MALL:
                 returnValue[0] = new DevelopTile("Consumer Markets", 3);

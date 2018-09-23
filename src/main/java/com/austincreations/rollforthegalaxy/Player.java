@@ -72,6 +72,9 @@ public class Player {
                 case ADD_RED_DIE_TO_CUP:
                     cup.addDie(new Die(DieColor.RED));
                     break;
+                case ADD_YELLOW_DIE_TO_CITIZENRY:
+                    citizenry.addDie(new Die(DieColor.YELLOW));
+                    break;
                 case START_WITH_EIGHT_CREDITS:
                     creditAmount = 8;
                     break;
