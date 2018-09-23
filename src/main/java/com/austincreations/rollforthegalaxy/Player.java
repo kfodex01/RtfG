@@ -63,4 +63,24 @@ public class Player {
     public Tile[] getTilesInSettleQueue() {
         return settleQueue.toArray(new Tile[settleQueue.size()]);
     }
+
+    public void addCredits(int amount) {
+        if (amount < 0) {
+            return;
+        }
+        creditAmount += amount;
+        if (creditAmount > 10) {
+            creditAmount = 10;
+        }
+    }
+
+    public void subtractCredits(int amount) {
+        if (amount < 0) {
+            return;
+        }
+        creditAmount -= amount;
+        if (creditAmount < 0) {
+            creditAmount = 0;
+        }
+    }
 }

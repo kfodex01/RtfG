@@ -63,4 +63,61 @@ public class PlayerTest {
         assertThat(settleTiles.length).isEqualTo(1);
         assertThat(settleTiles[0].getName()).isEqualTo("Spice World");
     }
+
+    @Test
+    public void addCredits_OneCredit_CreditTotalShouldBeTwo() {
+        thisPlayer.addCredits(1);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(2);
+    }
+
+    @Test
+    public void addCredits_TwoCredits_CreditTotalShouldBeThree() {
+        thisPlayer.addCredits(2);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(3);
+    }
+
+    @Test
+    public void addCredits_TenCredits_CreditTotalShouldBeTen() {
+        thisPlayer.addCredits(10);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(10);
+    }
+
+    @Test
+    public void addCredits_NegativeCredits_CreditTotalShouldBeOne() {
+        thisPlayer.addCredits(-5);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(1);
+    }
+
+    @Test
+    public void subtractCredits_OneCredit_CreditTotalShouldBeZero() {
+        thisPlayer.subtractCredits(1);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(0);
+    }
+
+    @Test
+    public void subtractCredits_AddTwoAndSubtractOneCredit_CreditTotalShouldBeTwo() {
+        thisPlayer.addCredits(2);
+        thisPlayer.subtractCredits(1);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(2);
+    }
+
+    @Test
+    public void subtractCredits_TwoCredits_CreditTotalShouldBeZero() {
+        thisPlayer.subtractCredits(2);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(0);
+    }
+
+    @Test
+    public void subtractCredits_NegativeCredits_CreditTotalShouldBeOne() {
+        thisPlayer.subtractCredits(-5);
+
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(1);
+    }
 }
