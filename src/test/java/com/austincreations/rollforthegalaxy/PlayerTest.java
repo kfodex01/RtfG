@@ -4,6 +4,8 @@ import com.austincreations.rollforthegalaxy.tile.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PlayerTest {
@@ -74,9 +76,11 @@ public class PlayerTest {
         thisPlayer.runPreSetup();
         thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
         DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
+        ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
 
         assertThat(citizenryColors.length).isEqualTo(3);
         assertThat(citizenryColors[0]).isEqualTo(DieColor.RED);
+        assertThat(developTileEffects.contains(DevelopTileEffect.SHIP_ONE_CREDIT_FOR_EVERY_TWO_RED_DICE_IN_CITIZENRY_AT_END_OF_PHASE)).isEqualTo(true);
     }
 
     @Test

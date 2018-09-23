@@ -266,6 +266,8 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Space Piracy");
         assertThat(firstTile.getPoints()).isEqualTo(0);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.SHIP_ONE_CREDIT_FOR_EVERY_TWO_RED_DICE_IN_CITIZENRY_AT_END_OF_PHASE);
         assertThat(secondTile.getName()).isEqualTo("Hidden Fortress");
         assertThat(secondTile.getPoints()).isEqualTo(2);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);

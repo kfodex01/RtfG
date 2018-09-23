@@ -1,9 +1,6 @@
 package com.austincreations.rollforthegalaxy;
 
-import com.austincreations.rollforthegalaxy.tile.DevelopTile;
-import com.austincreations.rollforthegalaxy.tile.SettleTile;
-import com.austincreations.rollforthegalaxy.tile.SettleTileEffect;
-import com.austincreations.rollforthegalaxy.tile.Tile;
+import com.austincreations.rollforthegalaxy.tile.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +13,7 @@ public class Player {
     private ArrayList<Tile> tableau;
     private LinkedList<DevelopTile> developQueue;
     private LinkedList<SettleTile> settleQueue;
+    private ArrayList<DevelopTileEffect> developTileEffects;
 
     Player() {
         creditAmount = 1;
@@ -24,6 +22,7 @@ public class Player {
         tableau = new ArrayList<>();
         developQueue = new LinkedList<>();
         settleQueue = new LinkedList<>();
+        developTileEffects = new ArrayList<>();
     }
 
     public void runPreSetup() {
@@ -48,13 +47,22 @@ public class Player {
 
     public void setupPlayer(Tile[] factionTile, Tile homeWorldTile, DevelopTile developTile, SettleTile settleTile) {
         tableau.addAll(Arrays.asList(factionTile));
-        if (factionTile[1].getClass() == SettleTile.class) {
-            applySettleTileEffects((SettleTile) factionTile[1]);
+        for (int i = 0; i < factionTile.length; i++) {
+            if (factionTile[i].getClass() == DevelopTile.class) {
+                applyDevelopTileEffects((DevelopTile) factionTile[i]);
+            }
+            if (factionTile[i].getClass() == SettleTile.class) {
+                applySettleTileEffects((SettleTile) factionTile[i]);
+            }
         }
         tableau.add(homeWorldTile);
         applySettleTileEffects((SettleTile) homeWorldTile);
         developQueue.add(developTile);
         settleQueue.add(settleTile);
+    }
+
+    private void applyDevelopTileEffects(DevelopTile developTile) {
+        developTileEffects.addAll(Arrays.asList(developTile.getTileEffects()));
     }
 
     private void applySettleTileEffects(SettleTile settleTile) {
@@ -121,5 +129,9 @@ public class Player {
         if (creditAmount < 0) {
             creditAmount = 0;
         }
+    }
+
+    public ArrayList<DevelopTileEffect> getDevelopPowers() {
+        return new ArrayList<>(developTileEffects);
     }
 }
