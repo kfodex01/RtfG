@@ -269,6 +269,8 @@ public class TileFactoryTest {
         assertThat(secondTile.getName()).isEqualTo("Hidden Fortress");
         assertThat(secondTile.getPoints()).isEqualTo(2);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY);
     }
 
     @Test

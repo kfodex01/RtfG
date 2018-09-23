@@ -65,7 +65,22 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_AlphaCentauri_PlayerStartsWithEightCredits() {
+    public void setupPlayer_SpacePiracy_PlayerStartsWithRedDieInCitizenry() {
+        Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
+        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.runPreSetup();
+        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
+
+        assertThat(citizenryColors.length).isEqualTo(3);
+        assertThat(citizenryColors[0]).isEqualTo(DieColor.RED);
+    }
+
+    @Test
+    public void setupPlayer_AlphaCentauri_PlayerStartsWithBrownDieOnTile() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
         Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
@@ -81,7 +96,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_AncientRace_PlayerStartsWithEightCredits() {
+    public void setupPlayer_AncientRace_PlayerStartsWithGreenDieOnTile() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ANCIENT_RACE);
         Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);

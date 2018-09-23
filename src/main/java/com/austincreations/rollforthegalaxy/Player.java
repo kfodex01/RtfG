@@ -21,9 +21,9 @@ public class Player {
         creditAmount = 1;
         cup = new Cup();
         citizenry = new DicePool();
-        tableau = new ArrayList<Tile>();
-        developQueue = new LinkedList<DevelopTile>();
-        settleQueue = new LinkedList<SettleTile>();
+        tableau = new ArrayList<>();
+        developQueue = new LinkedList<>();
+        settleQueue = new LinkedList<>();
     }
 
     public void runPreSetup() {
@@ -48,6 +48,9 @@ public class Player {
 
     public void setupPlayer(Tile[] factionTile, Tile homeWorldTile, DevelopTile developTile, SettleTile settleTile) {
         tableau.addAll(Arrays.asList(factionTile));
+        if (factionTile[1].getClass() == SettleTile.class) {
+            applySettleTileEffects((SettleTile) factionTile[1]);
+        }
         tableau.add(homeWorldTile);
         applySettleTileEffects((SettleTile) homeWorldTile);
         developQueue.add(developTile);
