@@ -103,7 +103,7 @@ public class TileFactory {
                 returnValue[1] = new SettleTile("Alien Rosetta Stone World", 1, PlanetColor.GRAY, new SettleTileEffect[]{SettleTileEffect.ADD_YELLOW_DIE_TO_CITIZENRY});
                 break;
             case CONSUMER_MARKETS_SPACE_MALL:
-                returnValue[0] = new DevelopTile("Consumer Markets", 3, new DevelopTileEffect[]{});
+                returnValue[0] = new DevelopTile("Consumer Markets", 3, new DevelopTileEffect[]{DevelopTileEffect.PRODUCE_ONE_CREDIT_FOR_EACH_BLUE_DIE_ON_A_WORLD_AT_END_OF_PHASE});
                 returnValue[1] = new SettleTile("Space Mall", 0, PlanetColor.BLUE, new SettleTileEffect[]{SettleTileEffect.ADD_BLUE_DIE_TO_CUP});
                 break;
             case IMPROVED_RECONNAISSANCE_WORMHOLE_STATION:

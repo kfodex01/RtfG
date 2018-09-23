@@ -302,6 +302,8 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Consumer Markets");
         assertThat(firstTile.getPoints()).isEqualTo(3);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.PRODUCE_ONE_CREDIT_FOR_EACH_BLUE_DIE_ON_A_WORLD_AT_END_OF_PHASE);
         assertThat(secondTile.getName()).isEqualTo("Space Mall");
         assertThat(secondTile.getPoints()).isEqualTo(0);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BLUE);

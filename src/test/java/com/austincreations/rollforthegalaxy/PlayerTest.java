@@ -112,9 +112,13 @@ public class PlayerTest {
         thisPlayer.runPreSetup();
         thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
         DieColor[] cupColors = thisPlayer.getCupContentsByDieColor();
+        ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
+
 
         assertThat(cupColors.length).isEqualTo(4);
         assertThat(cupColors[0]).isEqualTo(DieColor.BLUE);
+        assertThat(developTileEffects.contains(DevelopTileEffect.PRODUCE_ONE_CREDIT_FOR_EACH_BLUE_DIE_ON_A_WORLD_AT_END_OF_PHASE)).isEqualTo(true);
+
     }
 
     @Test
