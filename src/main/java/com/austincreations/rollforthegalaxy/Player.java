@@ -2,6 +2,7 @@ package com.austincreations.rollforthegalaxy;
 
 import com.austincreations.rollforthegalaxy.tile.DevelopTile;
 import com.austincreations.rollforthegalaxy.tile.SettleTile;
+import com.austincreations.rollforthegalaxy.tile.SettleTileEffect;
 import com.austincreations.rollforthegalaxy.tile.Tile;
 
 import java.util.ArrayList;
@@ -48,8 +49,24 @@ public class Player {
     public void setupPlayer(Tile[] factionTile, Tile homeWorldTile, DevelopTile developTile, SettleTile settleTile) {
         tableau.addAll(Arrays.asList(factionTile));
         tableau.add(homeWorldTile);
+        applySettleTileEffects((SettleTile) homeWorldTile);
         developQueue.add(developTile);
         settleQueue.add(settleTile);
+    }
+
+    private void applySettleTileEffects(SettleTile settleTile) {
+        for (SettleTileEffect settleTileEffect : settleTile.getTileEffects()) {
+            switch (settleTileEffect) {
+                case ADD_RED_DIE_TO_CITIZENRY:
+                    citizenry.addDie(new Die(DieColor.RED));
+                    break;
+                case ADD_RED_DIE_TO_CUP:
+                    cup.addDie(new Die(DieColor.RED));
+                    break;
+                case START_WITH_EIGHT_CREDITS:
+                    creditAmount = 8;
+            }
+        }
     }
 
     public Tile[] getTilesInTableau() {

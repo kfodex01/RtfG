@@ -334,7 +334,8 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("Alpha Centauri");
         assertThat(settleTile.getPoints()).isEqualTo(1);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
-        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffects.ADD_BROWN_DIE_TO_WORLD);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_BROWN_DIE_TO_WORLD);
     }
 
     @Test
@@ -344,7 +345,8 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("Ancient Race");
         assertThat(settleTile.getPoints()).isEqualTo(0);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GREEN);
-        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffects.ADD_GREEN_DIE_TO_WORLD);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_GREEN_DIE_TO_WORLD);
     }
 
     @Test
@@ -354,6 +356,8 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("Doomed World");
         assertThat(settleTile.getPoints()).isEqualTo(0);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.START_WITH_EIGHT_CREDITS);
     }
 
     @Test
@@ -363,6 +367,9 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("New Sparta");
         assertThat(settleTile.getPoints()).isEqualTo(2);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(2);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY);
+        assertThat(settleTile.getTileEffects()[1]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY);
     }
 
     @Test
@@ -372,5 +379,7 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("Separatist Colony");
         assertThat(settleTile.getPoints()).isEqualTo(2);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CUP);
     }
 }

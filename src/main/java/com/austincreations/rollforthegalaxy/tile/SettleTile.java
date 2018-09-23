@@ -4,16 +4,16 @@ public class SettleTile implements Tile {
     private String name;
     private int points;
     private PlanetColor planetColor;
-    private SettleTileEffects[] settleTileEffects;
+    private SettleTileEffect[] settleTileEffects;
 
-    SettleTile(String name, int points, PlanetColor planetColor, SettleTileEffects[] settleTileEffects) {
+    SettleTile(String name, int points, PlanetColor planetColor, SettleTileEffect[] settleTileEffects) {
         this.name = name;
         this.points = points;
         this.planetColor = planetColor;
         this.settleTileEffects = settleTileEffects;
     }
 
-    public SettleTileEffects[] getTileEffects() {
+    public SettleTileEffect[] getTileEffects() {
         return settleTileEffects;
     }
 

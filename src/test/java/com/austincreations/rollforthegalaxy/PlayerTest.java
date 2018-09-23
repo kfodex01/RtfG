@@ -65,14 +65,47 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_AlphaCentauri_WorldHasABrownDiceInItsPool() {
+    public void setupPlayer_DoomedWorld_PlayerStartsWithEightCredits() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
-        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);
         Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
         Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.runPreSetup();
         thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
 
+        assertThat(thisPlayer.getCreditAmount()).isEqualTo(8);
+    }
 
+    @Test
+    public void setupPlayer_NewSparta_PlayerHasTwoRedDiceInCitizenry() {
+        Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.CONSUMER_MARKETS_SPACE_MALL);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.NEW_SPARTA);
+        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.runPreSetup();
+        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
+
+        assertThat(citizenryColors.length).isEqualTo(4);
+        assertThat(citizenryColors[0]).isEqualTo(DieColor.RED);
+        assertThat(citizenryColors[1]).isEqualTo(DieColor.RED);
+    }
+
+    @Test
+    public void setupPlayer_SeparatistColony_PlayerHasARedDieInCup() {
+        Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.SEPARATIST_COLONY);
+        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.runPreSetup();
+        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        DieColor[] cupColors = thisPlayer.getCupContentsByDieColor();
+
+        assertThat(cupColors.length).isEqualTo(4);
+        assertThat(cupColors[0]).isEqualTo(DieColor.RED);
     }
 
     @Test

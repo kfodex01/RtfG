@@ -126,19 +126,19 @@ public class TileFactory {
         SettleTile returnTile;
         switch (thisHomeWorldTile) {
             case ALPHA_CENTAURI:
-                returnTile = new SettleTile("Alpha Centauri", 1, PlanetColor.BROWN, new SettleTileEffects[]{SettleTileEffects.ADD_BROWN_DIE_TO_WORLD});
+                returnTile = new SettleTile("Alpha Centauri", 1, PlanetColor.BROWN, new SettleTileEffect[]{SettleTileEffect.ADD_BROWN_DIE_TO_WORLD});
                 break;
             case ANCIENT_RACE:
-                returnTile = new SettleTile("Ancient Race", 0, PlanetColor.GREEN, new SettleTileEffects[]{SettleTileEffects.ADD_GREEN_DIE_TO_WORLD});
+                returnTile = new SettleTile("Ancient Race", 0, PlanetColor.GREEN, new SettleTileEffect[]{SettleTileEffect.ADD_GREEN_DIE_TO_WORLD});
                 break;
             case DOOMED_WORLD:
-                returnTile = new SettleTile("Doomed World", 0, PlanetColor.GRAY, null);
+                returnTile = new SettleTile("Doomed World", 0, PlanetColor.GRAY, new SettleTileEffect[]{SettleTileEffect.START_WITH_EIGHT_CREDITS});
                 break;
             case NEW_SPARTA:
-                returnTile = new SettleTile("New Sparta", 2, PlanetColor.GRAY, null);
+                returnTile = new SettleTile("New Sparta", 2, PlanetColor.GRAY, new SettleTileEffect[]{SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY, SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY});
                 break;
             case SEPARATIST_COLONY:
-                returnTile = new SettleTile("Separatist Colony", 2, PlanetColor.GRAY, null);
+                returnTile = new SettleTile("Separatist Colony", 2, PlanetColor.GRAY, new SettleTileEffect[]{SettleTileEffect.ADD_RED_DIE_TO_CUP});
                 break;
             default:
                 returnTile = new SettleTile("", -1, null, null);
