@@ -338,6 +338,8 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Genetics Lab");
         assertThat(firstTile.getPoints()).isEqualTo(2);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.PRODUCE_TWO_CREDITS_FOR_EACH_GREEN_DIE_USED_IN_PHASE_AT_END_OF_PHASE);
         assertThat(secondTile.getName()).isEqualTo("The Last of the Gnarssh");
         assertThat(secondTile.getPoints()).isEqualTo(0);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GREEN);

@@ -111,7 +111,7 @@ public class TileFactory {
                 returnValue[1] = new SettleTile("Wormhole Station", 3, PlanetColor.BROWN, new SettleTileEffect[]{SettleTileEffect.ADD_BROWN_DIE_TO_CUP});
                 break;
             case GENETICS_LAB_THE_LAST_OF_THE_GNARSSH:
-                returnValue[0] = new DevelopTile("Genetics Lab", 2, new DevelopTileEffect[]{});
+                returnValue[0] = new DevelopTile("Genetics Lab", 2, new DevelopTileEffect[]{DevelopTileEffect.PRODUCE_TWO_CREDITS_FOR_EACH_GREEN_DIE_USED_IN_PHASE_AT_END_OF_PHASE});
                 returnValue[1] = new SettleTile("The Last of the Gnarssh", 0, PlanetColor.GREEN, new SettleTileEffect[]{SettleTileEffect.ADD_GREEN_DIE_TO_CITIZENRY});
                 break;
             default:

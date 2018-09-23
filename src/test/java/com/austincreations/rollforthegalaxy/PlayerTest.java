@@ -150,9 +150,13 @@ public class PlayerTest {
         thisPlayer.runPreSetup();
         thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
         DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
+        ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
+
 
         assertThat(citizenryColors.length).isEqualTo(3);
         assertThat(citizenryColors[0]).isEqualTo(DieColor.GREEN);
+        assertThat(developTileEffects.contains(DevelopTileEffect.PRODUCE_TWO_CREDITS_FOR_EACH_GREEN_DIE_USED_IN_PHASE_AT_END_OF_PHASE)).isEqualTo(true);
+
     }
 
     @Test
