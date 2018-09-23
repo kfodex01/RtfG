@@ -1,5 +1,6 @@
 package com.austincreations.rollforthegalaxy;
 
+import com.austincreations.rollforthegalaxy.tile.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -39,5 +40,27 @@ public class PlayerTest {
         assertThat(citizenryContentsByDieColor.length).isEqualTo(2);
         assertThat(citizenryContentsByDieColor[0]).isEqualTo(DieColor.WHITE);
         assertThat(citizenryContentsByDieColor[1]).isEqualTo(DieColor.WHITE);
+    }
+
+    @Test
+    public void setupPlayer_GivenSpacePiracyAndAlphaCentauriAndAdvancedLogisticsAndSpiceWorldTiles_TilesInTableauAndStacksAreCorrect() {
+        Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
+        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+
+        Tile[] tableauTiles = thisPlayer.getTilesInTableau();
+        Tile[] developTiles = thisPlayer.getTilesInDevelopQueue();
+        Tile[] settleTiles = thisPlayer.getTilesInSettleQueue();
+
+        assertThat(tableauTiles.length).isEqualTo(3);
+        assertThat(tableauTiles[0].getName()).isEqualTo("Space Piracy");
+        assertThat(tableauTiles[1].getName()).isEqualTo("Hidden Fortress");
+        assertThat(tableauTiles[2].getName()).isEqualTo("Alpha Centauri");
+        assertThat(developTiles.length).isEqualTo(1);
+        assertThat(developTiles[0].getName()).isEqualTo("Advanced Logistics");
+        assertThat(settleTiles.length).isEqualTo(1);
+        assertThat(settleTiles[0].getName()).isEqualTo("Spice World");
     }
 }
