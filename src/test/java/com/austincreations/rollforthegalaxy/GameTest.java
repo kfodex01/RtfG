@@ -10,9 +10,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 class GameTest {
     private Game game;
 
+    private PlayerInterface playerInterface = new PlayerInterface();
+
     @Test
     public void constructor_TwoPlayerGame_GameHasTwoPlayers() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -21,7 +23,7 @@ class GameTest {
 
     @Test
     public void constructor_ThreePlayerGame_GameHasThreePlayers() {
-        game = new Game(3);
+        game = new Game(3, playerInterface);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -30,7 +32,7 @@ class GameTest {
 
     @Test
     public void constructor_FourPlayerGame_GameHasFourPlayers() {
-        game = new Game(4);
+        game = new Game(4, playerInterface);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -39,7 +41,7 @@ class GameTest {
 
     @Test
     public void constructor_FivePlayerGame_GameHasFivePlayers() {
-        game = new Game(5);
+        game = new Game(5, playerInterface);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -48,7 +50,7 @@ class GameTest {
 
     @Test
     public void constructor_TwoPlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -57,7 +59,7 @@ class GameTest {
 
     @Test
     public void constructor_ThreePlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(3);
+        game = new Game(3, playerInterface);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -66,7 +68,7 @@ class GameTest {
 
     @Test
     public void constructor_FourPlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(4);
+        game = new Game(4, playerInterface);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -75,7 +77,7 @@ class GameTest {
 
     @Test
     public void constructor_FivePlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(5);
+        game = new Game(5, playerInterface);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -84,7 +86,7 @@ class GameTest {
 
     @Test
     public void getFactionTile_GetTile_GetsAFactionTile() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
 
         Tile[] factionTile = game.getFactionTile();
 
@@ -93,7 +95,7 @@ class GameTest {
 
     @Test
     public void getFactionTile_GetAllTiles_NoFactionTilesMatchAndPoolContainsTheCorrectNumber() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
         ArrayList<String> allFactionTiles = new ArrayList<String>();
         int numberOfFactionTiles = FactionTile.values().length * 2;
         boolean foundDuplicate = false;
@@ -115,7 +117,7 @@ class GameTest {
 
     @Test
     public void getHomeWorldTile_GetTile_GetsAHomeWorldTile() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
 
         Tile homeWorldTile = game.getHomeWorldTile();
 
@@ -124,7 +126,7 @@ class GameTest {
 
     @Test
     public void getHomeWorldTile_GetAllTiles_NoHomeWorldTilesMatchAndPoolContainsTheCorrectNumber() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
         ArrayList<String> allHomeWorldTiles = new ArrayList<String>();
         int numberOfHomeWorldTiles = HomeWorldTile.values().length;
         boolean foundDuplicate = false;
@@ -144,7 +146,7 @@ class GameTest {
 
     @Test
     public void getGameTile_GetTile_GetsAGameTile() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
 
         Tile[] gameTile = game.getGameTile();
 
@@ -155,7 +157,7 @@ class GameTest {
 
     @Test
     public void getGameTile_GetAllTiles_NoGameTilesMatchAndPoolContainsTheCorrectNumber() {
-        game = new Game(2);
+        game = new Game(2, playerInterface);
         ArrayList<String> allGameTiles = new ArrayList<String>();
         int numberOfGameTiles = GameTile.values().length * 2;
         boolean foundDuplicate = false;
@@ -173,5 +175,21 @@ class GameTest {
 
         assertThat(foundDuplicate).isEqualTo(false);
         assertThat(allGameTiles.size()).isEqualTo(numberOfGameTiles);
+    }
+
+    @Test
+    public void setupPlayers_GetRandomTiles_EachPlayerHasThreeTableauTilesOneTileInDevelopQueueAndOneTileInSettleQueue() {
+        game = new Game(2, playerInterface);
+
+        game.setupPlayers();
+        Player[] players = game.getPlayers();
+
+        assertThat(players.length).isEqualTo(2);
+        assertThat(players[0].getTilesInTableau().length).isEqualTo(3);
+        assertThat(players[0].getTilesInDevelopQueue().length).isEqualTo(1);
+        assertThat(players[0].getTilesInSettleQueue().length).isEqualTo(1);
+        assertThat(players[1].getTilesInTableau().length).isEqualTo(3);
+        assertThat(players[1].getTilesInDevelopQueue().length).isEqualTo(1);
+        assertThat(players[1].getTilesInSettleQueue().length).isEqualTo(1);
     }
 }

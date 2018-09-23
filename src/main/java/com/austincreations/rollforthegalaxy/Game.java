@@ -14,13 +14,15 @@ public class Game {
     private ArrayList<HomeWorldTile> homeWorldTilePool;
     private ArrayList<GameTile> gameTilePool;
     private int pointsInPool;
+    private PlayerInterface playerInterface;
 
-    public Game(int numberOfPlayers) {
+    public Game(int numberOfPlayers, PlayerInterface playerInterface) {
         players = new Player[numberOfPlayers];
         factionTilePool = new ArrayList<FactionTile>(Arrays.asList(FactionTile.values()));
         homeWorldTilePool = new ArrayList<HomeWorldTile>(Arrays.asList(HomeWorldTile.values()));
         gameTilePool = new ArrayList<GameTile>(Arrays.asList(GameTile.values()));
         pointsInPool = numberOfPlayers * 12;
+        this.playerInterface = playerInterface;
     }
 
     public int getNumberOfPlayers() {
@@ -53,5 +55,23 @@ public class Game {
 
     public int getNumberOfPointsInPool() {
         return pointsInPool;
+    }
+
+    public void setupPlayers() {
+        int numberOfPlayers = players.length;
+        for (int i = 0; i < numberOfPlayers; i++) {
+            players[i] = new Player();
+            players[i].runPreSetup();
+            Tile[] factionTile = getFactionTile();
+            Tile homeWorldTile = getHomeWorldTile();
+            Tile[] firstGameTile = getGameTile();
+            Tile[] secondGameTile = getGameTile();
+            Tile[] selectedTiles = playerInterface.askPlayerToChooseInitialGameTiles(firstGameTile, secondGameTile);
+            players[i].setupPlayer(factionTile, homeWorldTile, (DevelopTile) selectedTiles[0], (SettleTile) selectedTiles[1]);
+        }
+    }
+
+    public Player[] getPlayers() {
+        return players;
     }
 }

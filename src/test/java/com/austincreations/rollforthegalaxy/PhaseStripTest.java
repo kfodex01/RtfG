@@ -36,7 +36,6 @@ public class PhaseStripTest {
     @BeforeEach
     public void setup() {
         thisPhaseStrip = new PhaseStrip();
-        firstDie = mock(Die.class);
     }
 
     @Test
@@ -48,6 +47,7 @@ public class PhaseStripTest {
 
     @Test
     public void addDice_AddDie_ShouldReturnTrue() {
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(DieFace.EXPLORE);
 
         boolean diceWereAdded = thisPhaseStrip.addDice(new Die[]{firstDie});
@@ -58,6 +58,7 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddExploreDie_ShouldContainDieOfCorrectColorInExplorePool() {
         DieColor thisDieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(DieFace.EXPLORE);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
@@ -71,6 +72,7 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddDevelopDie_ShouldContainDieOfCorrectColorInDevelopPool() {
         DieColor thisDieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(DieFace.DEVELOP);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
@@ -84,6 +86,7 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddSettleDie_ShouldContainDieOfCorrectColorInSettlePool() {
         DieColor thisDieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(DieFace.SETTLE);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
@@ -97,6 +100,7 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddProduceDie_ShouldContainDieOfCorrectColorInProducePool() {
         DieColor thisDieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(DieFace.PRODUCE);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
@@ -110,6 +114,7 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddShipDie_ShouldContainDieOfCorrectColorInShipPool() {
         DieColor thisDieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(DieFace.SHIP);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
@@ -123,6 +128,7 @@ public class PhaseStripTest {
     @Test
     public void addDice_AddWildDie_ShouldContainDieOfCorrectColorInUnassignedPool() {
         DieColor thisDieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(DieFace.WILD);
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
@@ -135,6 +141,7 @@ public class PhaseStripTest {
 
     @Test
     public void addDice_AddOneEmptyDie_ShouldNotContainADieInAnyPool() {
+        firstDie = mock(Die.class);
         when(firstDie.getCurrentFace()).thenReturn(null);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
