@@ -134,6 +134,9 @@ public class TileFactory {
             case DOOMED_WORLD:
                 returnTile = new SettleTile("Doomed World", 0, PlanetColor.GRAY);
                 break;
+            case NEW_SPARTA:
+                returnTile = new SettleTile("New Sparta", 2, PlanetColor.GRAY);
+                break;
             case SEPARATIST_COLONY:
                 returnTile = new SettleTile("Separatist Colony", 2, PlanetColor.GRAY);
                 break;

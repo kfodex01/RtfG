@@ -355,6 +355,15 @@ public class TileFactoryTest {
     }
 
     @Test
+    public void getHomeWorldTiles_NewSparta_HasCorrectValues() {
+        SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.NEW_SPARTA);
+
+        assertThat(settleTile.getName()).isEqualTo("New Sparta");
+        assertThat(settleTile.getPoints()).isEqualTo(2);
+        assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+    }
+
+    @Test
     public void getHomeWorldTiles_SeparatistColony_HasCorrectValues() {
         SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.SEPARATIST_COLONY);
 
