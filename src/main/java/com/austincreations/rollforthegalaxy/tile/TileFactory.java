@@ -110,6 +110,10 @@ public class TileFactory {
                 returnValue[0] = new DevelopTile("Improved Reconnaissance", 2);
                 returnValue[1] = new SettleTile("Wormhole Station", 3, PlanetColor.BROWN);
                 break;
+            case GENETICS_LAB_THE_LAST_OF_THE_GNARSSH:
+                returnValue[0] = new DevelopTile("Genetics Lab", 2);
+                returnValue[1] = new SettleTile("The Last of the Gnarssh", 0, PlanetColor.GREEN);
+                break;
             default:
                 returnValue[0] = new DevelopTile("", -1);
                 returnValue[1] = new SettleTile("", -1, null);

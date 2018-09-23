@@ -314,6 +314,20 @@ public class TileFactoryTest {
     }
 
     @Test
+    public void getFactionTiles_GeneticsLabTile_HasCorrectValues() {
+        Tile[] tileArray = TileFactory.getFactionTiles(FactionTile.GENETICS_LAB_THE_LAST_OF_THE_GNARSSH);
+        DevelopTile firstTile = (DevelopTile) tileArray[0];
+        SettleTile secondTile = (SettleTile) tileArray[1];
+
+        assertThat(tileArray.length).isEqualTo(2);
+        assertThat(firstTile.getName()).isEqualTo("Genetics Lab");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+        assertThat(secondTile.getName()).isEqualTo("The Last of the Gnarssh");
+        assertThat(secondTile.getPoints()).isEqualTo(0);
+        assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
     public void getHomeWorldTiles_AlphaCentauri_HasCorrectValues() {
         SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
 
