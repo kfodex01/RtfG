@@ -317,6 +317,8 @@ public class TileFactoryTest {
         assertThat(secondTile.getName()).isEqualTo("Wormhole Station");
         assertThat(secondTile.getPoints()).isEqualTo(3);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_BROWN_DIE_TO_CUP);
     }
 
     @Test
