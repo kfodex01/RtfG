@@ -300,6 +300,20 @@ public class TileFactoryTest {
     }
 
     @Test
+    public void getFactionTiles_ImprovedReconnaissanceTile_HasCorrectValues() {
+        Tile[] tileArray = TileFactory.getFactionTiles(FactionTile.IMPROVED_RECONNAISSANCE_WORMHOLE_STATION);
+        DevelopTile firstTile = (DevelopTile) tileArray[0];
+        SettleTile secondTile = (SettleTile) tileArray[1];
+
+        assertThat(tileArray.length).isEqualTo(2);
+        assertThat(firstTile.getName()).isEqualTo("Improved Reconnaissance");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+        assertThat(secondTile.getName()).isEqualTo("Wormhole Station");
+        assertThat(secondTile.getPoints()).isEqualTo(3);
+        assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
+    }
+
+    @Test
     public void getHomeWorldTiles_AlphaCentauri_HasCorrectValues() {
         SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
 
