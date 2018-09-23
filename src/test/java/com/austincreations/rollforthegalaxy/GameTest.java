@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class GameTest {
     private Game game;
@@ -179,6 +182,13 @@ class GameTest {
 
     @Test
     public void setupPlayers_GetRandomTiles_EachPlayerHasThreeTableauTilesOneTileInDevelopQueueAndOneTileInSettleQueue() {
+        playerInterface = mock(PlayerInterface.class);
+        when(playerInterface.askPlayerToChooseInitialGameTiles(any(Tile[].class), any(Tile[].class))).thenAnswer(i -> {
+            Object[] arguments = i.getArguments();
+            Tile[] firstArgument = (Tile[]) arguments[0];
+            Tile[] secondArgument = (Tile[]) arguments[1];
+            return new Tile[]{firstArgument[0], secondArgument[1]};
+        });
         game = new Game(5, playerInterface);
 
         game.setupPlayers();
