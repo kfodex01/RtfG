@@ -179,17 +179,26 @@ class GameTest {
 
     @Test
     public void setupPlayers_GetRandomTiles_EachPlayerHasThreeTableauTilesOneTileInDevelopQueueAndOneTileInSettleQueue() {
-        game = new Game(2, playerInterface);
+        game = new Game(5, playerInterface);
 
         game.setupPlayers();
         Player[] players = game.getPlayers();
 
-        assertThat(players.length).isEqualTo(2);
+        assertThat(players.length).isEqualTo(5);
         assertThat(players[0].getTilesInTableau().length).isEqualTo(3);
         assertThat(players[0].getTilesInDevelopQueue().length).isEqualTo(1);
         assertThat(players[0].getTilesInSettleQueue().length).isEqualTo(1);
         assertThat(players[1].getTilesInTableau().length).isEqualTo(3);
         assertThat(players[1].getTilesInDevelopQueue().length).isEqualTo(1);
         assertThat(players[1].getTilesInSettleQueue().length).isEqualTo(1);
+        assertThat(players[2].getTilesInTableau().length).isEqualTo(3);
+        assertThat(players[2].getTilesInDevelopQueue().length).isEqualTo(1);
+        assertThat(players[2].getTilesInSettleQueue().length).isEqualTo(1);
+        assertThat(players[3].getTilesInTableau().length).isEqualTo(3);
+        assertThat(players[3].getTilesInDevelopQueue().length).isEqualTo(1);
+        assertThat(players[3].getTilesInSettleQueue().length).isEqualTo(1);
+        assertThat(players[4].getTilesInTableau().length).isEqualTo(3);
+        assertThat(players[4].getTilesInDevelopQueue().length).isEqualTo(1);
+        assertThat(players[4].getTilesInSettleQueue().length).isEqualTo(1);
     }
 }
