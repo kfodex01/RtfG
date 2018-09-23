@@ -337,6 +337,15 @@ public class TileFactoryTest {
     }
 
     @Test
+    public void getHomeWorldTiles_AncientRace_HasCorrectValues() {
+        SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ANCIENT_RACE);
+
+        assertThat(settleTile.getName()).isEqualTo("Ancient Race");
+        assertThat(settleTile.getPoints()).isEqualTo(0);
+        assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GREEN);
+    }
+
+    @Test
     public void getHomeWorldTiles_DoomedWorld_HasCorrectValues() {
         SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);
 

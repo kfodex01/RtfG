@@ -128,6 +128,9 @@ public class TileFactory {
             case ALPHA_CENTAURI:
                 returnTile = new SettleTile("Alpha Centauri", 1, PlanetColor.BROWN);
                 break;
+            case ANCIENT_RACE:
+                returnTile = new SettleTile("Ancient Race", 0, PlanetColor.GREEN);
+                break;
             case DOOMED_WORLD:
                 returnTile = new SettleTile("Doomed World", 0, PlanetColor.GRAY);
                 break;
