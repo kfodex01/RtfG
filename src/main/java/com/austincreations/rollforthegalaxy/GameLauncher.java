@@ -5,13 +5,10 @@ import java.awt.*;
 
 public class GameLauncher extends JFrame {
     private Game game;
-    private JButton twoPlayer;
-    private JButton threePlayer;
-    private JButton fourPlayer;
-    private JButton fivePlayer;
+    private Container container;
 
     public GameLauncher() {
-        Container container = getContentPane();
+        container = getContentPane();
         container.setLayout(new FlowLayout());
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,30 +17,28 @@ public class GameLauncher extends JFrame {
         setVisible(true);
 
         container.add(new JLabel("Please select number of players:"));
-        twoPlayer = new JButton("2");
-        threePlayer = new JButton("3");
-        fourPlayer = new JButton("4");
-        fivePlayer = new JButton("5");
+        JButton twoPlayer = new JButton("2");
+        JButton threePlayer = new JButton("3");
+        JButton fourPlayer = new JButton("4");
+        JButton fivePlayer = new JButton("5");
         container.add(twoPlayer);
         container.add(threePlayer);
         container.add(fourPlayer);
         container.add(fivePlayer);
 
-        twoPlayer.addActionListener(evt ->
-                game = new Game(2, 1)
-        );
+        twoPlayer.addActionListener(evt -> startGame(2));
 
-        threePlayer.addActionListener(evt ->
-                game = new Game(3, 1)
-        );
+        threePlayer.addActionListener(evt -> startGame(3));
 
-        fourPlayer.addActionListener(evt ->
-                game = new Game(4, 1)
-        );
+        fourPlayer.addActionListener(evt -> startGame(4));
 
-        fivePlayer.addActionListener(evt ->
-                game = new Game(5, 1)
-        );
+        fivePlayer.addActionListener(evt -> startGame(5));
+    }
+
+    public void startGame(int numberOfPlayers) {
+        this.dispose();
+        game = new Game(numberOfPlayers, 1);
+        game.setupPlayers();
     }
 
     public static void main(String[] args) {
