@@ -1,5 +1,9 @@
-package com.austincreations.rollforthegalaxy;
+package com.austincreations.rollforthegalaxy.player;
 
+import com.austincreations.rollforthegalaxy.Cup;
+import com.austincreations.rollforthegalaxy.DicePool;
+import com.austincreations.rollforthegalaxy.Die;
+import com.austincreations.rollforthegalaxy.DieColor;
 import com.austincreations.rollforthegalaxy.tile.*;
 
 import java.util.ArrayList;
@@ -16,7 +20,7 @@ public class Player {
     private ArrayList<DevelopTileEffect> developTileEffects;
     private PlayerInterface playerInterface;
 
-    Player(boolean isHuman) {
+    public Player(boolean isHuman) {
         creditAmount = 1;
         cup = new Cup();
         citizenry = new DicePool();

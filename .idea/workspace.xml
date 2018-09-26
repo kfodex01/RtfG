@@ -371,7 +371,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537945184064" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537945419661" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -412,7 +412,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameLauncher">
+  <component name="RunManager" selected="JUnit.All Tests">
     <configuration name="DieTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="Roll for the Galaxy" />
       <option name="PACKAGE_NAME" value="com.austincreations.rollforthegalaxy" />
@@ -427,7 +427,7 @@
       <module name="Roll for the Galaxy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.*" />
+          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -436,11 +436,11 @@
       </method>
     </configuration>
     <configuration name="PlayerInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.austincreations.rollforthegalaxy.PlayerInterface" />
+      <option name="MAIN_CLASS_NAME" value="com.austincreations.rollforthegalaxy.player.PlayerInterface" />
       <module name="Roll for the Galaxy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.*" />
+          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -452,7 +452,7 @@
       <module name="Roll for the Galaxy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.*" />
+          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -469,7 +469,7 @@
       <module name="Roll for the Galaxy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.*" />
+          <option name="PATTERN" value="com.austincreations.rollforthegalaxy.player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

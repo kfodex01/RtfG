@@ -1,5 +1,6 @@
 package com.austincreations.rollforthegalaxy;
 
+import com.austincreations.rollforthegalaxy.player.Player;
 import com.austincreations.rollforthegalaxy.tile.*;
 import org.junit.jupiter.api.Test;
 

@@ -1,5 +1,6 @@
-package com.austincreations.rollforthegalaxy;
+package com.austincreations.rollforthegalaxy.player;
 
+import com.austincreations.rollforthegalaxy.DieColor;
 import com.austincreations.rollforthegalaxy.tile.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

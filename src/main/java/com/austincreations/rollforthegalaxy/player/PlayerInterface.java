@@ -1,4 +1,4 @@
-package com.austincreations.rollforthegalaxy;
+package com.austincreations.rollforthegalaxy.player;
 
 import com.austincreations.rollforthegalaxy.tile.Tile;
 
