@@ -13,7 +13,7 @@ public class PlayerTest {
 
     @BeforeEach
     public void setup() {
-        thisPlayer = new Player();
+        thisPlayer = new Player(true);
     }
 
     @Test

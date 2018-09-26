@@ -6,18 +6,15 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 class GameTest {
     private Game game;
 
-    private PlayerInterface playerInterface = new PlayerInterface();
+    private int numberOfHumanPlayers = 0;
 
     @Test
     public void constructor_TwoPlayerGame_GameHasTwoPlayers() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -26,7 +23,7 @@ class GameTest {
 
     @Test
     public void constructor_ThreePlayerGame_GameHasThreePlayers() {
-        game = new Game(3, playerInterface);
+        game = new Game(3, numberOfHumanPlayers);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -35,7 +32,7 @@ class GameTest {
 
     @Test
     public void constructor_FourPlayerGame_GameHasFourPlayers() {
-        game = new Game(4, playerInterface);
+        game = new Game(4, numberOfHumanPlayers);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -44,7 +41,7 @@ class GameTest {
 
     @Test
     public void constructor_FivePlayerGame_GameHasFivePlayers() {
-        game = new Game(5, playerInterface);
+        game = new Game(5, numberOfHumanPlayers);
 
         int numberOfPlayers = game.getNumberOfPlayers();
 
@@ -53,7 +50,7 @@ class GameTest {
 
     @Test
     public void constructor_TwoPlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -62,7 +59,7 @@ class GameTest {
 
     @Test
     public void constructor_ThreePlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(3, playerInterface);
+        game = new Game(3, numberOfHumanPlayers);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -71,7 +68,7 @@ class GameTest {
 
     @Test
     public void constructor_FourPlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(4, playerInterface);
+        game = new Game(4, numberOfHumanPlayers);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -80,7 +77,7 @@ class GameTest {
 
     @Test
     public void constructor_FivePlayerGame_CorrectNumberOfPointsAddedToPool() {
-        game = new Game(5, playerInterface);
+        game = new Game(5, numberOfHumanPlayers);
 
         int numberOfPointsInPool = game.getNumberOfPointsInPool();
 
@@ -89,7 +86,7 @@ class GameTest {
 
     @Test
     public void getFactionTile_GetTile_GetsAFactionTile() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
 
         Tile[] factionTile = game.getFactionTile();
 
@@ -98,7 +95,7 @@ class GameTest {
 
     @Test
     public void getFactionTile_GetAllTiles_NoFactionTilesMatchAndPoolContainsTheCorrectNumber() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
         ArrayList<String> allFactionTiles = new ArrayList<String>();
         int numberOfFactionTiles = FactionTile.values().length * 2;
         boolean foundDuplicate = false;
@@ -120,7 +117,7 @@ class GameTest {
 
     @Test
     public void getHomeWorldTile_GetTile_GetsAHomeWorldTile() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
 
         Tile homeWorldTile = game.getHomeWorldTile();
 
@@ -129,7 +126,7 @@ class GameTest {
 
     @Test
     public void getHomeWorldTile_GetAllTiles_NoHomeWorldTilesMatchAndPoolContainsTheCorrectNumber() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
         ArrayList<String> allHomeWorldTiles = new ArrayList<String>();
         int numberOfHomeWorldTiles = HomeWorldTile.values().length;
         boolean foundDuplicate = false;
@@ -149,7 +146,7 @@ class GameTest {
 
     @Test
     public void getGameTile_GetTile_GetsAGameTile() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
 
         Tile[] gameTile = game.getGameTile();
 
@@ -160,7 +157,7 @@ class GameTest {
 
     @Test
     public void getGameTile_GetAllTiles_NoGameTilesMatchAndPoolContainsTheCorrectNumber() {
-        game = new Game(2, playerInterface);
+        game = new Game(2, numberOfHumanPlayers);
         ArrayList<String> allGameTiles = new ArrayList<String>();
         int numberOfGameTiles = GameTile.values().length * 2;
         boolean foundDuplicate = false;
@@ -182,14 +179,7 @@ class GameTest {
 
     @Test
     public void setupPlayers_GetRandomTiles_EachPlayerHasThreeTableauTilesOneTileInDevelopQueueAndOneTileInSettleQueue() {
-        playerInterface = mock(PlayerInterface.class);
-        when(playerInterface.askPlayerToChooseInitialGameTiles(any(Tile[].class), any(Tile[].class))).thenAnswer(i -> {
-            Object[] arguments = i.getArguments();
-            Tile[] firstArgument = (Tile[]) arguments[0];
-            Tile[] secondArgument = (Tile[]) arguments[1];
-            return new Tile[]{firstArgument[0], secondArgument[1]};
-        });
-        game = new Game(5, playerInterface);
+        game = new Game(5, numberOfHumanPlayers);
 
         game.setupPlayers();
         Player[] players = game.getPlayers();

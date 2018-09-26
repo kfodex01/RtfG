@@ -14,8 +14,9 @@ public class Player {
     private LinkedList<DevelopTile> developQueue;
     private LinkedList<SettleTile> settleQueue;
     private ArrayList<DevelopTileEffect> developTileEffects;
+    private PlayerInterface playerInterface;
 
-    Player() {
+    Player(boolean isHuman) {
         creditAmount = 1;
         cup = new Cup();
         citizenry = new DicePool();
@@ -23,7 +24,13 @@ public class Player {
         developQueue = new LinkedList<>();
         settleQueue = new LinkedList<>();
         developTileEffects = new ArrayList<>();
+        if (isHuman) {
+            playerInterface = new HumanPlayer();
+        } else {
+            playerInterface = new CpuPlayer();
+        }
     }
+
 
     public void runPreSetup() {
         cup.addDie(new Die(DieColor.WHITE));
@@ -133,5 +140,9 @@ public class Player {
 
     public ArrayList<DevelopTileEffect> getDevelopPowers() {
         return new ArrayList<>(developTileEffects);
+    }
+
+    public Tile[] askPlayerToChooseInitialGameTiles(Tile[] firstGameTile, Tile[] secondGameTile) {
+        return playerInterface.askPlayerToChooseInitialGameTiles(firstGameTile, secondGameTile);
     }
 }
