@@ -266,9 +266,13 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Space Piracy");
         assertThat(firstTile.getPoints()).isEqualTo(0);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.SHIP_ONE_CREDIT_FOR_EVERY_TWO_RED_DICE_IN_CITIZENRY_AT_END_OF_PHASE);
         assertThat(secondTile.getName()).isEqualTo("Hidden Fortress");
         assertThat(secondTile.getPoints()).isEqualTo(2);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY);
     }
 
     @Test
@@ -280,9 +284,13 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Alien Archaeology");
         assertThat(firstTile.getPoints()).isEqualTo(1);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.EXPLORE_FOUR_CREDITS_WHEN_STOCKING_WITH_A_YELLOW_DIE);
         assertThat(secondTile.getName()).isEqualTo("Alien Rosetta Stone World");
         assertThat(secondTile.getPoints()).isEqualTo(1);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_YELLOW_DIE_TO_CITIZENRY);
     }
 
     @Test
@@ -294,9 +302,49 @@ public class TileFactoryTest {
         assertThat(tileArray.length).isEqualTo(2);
         assertThat(firstTile.getName()).isEqualTo("Consumer Markets");
         assertThat(firstTile.getPoints()).isEqualTo(3);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.PRODUCE_ONE_CREDIT_FOR_EACH_BLUE_DIE_ON_A_WORLD_AT_END_OF_PHASE);
         assertThat(secondTile.getName()).isEqualTo("Space Mall");
         assertThat(secondTile.getPoints()).isEqualTo(0);
         assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BLUE);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_BLUE_DIE_TO_CUP);
+    }
+
+    @Test
+    public void getFactionTiles_ImprovedReconnaissanceTile_HasCorrectValues() {
+        Tile[] tileArray = TileFactory.getFactionTiles(FactionTile.IMPROVED_RECONNAISSANCE_WORMHOLE_STATION);
+        DevelopTile firstTile = (DevelopTile) tileArray[0];
+        SettleTile secondTile = (SettleTile) tileArray[1];
+
+        assertThat(tileArray.length).isEqualTo(2);
+        assertThat(firstTile.getName()).isEqualTo("Improved Reconnaissance");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.EXPLORE_MAY_PLACE_TILES_ON_TOP_OF_STACKS);
+        assertThat(secondTile.getName()).isEqualTo("Wormhole Station");
+        assertThat(secondTile.getPoints()).isEqualTo(3);
+        assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_BROWN_DIE_TO_CUP);
+    }
+
+    @Test
+    public void getFactionTiles_GeneticsLabTile_HasCorrectValues() {
+        Tile[] tileArray = TileFactory.getFactionTiles(FactionTile.GENETICS_LAB_THE_LAST_OF_THE_GNARSSH);
+        DevelopTile firstTile = (DevelopTile) tileArray[0];
+        SettleTile secondTile = (SettleTile) tileArray[1];
+
+        assertThat(tileArray.length).isEqualTo(2);
+        assertThat(firstTile.getName()).isEqualTo("Genetics Lab");
+        assertThat(firstTile.getPoints()).isEqualTo(2);
+        assertThat(firstTile.getTileEffects().length).isEqualTo(1);
+        assertThat(firstTile.getTileEffects()[0]).isEqualTo(DevelopTileEffect.PRODUCE_TWO_CREDITS_FOR_EACH_GREEN_DIE_USED_IN_PHASE_AT_END_OF_PHASE);
+        assertThat(secondTile.getName()).isEqualTo("The Last of the Gnarssh");
+        assertThat(secondTile.getPoints()).isEqualTo(0);
+        assertThat(secondTile.getPlanetColor()).isEqualTo(PlanetColor.GREEN);
+        assertThat(secondTile.getTileEffects().length).isEqualTo(1);
+        assertThat(secondTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_GREEN_DIE_TO_CITIZENRY);
     }
 
     @Test
@@ -306,6 +354,19 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("Alpha Centauri");
         assertThat(settleTile.getPoints()).isEqualTo(1);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.BROWN);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_BROWN_DIE_TO_WORLD);
+    }
+
+    @Test
+    public void getHomeWorldTiles_AncientRace_HasCorrectValues() {
+        SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ANCIENT_RACE);
+
+        assertThat(settleTile.getName()).isEqualTo("Ancient Race");
+        assertThat(settleTile.getPoints()).isEqualTo(0);
+        assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GREEN);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_GREEN_DIE_TO_WORLD);
     }
 
     @Test
@@ -315,6 +376,20 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("Doomed World");
         assertThat(settleTile.getPoints()).isEqualTo(0);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.START_WITH_EIGHT_CREDITS);
+    }
+
+    @Test
+    public void getHomeWorldTiles_NewSparta_HasCorrectValues() {
+        SettleTile settleTile = TileFactory.getHomeWorldTiles(HomeWorldTile.NEW_SPARTA);
+
+        assertThat(settleTile.getName()).isEqualTo("New Sparta");
+        assertThat(settleTile.getPoints()).isEqualTo(2);
+        assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(2);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY);
+        assertThat(settleTile.getTileEffects()[1]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CITIZENRY);
     }
 
     @Test
@@ -324,5 +399,7 @@ public class TileFactoryTest {
         assertThat(settleTile.getName()).isEqualTo("Separatist Colony");
         assertThat(settleTile.getPoints()).isEqualTo(2);
         assertThat(settleTile.getPlanetColor()).isEqualTo(PlanetColor.GRAY);
+        assertThat(settleTile.getTileEffects().length).isEqualTo(1);
+        assertThat(settleTile.getTileEffects()[0]).isEqualTo(SettleTileEffect.ADD_RED_DIE_TO_CUP);
     }
 }

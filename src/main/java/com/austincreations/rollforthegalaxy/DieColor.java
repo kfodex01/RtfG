@@ -6,6 +6,6 @@ public enum DieColor {
     GREEN,
     PURPLE,
     RED,
-    YELLOW,
-    WHITE
+    WHITE,
+    YELLOW
 }

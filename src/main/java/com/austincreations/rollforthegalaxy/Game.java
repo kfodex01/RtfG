@@ -1,5 +1,6 @@
 package com.austincreations.rollforthegalaxy;
 
+import com.austincreations.rollforthegalaxy.player.Player;
 import com.austincreations.rollforthegalaxy.tile.*;
 
 import java.util.ArrayList;
@@ -14,13 +15,15 @@ public class Game {
     private ArrayList<HomeWorldTile> homeWorldTilePool;
     private ArrayList<GameTile> gameTilePool;
     private int pointsInPool;
+    private int numberOfHumanPlayers;
 
-    public Game(int numberOfPlayers) {
+    public Game(int numberOfPlayers, int numberOfHumanPlayers) {
         players = new Player[numberOfPlayers];
-        factionTilePool = new ArrayList<FactionTile>(Arrays.asList(FactionTile.values()));
-        homeWorldTilePool = new ArrayList<HomeWorldTile>(Arrays.asList(HomeWorldTile.values()));
-        gameTilePool = new ArrayList<GameTile>(Arrays.asList(GameTile.values()));
+        factionTilePool = new ArrayList<>(Arrays.asList(FactionTile.values()));
+        homeWorldTilePool = new ArrayList<>(Arrays.asList(HomeWorldTile.values()));
+        gameTilePool = new ArrayList<>(Arrays.asList(GameTile.values()));
         pointsInPool = numberOfPlayers * 12;
+        this.numberOfHumanPlayers = numberOfHumanPlayers;
     }
 
     public int getNumberOfPlayers() {
@@ -53,5 +56,31 @@ public class Game {
 
     public int getNumberOfPointsInPool() {
         return pointsInPool;
+    }
+
+    public void setupPlayers() {
+        int numberOfPlayers = players.length;
+        int humanPlayersLeft = numberOfHumanPlayers;
+        boolean isHumanPlayer = true;
+        for (int i = 0; i < numberOfPlayers; i++) {
+            if (humanPlayersLeft > 0) {
+                humanPlayersLeft--;
+            } else {
+                isHumanPlayer = false;
+            }
+            players[i] = new Player(isHumanPlayer);
+            players[i].runPreSetup();
+            Tile[] factionTile = getFactionTile();
+            Tile homeWorldTile = getHomeWorldTile();
+            players[i].setStartingTableau(factionTile, homeWorldTile);
+            Tile[] firstGameTile = getGameTile();
+            Tile[] secondGameTile = getGameTile();
+            Tile[] selectedTiles = players[i].askPlayerToChooseInitialGameTiles(firstGameTile, secondGameTile);
+            players[i].setStartingQueues((DevelopTile) selectedTiles[0], (SettleTile) selectedTiles[1]);
+        }
+    }
+
+    public Player[] getPlayers() {
+        return players;
     }
 }
