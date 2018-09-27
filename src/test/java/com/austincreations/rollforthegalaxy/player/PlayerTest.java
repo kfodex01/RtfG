@@ -14,7 +14,7 @@ public class PlayerTest {
 
     @BeforeEach
     public void setup() {
-        thisPlayer = new Player(true);
+        thisPlayer = new Player(false);
     }
 
     @Test
@@ -205,18 +205,47 @@ public class PlayerTest {
     }
 
     @Test
-    public void setStartingQueues_AdvancedLogisticsAndSpiceWorldTiles_TilesInQueuesAreCorrect() {
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+    public void askPlayerToChooseInitialGameTiles_AdvancedLogisticsAndSpiceWorldTiles_TilesReturnedContainPossibleCombinations() {
+        Tile[] firstGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] secondGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
-        thisPlayer.setStartingQueues((DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        Tile[] result = thisPlayer.askPlayerToChooseInitialGameTiles(firstGameTile, secondGameTile);
+
+        assertThat(result.length).isEqualTo(2);
+        assertThat(result[0].getName()).isIn("Advanced Logistics", "Alien Research Ship");
+        assertThat(result[1].getName()).isIn("Designer Species, Ultd.", "Spice World");
+        if (result[0].getName() == "Advanced Logistics") {
+            assertThat(result[1]).isNotEqualTo("Designer Species, Ultd.");
+        } else {
+            assertThat(result[1]).isNotEqualTo("Spice World");
+        }
+    }
+
+    @Test
+    public void askPlayerToChooseInitialGameTiles_CpuPlayerGivenAlienUpliftBlueprintsAndExportDuties_PicksTileCombinationWithLowerSum() {
+        Tile[] firstGameTile = TileFactory.getGameTiles(GameTile.ALIEN_UPLIFT_BLUEPRINTS_INFORMATION_HUB);
+        Tile[] secondGameTile = TileFactory.getGameTiles(GameTile.EXPORT_DUTIES_SILICON_WORLD);
+
+        Tile[] result = thisPlayer.askPlayerToChooseInitialGameTiles(firstGameTile, secondGameTile);
+
+        assertThat(result.length).isEqualTo(2);
+        assertThat(result[0].getName()).isEqualTo("Export Duties");
+        assertThat(result[1].getName()).isEqualTo("Information Hub");
+    }
+
+    @Test
+    public void setStartingQueues_AdvancedLogisticsAndSpiceWorldTiles_TilesInQueuesAreCorrect() {
+        Tile[] firstGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] secondGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.setStartingQueues((DevelopTile) firstGameTile[0], (SettleTile) secondGameTile[1]);
         Tile[] developTiles = thisPlayer.getTilesInDevelopQueue();
         Tile[] settleTiles = thisPlayer.getTilesInSettleQueue();
 
         assertThat(developTiles.length).isEqualTo(1);
-        assertThat(developTiles[0].getName()).isEqualTo("Advanced Logistics");
+        assertThat(developTiles[0].getName()).isIn("Advanced Logistics", "Alien Research Ship");
         assertThat(settleTiles.length).isEqualTo(1);
-        assertThat(settleTiles[0].getName()).isEqualTo("Spice World");
+        assertThat(settleTiles[0].getName()).isIn("Designer Species, Ultd.", "Spice World");
     }
 
     @Test
