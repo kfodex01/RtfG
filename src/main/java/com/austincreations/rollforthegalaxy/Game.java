@@ -72,10 +72,11 @@ public class Game {
             players[i].runPreSetup();
             Tile[] factionTile = getFactionTile();
             Tile homeWorldTile = getHomeWorldTile();
+            players[i].setStartingTableau(factionTile, homeWorldTile);
             Tile[] firstGameTile = getGameTile();
             Tile[] secondGameTile = getGameTile();
             Tile[] selectedTiles = players[i].askPlayerToChooseInitialGameTiles(firstGameTile, secondGameTile);
-            players[i].setupPlayer(factionTile, homeWorldTile, (DevelopTile) selectedTiles[0], (SettleTile) selectedTiles[1]);
+            players[i].setStartingQueues((DevelopTile) selectedTiles[0], (SettleTile) selectedTiles[1]);
         }
     }
 

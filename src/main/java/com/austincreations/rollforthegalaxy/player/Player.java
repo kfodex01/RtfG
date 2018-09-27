@@ -56,18 +56,7 @@ public class Player {
         return creditAmount;
     }
 
-    public void setupPlayer(Tile[] factionTile, Tile homeWorldTile, DevelopTile developTile, SettleTile settleTile) {
-        tableau.addAll(Arrays.asList(factionTile));
-        for (int i = 0; i < factionTile.length; i++) {
-            if (factionTile[i].getClass() == DevelopTile.class) {
-                applyDevelopTileEffects((DevelopTile) factionTile[i]);
-            }
-            if (factionTile[i].getClass() == SettleTile.class) {
-                applySettleTileEffects((SettleTile) factionTile[i]);
-            }
-        }
-        tableau.add(homeWorldTile);
-        applySettleTileEffects((SettleTile) homeWorldTile);
+    public void setStartingQueues(DevelopTile developTile, SettleTile settleTile) {
         developQueue.add(developTile);
         settleQueue.add(settleTile);
     }
@@ -147,6 +136,20 @@ public class Player {
     }
 
     public Tile[] askPlayerToChooseInitialGameTiles(Tile[] firstGameTile, Tile[] secondGameTile) {
-        return playerInterface.askPlayerToChooseInitialGameTiles(firstGameTile, secondGameTile);
+        return playerInterface.askPlayerToChooseInitialGameTiles(this, firstGameTile, secondGameTile);
+    }
+
+    public void setStartingTableau(Tile[] factionTile, Tile homeWorldTile) {
+        tableau.addAll(Arrays.asList(factionTile));
+        for (int i = 0; i < factionTile.length; i++) {
+            if (factionTile[i].getClass() == DevelopTile.class) {
+                applyDevelopTileEffects((DevelopTile) factionTile[i]);
+            }
+            if (factionTile[i].getClass() == SettleTile.class) {
+                applySettleTileEffects((SettleTile) factionTile[i]);
+            }
+        }
+        tableau.add(homeWorldTile);
+        applySettleTileEffects((SettleTile) homeWorldTile);
     }
 }

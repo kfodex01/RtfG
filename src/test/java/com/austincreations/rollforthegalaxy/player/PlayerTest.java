@@ -46,36 +46,26 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_GivenSpacePiracyAndAlphaCentauriAndAdvancedLogisticsAndSpiceWorldTiles_TilesInTableauAndStacksAreCorrect() {
+    public void setStartingTableau_SpacePiracyAndAlphaCentauri_TilesInTableauAreCorrect() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
 
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         Tile[] tableauTiles = thisPlayer.getTilesInTableau();
-        Tile[] developTiles = thisPlayer.getTilesInDevelopQueue();
-        Tile[] settleTiles = thisPlayer.getTilesInSettleQueue();
 
         assertThat(tableauTiles.length).isEqualTo(3);
         assertThat(tableauTiles[0].getName()).isEqualTo("Space Piracy");
         assertThat(tableauTiles[1].getName()).isEqualTo("Hidden Fortress");
         assertThat(tableauTiles[2].getName()).isEqualTo("Alpha Centauri");
-        assertThat(developTiles.length).isEqualTo(1);
-        assertThat(developTiles[0].getName()).isEqualTo("Advanced Logistics");
-        assertThat(settleTiles.length).isEqualTo(1);
-        assertThat(settleTiles[0].getName()).isEqualTo("Spice World");
     }
 
     @Test
-    public void setupPlayer_SpacePiracy_PlayerStartsWithRedDieInCitizenry() {
+    public void setStartingTableau_SpacePiracy_PlayerStartsWithRedDieInCitizenry() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
         ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
 
@@ -85,14 +75,12 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_AlienArchaeology_PlayerStartsWithYellowDieInCitizenry() {
+    public void setStartingTableau_AlienArchaeology_PlayerStartsWithYellowDieInCitizenry() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.ALIEN_ARCHAEOLOGY_ALIEN_ROSETTA_STONE_WORLD);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
         ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
 
@@ -100,18 +88,15 @@ public class PlayerTest {
         assertThat(citizenryColors.length).isEqualTo(3);
         assertThat(citizenryColors[2]).isEqualTo(DieColor.YELLOW);
         assertThat(developTileEffects.contains(DevelopTileEffect.EXPLORE_FOUR_CREDITS_WHEN_STOCKING_WITH_A_YELLOW_DIE)).isEqualTo(true);
-
     }
 
     @Test
-    public void setupPlayer_ConsumerMarkets_PlayerStartsWithBlueDieInCup() {
+    public void setStartingTableau_ConsumerMarkets_PlayerStartsWithBlueDieInCup() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.CONSUMER_MARKETS_SPACE_MALL);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         DieColor[] cupColors = thisPlayer.getCupContentsByDieColor();
         ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
 
@@ -119,18 +104,15 @@ public class PlayerTest {
         assertThat(cupColors.length).isEqualTo(4);
         assertThat(cupColors[0]).isEqualTo(DieColor.BLUE);
         assertThat(developTileEffects.contains(DevelopTileEffect.PRODUCE_ONE_CREDIT_FOR_EACH_BLUE_DIE_ON_A_WORLD_AT_END_OF_PHASE)).isEqualTo(true);
-
     }
 
     @Test
-    public void setupPlayer_ImprovedReconnaissance_PlayerStartsWithBrownDieInCup() {
+    public void setStartingTableau_ImprovedReconnaissance_PlayerStartsWithBrownDieInCup() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.IMPROVED_RECONNAISSANCE_WORMHOLE_STATION);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         DieColor[] cupColors = thisPlayer.getCupContentsByDieColor();
         ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
 
@@ -138,18 +120,15 @@ public class PlayerTest {
         assertThat(cupColors.length).isEqualTo(4);
         assertThat(cupColors[0]).isEqualTo(DieColor.BROWN);
         assertThat(developTileEffects.contains(DevelopTileEffect.EXPLORE_MAY_PLACE_TILES_ON_TOP_OF_STACKS)).isEqualTo(true);
-
     }
 
     @Test
-    public void setupPlayer_GeneticsLab_PlayerStartsWithGreenDieInCitizenry() {
+    public void setStartingTableau_GeneticsLab_PlayerStartsWithGreenDieInCitizenry() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.GENETICS_LAB_THE_LAST_OF_THE_GNARSSH);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
         ArrayList<DevelopTileEffect> developTileEffects = thisPlayer.getDevelopPowers();
 
@@ -157,18 +136,15 @@ public class PlayerTest {
         assertThat(citizenryColors.length).isEqualTo(3);
         assertThat(citizenryColors[0]).isEqualTo(DieColor.GREEN);
         assertThat(developTileEffects.contains(DevelopTileEffect.PRODUCE_TWO_CREDITS_FOR_EACH_GREEN_DIE_USED_IN_PHASE_AT_END_OF_PHASE)).isEqualTo(true);
-
     }
 
     @Test
-    public void setupPlayer_AlphaCentauri_PlayerStartsWithBrownDieOnTile() {
+    public void setStartingTableau_AlphaCentauri_PlayerStartsWithBrownDieOnTile() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ALPHA_CENTAURI);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         SettleTile thirdTableauTile = (SettleTile) thisPlayer.getTilesInTableau()[2];
         DieColor[] diceOnThirdTableauTile = thirdTableauTile.getDiceByDieColor();
 
@@ -177,14 +153,12 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_AncientRace_PlayerStartsWithGreenDieOnTile() {
+    public void setStartingTableau_AncientRace_PlayerStartsWithGreenDieOnTile() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.ANCIENT_RACE);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         SettleTile thirdTableauTile = (SettleTile) thisPlayer.getTilesInTableau()[2];
         DieColor[] diceOnThirdTableauTile = thirdTableauTile.getDiceByDieColor();
 
@@ -193,27 +167,23 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_DoomedWorld_PlayerStartsWithEightCredits() {
+    public void setStartingTableau_DoomedWorld_PlayerStartsWithEightCredits() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.DOOMED_WORLD);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
 
         assertThat(thisPlayer.getCreditAmount()).isEqualTo(8);
     }
 
     @Test
-    public void setupPlayer_NewSparta_PlayerHasTwoRedDiceInCitizenry() {
+    public void setStartingTableau_NewSparta_PlayerHasTwoRedDiceInCitizenry() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.CONSUMER_MARKETS_SPACE_MALL);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.NEW_SPARTA);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         DieColor[] citizenryColors = thisPlayer.getCitizenryContentsByDieColor();
 
         assertThat(citizenryColors.length).isEqualTo(4);
@@ -222,18 +192,31 @@ public class PlayerTest {
     }
 
     @Test
-    public void setupPlayer_SeparatistColony_PlayerHasARedDieInCup() {
+    public void setStartingTableau_SeparatistColony_PlayerHasARedDieInCup() {
         Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
         Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.SEPARATIST_COLONY);
-        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
-        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
         thisPlayer.runPreSetup();
-        thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
         DieColor[] cupColors = thisPlayer.getCupContentsByDieColor();
 
         assertThat(cupColors.length).isEqualTo(4);
         assertThat(cupColors[0]).isEqualTo(DieColor.RED);
+    }
+
+    @Test
+    public void setStartingQueues_AdvancedLogisticsAndSpiceWorldTiles_TilesInQueuesAreCorrect() {
+        Tile[] developGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
+        Tile[] settleGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
+
+        thisPlayer.setStartingQueues((DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);
+        Tile[] developTiles = thisPlayer.getTilesInDevelopQueue();
+        Tile[] settleTiles = thisPlayer.getTilesInSettleQueue();
+
+        assertThat(developTiles.length).isEqualTo(1);
+        assertThat(developTiles[0].getName()).isEqualTo("Advanced Logistics");
+        assertThat(settleTiles.length).isEqualTo(1);
+        assertThat(settleTiles[0].getName()).isEqualTo("Spice World");
     }
 
     @Test
