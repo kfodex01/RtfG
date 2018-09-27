@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/CpuPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/CpuPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/player/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/player/PlayerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,28 +37,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="190" />
+          <entry key="java" value="194" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="190" />
+          <entry key="JAVA" value="194" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="73" />
-          <entry key="java" value="34958" />
-          <entry key="txt" value="2557" />
+          <entry key="java" value="34967" />
+          <entry key="txt" value="2604" />
           <entry key="xml" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="34958" />
-          <entry key="PLAIN_TEXT" value="2630" />
+          <entry key="JAVA" value="34967" />
+          <entry key="PLAIN_TEXT" value="2677" />
           <entry key="XML" value="105" />
         </counts>
       </usages-collector>
@@ -75,31 +74,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/CpuPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="55" lean-forward="true" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/player/PlayerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="219" column="59" selection-start-line="219" selection-start-column="59" selection-end-line="219" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-841">
+            <state relative-caret-position="-994">
               <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,13 +87,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/tile/TileFactory.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/player/PlayerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1834">
-              <caret line="113" column="178" selection-start-line="113" selection-start-column="178" selection-end-line="113" selection-end-column="178" />
+            <state relative-caret-position="870">
+              <caret line="207" column="59" selection-start-line="207" selection-start-column="59" selection-end-line="207" selection-end-column="59" />
               <folding>
-                <element signature="e#155#156#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -337,7 +314,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538090049237" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538090075123" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -473,13 +450,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533066133973</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Added Replicant Robots tile.">
-      <created>1537147855906</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1537147855906</updated>
     </task>
     <task id="LOCAL-00031" summary="Added Export Duties tile.">
       <created>1537148472124</created>
@@ -817,13 +787,17 @@
       <option name="project" value="LOCAL" />
       <updated>1538085608593</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Improved CpuPlayer construction tile picker.">
+      <created>1538090135033</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1538090135033</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2018.09.27 at 17h 48m 59s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Tests - 2018.09.27 at 17h 56m 13s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
@@ -851,6 +825,9 @@
     <history-entry file="All_Tests - 2018.09.27 at 18h 08m 31s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_Tests - 2018.09.27 at 18h 14m 12s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -865,7 +842,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19722815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19722815" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -874,7 +851,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -956,7 +933,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added Ancient Race tile." />
     <MESSAGE value="Added New Sparta tile." />
     <MESSAGE value="Modified player setup test." />
     <MESSAGE value="Created tile effects for Ancient Race and Alpha Centauri." />
@@ -981,7 +957,8 @@
     <MESSAGE value="Created a package for player." />
     <MESSAGE value="Refactored player initialization and created the GameWindow for user interaction." />
     <MESSAGE value="Replaced method declaration with a lambda." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced method declaration with a lambda." />
+    <MESSAGE value="Improved CpuPlayer construction tile picker." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved CpuPlayer construction tile picker." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1208,28 +1185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/HumanPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/GameLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1271,16 +1226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-841">
-          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/CpuPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1288,10 +1233,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/HumanPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/player/PlayerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="219" column="59" selection-start-line="219" selection-start-column="59" selection-end-line="219" selection-end-column="59" />
+        <state relative-caret-position="870">
+          <caret line="207" column="59" selection-start-line="207" selection-start-column="59" selection-end-line="207" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-994">
+          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

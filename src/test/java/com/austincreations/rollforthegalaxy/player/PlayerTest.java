@@ -205,7 +205,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void askPlayerToChooseInitialGameTiles_AdvancedLogisticsAndSpiceWorldTiles_TilesReturnedContainPossibleCombinations() {
+    public void askPlayerToChooseInitialGameTiles_CpuPlayerAdvancedLogisticsAndSpiceWorldTiles_TilesReturnedContainPossibleCombinations() {
         Tile[] firstGameTile = TileFactory.getGameTiles(GameTile.ADVANCED_LOGISTICS_DESIGNER_SPECIES_ULTD);
         Tile[] secondGameTile = TileFactory.getGameTiles(GameTile.ALIEN_RESEARCH_SHIP_SPICE_WORLD);
 
