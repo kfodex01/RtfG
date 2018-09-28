@@ -70,4 +70,32 @@ public class PhaseStrip {
         }
         return diceByColorInPool;
     }
+
+    public void assignWildDie(DieColor dieColor, DieFace dieFace) {
+        Die thisDie;
+        switch (dieFace) {
+            case EXPLORE:
+                thisDie = unassignedPool.removeDie(dieColor);
+                explorePool.addDie(thisDie);
+                break;
+            case DEVELOP:
+                thisDie = unassignedPool.removeDie(dieColor);
+                developPool.addDie(thisDie);
+                break;
+            case SETTLE:
+                thisDie = unassignedPool.removeDie(dieColor);
+                settlePool.addDie(thisDie);
+                break;
+            case PRODUCE:
+                thisDie = unassignedPool.removeDie(dieColor);
+                producePool.addDie(thisDie);
+                break;
+            case SHIP:
+                thisDie = unassignedPool.removeDie(dieColor);
+                shipPool.addDie(thisDie);
+                break;
+            default:
+                break;
+        }
+    }
 }
