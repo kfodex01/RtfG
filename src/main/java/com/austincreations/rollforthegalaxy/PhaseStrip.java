@@ -46,7 +46,7 @@ public class PhaseStrip {
         }
     }
 
-    public DieColor[] getDiceFromPool(DieFace thisDieFace) {
+    public DieColor[] getDiceByColorFromPool(DieFace thisDieFace) {
         DieColor[] diceByColorInPool = {};
         switch (thisDieFace) {
             case EXPLORE:

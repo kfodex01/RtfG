@@ -1,11 +1,14 @@
 package com.austincreations.rollforthegalaxy.player;
 
 import com.austincreations.rollforthegalaxy.DieColor;
+import com.austincreations.rollforthegalaxy.DieFace;
+import com.austincreations.rollforthegalaxy.PhaseStrip;
 import com.austincreations.rollforthegalaxy.tile.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -303,5 +306,41 @@ public class PlayerTest {
         thisPlayer.subtractCredits(-5);
 
         assertThat(thisPlayer.getCreditAmount()).isEqualTo(1);
+    }
+
+    @Test
+    public void getPhaseStrip_SpacePiracy_PhaseStripHasCorrectNumberOfDiceWithCorrectColors() {
+        Tile[] factionTile = TileFactory.getFactionTiles(FactionTile.SPACE_PIRACY_HIDDEN_FORTRESS);
+        Tile homeWorldTile = TileFactory.getHomeWorldTiles(HomeWorldTile.SEPARATIST_COLONY);
+        ArrayList<DieColor> allDice = new ArrayList<>();
+        int numberOfWhiteDice = 0;
+        int numberOfRedDice = 0;
+
+        thisPlayer.runPreSetup();
+        thisPlayer.setStartingTableau(factionTile, homeWorldTile);
+        thisPlayer.rollCupDice();
+        PhaseStrip thisPhaseStrip = thisPlayer.getPhaseStrip();
+        allDice.addAll(Arrays.asList(thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE)));
+        allDice.addAll(Arrays.asList(thisPhaseStrip.getDiceByColorFromPool(DieFace.DEVELOP)));
+        allDice.addAll(Arrays.asList(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE)));
+        allDice.addAll(Arrays.asList(thisPhaseStrip.getDiceByColorFromPool(DieFace.PRODUCE)));
+        allDice.addAll(Arrays.asList(thisPhaseStrip.getDiceByColorFromPool(DieFace.SHIP)));
+        allDice.addAll(Arrays.asList(thisPhaseStrip.getDiceByColorFromPool(DieFace.WILD)));
+        for (DieColor thisColor : allDice) {
+            switch (thisColor) {
+                case WHITE:
+                    numberOfWhiteDice++;
+                    break;
+                case RED:
+                    numberOfRedDice++;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        assertThat(allDice.size()).isEqualTo(4);
+        assertThat(numberOfWhiteDice).isEqualTo(3);
+        assertThat(numberOfRedDice).isEqualTo(1);
     }
 }

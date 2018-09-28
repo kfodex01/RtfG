@@ -1,9 +1,6 @@
 package com.austincreations.rollforthegalaxy.player;
 
-import com.austincreations.rollforthegalaxy.Cup;
-import com.austincreations.rollforthegalaxy.DicePool;
-import com.austincreations.rollforthegalaxy.Die;
-import com.austincreations.rollforthegalaxy.DieColor;
+import com.austincreations.rollforthegalaxy.*;
 import com.austincreations.rollforthegalaxy.tile.*;
 
 import java.util.ArrayList;
@@ -19,6 +16,7 @@ public class Player {
     private LinkedList<SettleTile> settleQueue;
     private ArrayList<DevelopTileEffect> developTileEffects;
     private PlayerInterface playerInterface;
+    private PhaseStrip phaseStrip;
 
     public Player(boolean isHuman) {
         creditAmount = 1;
@@ -33,6 +31,7 @@ public class Player {
         } else {
             playerInterface = new CpuPlayer();
         }
+        phaseStrip = new PhaseStrip();
     }
 
 
@@ -151,5 +150,13 @@ public class Player {
         }
         tableau.add(homeWorldTile);
         applySettleTileEffects((SettleTile) homeWorldTile);
+    }
+
+    public void rollCupDice() {
+        phaseStrip.addDice(cup.rollDice());
+    }
+
+    public PhaseStrip getPhaseStrip() {
+        return phaseStrip;
     }
 }

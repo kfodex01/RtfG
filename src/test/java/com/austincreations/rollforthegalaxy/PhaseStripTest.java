@@ -63,7 +63,7 @@ public class PhaseStripTest {
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.EXPLORE);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -77,7 +77,7 @@ public class PhaseStripTest {
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.DEVELOP);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceByColorFromPool(DieFace.DEVELOP);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -91,7 +91,7 @@ public class PhaseStripTest {
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.SETTLE);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -105,7 +105,7 @@ public class PhaseStripTest {
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.PRODUCE);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceByColorFromPool(DieFace.PRODUCE);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -119,7 +119,7 @@ public class PhaseStripTest {
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.SHIP);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceByColorFromPool(DieFace.SHIP);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -133,7 +133,7 @@ public class PhaseStripTest {
         when(firstDie.getColor()).thenReturn(thisDieColor);
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
-        DieColor[] returnedColorArray = thisPhaseStrip.getDiceFromPool(DieFace.WILD);
+        DieColor[] returnedColorArray = thisPhaseStrip.getDiceByColorFromPool(DieFace.WILD);
 
         assertThat(returnedColorArray.length).as("Returned array has one value").isEqualTo(1);
         assertThat(returnedColorArray[0]).as("Returned array contains dice of correct color").isEqualTo(thisDieColor);
@@ -146,12 +146,12 @@ public class PhaseStripTest {
 
         thisPhaseStrip.addDice(new Die[]{firstDie});
 
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.EXPLORE).length).as("EXPLORE pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.DEVELOP).length).as("DEVELOP pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.SETTLE).length).as("SETTLE pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.PRODUCE).length).as("PRODUCE pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.SHIP).length).as("SHIP pool is empty").isEqualTo(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(DieFace.WILD).length).as("Unassigned pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE).length).as("EXPLORE pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.DEVELOP).length).as("DEVELOP pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE).length).as("SETTLE pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.PRODUCE).length).as("PRODUCE pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SHIP).length).as("SHIP pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.WILD).length).as("Unassigned pool is empty").isEqualTo(0);
     }
 
     @Test
@@ -166,10 +166,10 @@ public class PhaseStripTest {
         thisCup.addDie(secondDie);
         thisPhaseStrip.addDice(thisCup.rollDice());
 
-        assertThat(thisPhaseStrip.getDiceFromPool(firstDie.getCurrentFace()).length).as("First dice array contains at least one die").isGreaterThan(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(firstDie.getCurrentFace())).as("First dice array contains the first die color").contains(firstDieColor);
-        assertThat(thisPhaseStrip.getDiceFromPool(secondDie.getCurrentFace()).length).as("Second dice array contains at least one die").isGreaterThan(0);
-        assertThat(thisPhaseStrip.getDiceFromPool(secondDie.getCurrentFace())).as("Second dice array contains the first die color").contains(secondDieColor);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(firstDie.getCurrentFace()).length).as("First dice array contains at least one die").isGreaterThan(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(firstDie.getCurrentFace())).as("First dice array contains the first die color").contains(firstDieColor);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(secondDie.getCurrentFace()).length).as("Second dice array contains at least one die").isGreaterThan(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(secondDie.getCurrentFace())).as("Second dice array contains the first die color").contains(secondDieColor);
     }
 
     private DieColor getRandomDiceColor() {
