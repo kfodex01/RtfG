@@ -72,6 +72,9 @@ public class PhaseStrip {
     }
 
     public void assignWildDie(DieColor dieColor, DieFace fromPool, DieFace toPool) {
+        if (fromPool == toPool) {
+            return;
+        }
         Die thisDie;
         switch (fromPool) {
             case EXPLORE:
