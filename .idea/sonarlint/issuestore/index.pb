@@ -21,10 +21,6 @@ w
 Gsrc/main/java/com/austincreations/rollforthegalaxy/tile/SettleTile.java,c\8\c8cdd6aa8d4e1a41b768463c6e78680009706313
 L
 .idea/dictionaries/Kevin.xml,0\5\053148ad7c1537f80d090486f5fd862450a0e352
-n
->src/main/java/com/austincreations/rollforthegalaxy/Player.java,8\8\882f16ab0a94c1c4690c29acedc35af3a97296dd
-r
-Bsrc/test/java/com/austincreations/rollforthegalaxy/PlayerTest.java,e\8\e84548801584038950fb0263a3f230aa10953c31
 p
 @src/main/java/com/austincreations/rollforthegalaxy/DicePool.java,3\2\322a561271ad1c1d56d2b277ba05850c01eefe94
 t
@@ -33,9 +29,17 @@ o
 ?src/test/java/com/austincreations/rollforthegalaxy/CupTest.java,d\6\d63c7d9cdf5cd89e6311195d07efa7304d04f121
 v
 Fsrc/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java,4\e\4e77265f3cdf7dd9d311baf74fe6a5e2f869b2a4
-w
-Gsrc/main/java/com/austincreations/rollforthegalaxy/PlayerInterface.java,7\e\7efd96a5a38ad2c603b7546fabd38ba6a8a79800
 p
 @src/test/java/com/austincreations/rollforthegalaxy/GameTest.java,c\f\cf6d64f7de5f5150fd6bdf71eae8adcf7f3315d1
 l
 <src/main/java/com/austincreations/rollforthegalaxy/Game.java,4\c\4c2010f66e4cf8352e67eb1064f269ac12093cad
+G
+Roll for the Galaxy.iml,a\d\ad23f156875a64954a25a1d569db5b045e1099b5
+p
+@src/main/java/com/austincreations/rollforthegalaxy/DieColor.java,1\6\169f09dba25aa98ecc18199d51035920fbfffa35
+y
+Isrc/test/java/com/austincreations/rollforthegalaxy/player/PlayerTest.java,f\c\fcfd380e795c70ebf4cfcf0dff5823fa1b4c5388
+u
+Esrc/main/java/com/austincreations/rollforthegalaxy/player/Player.java,f\9\f92be2be48b4468141a975bca6bf8ee2411dd93e
+r
+Bsrc/main/java/com/austincreations/rollforthegalaxy/PhaseStrip.java,7\c\7c074927588936a4901d3a8435a8119950d4c708

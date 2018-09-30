@@ -71,31 +71,56 @@ public class PhaseStrip {
         return diceByColorInPool;
     }
 
-    public void assignWildDie(DieColor dieColor, DieFace dieFace) {
+    public void assignWildDie(DieColor dieColor, DieFace fromPool, DieFace toPool) {
         Die thisDie;
-        switch (dieFace) {
+        switch (fromPool) {
             case EXPLORE:
+                thisDie = explorePool.removeDie(dieColor);
+                break;
+            case DEVELOP:
+                thisDie = developPool.removeDie(dieColor);
+                break;
+            case SETTLE:
+                thisDie = settlePool.removeDie(dieColor);
+                break;
+            case PRODUCE:
+                thisDie = producePool.removeDie(dieColor);
+                break;
+            case SHIP:
+                thisDie = shipPool.removeDie(dieColor);
+                break;
+            case WILD:
                 thisDie = unassignedPool.removeDie(dieColor);
+                break;
+            default:
+                thisDie = null;
+                break;
+        }
+        switch (toPool) {
+            case EXPLORE:
                 explorePool.addDie(thisDie);
                 break;
             case DEVELOP:
-                thisDie = unassignedPool.removeDie(dieColor);
                 developPool.addDie(thisDie);
                 break;
             case SETTLE:
-                thisDie = unassignedPool.removeDie(dieColor);
                 settlePool.addDie(thisDie);
                 break;
             case PRODUCE:
-                thisDie = unassignedPool.removeDie(dieColor);
                 producePool.addDie(thisDie);
                 break;
             case SHIP:
-                thisDie = unassignedPool.removeDie(dieColor);
                 shipPool.addDie(thisDie);
+                break;
+            case WILD:
+                unassignedPool.addDie(thisDie);
                 break;
             default:
                 break;
         }
+    }
+
+    public void assignWildDie(DieColor dieColor, DieFace dieface) {
+        assignWildDie(dieColor, DieFace.WILD, dieface);
     }
 }
