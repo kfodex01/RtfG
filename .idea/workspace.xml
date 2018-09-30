@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,15 +51,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="73" />
-          <entry key="java" value="38095" />
-          <entry key="txt" value="2851" />
+          <entry key="java" value="38237" />
+          <entry key="txt" value="2896" />
           <entry key="xml" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="38095" />
-          <entry key="PLAIN_TEXT" value="2924" />
+          <entry key="JAVA" value="38237" />
+          <entry key="PLAIN_TEXT" value="2969" />
           <entry key="XML" value="105" />
         </counts>
       </usages-collector>
@@ -78,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="366">
-              <caret line="348" column="5" selection-start-line="348" selection-start-column="5" selection-end-line="348" selection-end-column="5" />
+              <caret line="535" column="92" selection-start-line="535" selection-start-column="92" selection-end-line="535" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -303,7 +304,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538347770754" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538349540368" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -439,13 +440,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533066133973</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Added Player pre-setup.">
-      <created>1537312489938</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1537312489938</updated>
     </task>
     <task id="LOCAL-00036" summary="Reconfigured Tiles.">
       <created>1537322685846</created>
@@ -783,16 +777,17 @@
       <option name="project" value="LOCAL" />
       <updated>1538342844944</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Added tests for Develop to other dice pools.">
+      <created>1538347809525</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1538347809525</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2018.09.28 at 06h 57m 51s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2018.09.28 at 06h 58m 01s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Tests - 2018.09.28 at 06h 58m 11s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
@@ -815,6 +810,12 @@
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_Tests - 2018.09.30 at 16h 38m 18s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2018.09.30 at 17h 46m 44s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2018.09.30 at 17h 49m 34s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -922,7 +923,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added tile effects for Alpha Centauri." />
     <MESSAGE value="Added tile effects for Ancient Race." />
     <MESSAGE value="Fixed a test so that it uses a mock, instead of a hardwired return." />
     <MESSAGE value="Added Hidden Fortress tile effect." />
@@ -947,7 +947,8 @@
     <MESSAGE value="Can assign wild dice." />
     <MESSAGE value="Added tests for assigning wild dice from explore pool." />
     <MESSAGE value="Added if statement so that if the pool is the same, nothing is performed on the dice pools." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added if statement so that if the pool is the same, nothing is performed on the dice pools." />
+    <MESSAGE value="Added tests for Develop to other dice pools." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for Develop to other dice pools." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1201,7 +1202,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
-          <caret line="348" column="5" selection-start-line="348" selection-start-column="5" selection-end-line="348" selection-end-column="5" />
+          <caret line="535" column="92" selection-start-line="535" selection-start-column="92" selection-end-line="535" selection-end-column="92" />
         </state>
       </provider>
     </entry>

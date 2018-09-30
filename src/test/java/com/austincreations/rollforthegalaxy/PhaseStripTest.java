@@ -443,6 +443,101 @@ public class PhaseStripTest {
         assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.WILD)[0]).as("Unassigned pool die has the right color").isEqualTo(dieColor);
     }
 
+    @Test
+    public void assignWildDie_WildDieFromSettleToExplore_PoolsShouldHaveCorrectNumberAndCorrectColorOfDie() {
+        DieColor dieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn((DieFace.WILD));
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE);
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE, DieFace.EXPLORE);
+
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE).length).as("Settle dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE).length).as("Explore dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE)[0]).as("Explore pool die has the right color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void assignWildDie_WildDieFromSettleToDevelop_PoolsShouldHaveCorrectNumberAndCorrectColorOfDie() {
+        DieColor dieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn((DieFace.WILD));
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE);
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE, DieFace.DEVELOP);
+
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE).length).as("Settle dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.DEVELOP).length).as("Develop dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.DEVELOP)[0]).as("Develop pool die has the right color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void assignWildDie_WildDieFromSettleToSettle_PoolsShouldHaveCorrectNumberAndCorrectColorOfDie() {
+        DieColor dieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn((DieFace.WILD));
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE);
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE, DieFace.SETTLE);
+
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE).length).as("Settle dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE)[0]).as("Settle pool die has the right color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void assignWildDie_WildDieFromSettleToProduce_PoolsShouldHaveCorrectNumberAndCorrectColorOfDie() {
+        DieColor dieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn((DieFace.WILD));
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE);
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE, DieFace.PRODUCE);
+
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE).length).as("Settle dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.PRODUCE).length).as("Produce dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.PRODUCE)[0]).as("Produce pool die has the right color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void assignWildDie_WildDieFromSettleToShip_PoolsShouldHaveCorrectNumberAndCorrectColorOfDie() {
+        DieColor dieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn((DieFace.WILD));
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE);
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE, DieFace.SHIP);
+
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SETTLE).length).as("Settle dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SHIP).length).as("Ship dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.SHIP)[0]).as("Ship pool die has the right color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void assignWildDie_WildDieFromSettleToWild_PoolsShouldHaveCorrectNumberAndCorrectColorOfDie() {
+        DieColor dieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn((DieFace.WILD));
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE);
+        thisPhaseStrip.assignWildDie(dieColor, DieFace.SETTLE, DieFace.WILD);
+
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.DEVELOP).length).as("Settle dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.WILD).length).as("Unassigned dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.WILD)[0]).as("Unassigned pool die has the right color").isEqualTo(dieColor);
+    }
+
     private DieColor getRandomDiceColor() {
         return ALL_DIE_COLORS[randomNumberGenerator.nextInt(ALL_DIE_COLORS.length - 1)];
     }
