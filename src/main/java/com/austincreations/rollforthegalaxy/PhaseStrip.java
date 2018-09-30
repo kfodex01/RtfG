@@ -71,7 +71,7 @@ public class PhaseStrip {
         return diceByColorInPool;
     }
 
-    public void assignWildDie(DieColor dieColor, DieFace fromPool, DieFace toPool) {
+    public void assignDie(DieColor dieColor, DieFace fromPool, DieFace toPool) {
         if (fromPool == toPool) {
             return;
         }
@@ -123,7 +123,7 @@ public class PhaseStrip {
         }
     }
 
-    public void assignWildDie(DieColor dieColor, DieFace dieface) {
-        assignWildDie(dieColor, DieFace.WILD, dieface);
+    public void assignDie(DieColor dieColor, DieFace dieface) {
+        assignDie(dieColor, DieFace.WILD, dieface);
     }
 }
