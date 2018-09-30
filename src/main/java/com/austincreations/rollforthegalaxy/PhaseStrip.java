@@ -99,6 +99,10 @@ public class PhaseStrip {
                 thisDie = null;
                 break;
         }
+        if (thisDie.getCurrentFace() != DieFace.WILD) {
+            this.addDice(new Die[]{thisDie});
+            return;
+        }
         switch (toPool) {
             case EXPLORE:
                 explorePool.addDie(thisDie);

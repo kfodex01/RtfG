@@ -20,6 +20,14 @@ public class PhaseStripTest {
             DieColor.RED,
             DieColor.YELLOW
     };
+    private static final DieFace[] ALL_DIE_FACES = {
+            DieFace.EXPLORE,
+            DieFace.DEVELOP,
+            DieFace.SETTLE,
+            DieFace.PRODUCE,
+            DieFace.SHIP,
+            DieFace.WILD
+    };
 
     private PhaseStrip thisPhaseStrip;
     private Die firstDie;
@@ -728,7 +736,31 @@ public class PhaseStripTest {
         assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.WILD)[0]).as("Unassigned pool die has the right color").isEqualTo(dieColor);
     }
 
+    @Test
+    public void assignDie_ExploreDieToAnyOther_PoolsRemainTheSame() {
+        DieColor dieColor = getRandomDiceColor();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn((DieFace.EXPLORE));
+        when(firstDie.getColor()).thenReturn(dieColor);
+        DieFace destinationPool = getAnyOtherRandomDieFace(DieFace.EXPLORE);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        thisPhaseStrip.assignDie(dieColor, DieFace.EXPLORE, destinationPool);
+
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(destinationPool).length).as("Random destination dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE).length).as("Explore dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE)[0]).as("Explore pool die has the right color").isEqualTo(dieColor);
+    }
+
     private DieColor getRandomDiceColor() {
         return ALL_DIE_COLORS[randomNumberGenerator.nextInt(ALL_DIE_COLORS.length - 1)];
+    }
+
+    private DieFace getAnyOtherRandomDieFace(DieFace thisFace) {
+        DieFace returnFace = null;
+        while (returnFace == null || returnFace == thisFace) {
+            returnFace = ALL_DIE_FACES[randomNumberGenerator.nextInt(ALL_DIE_FACES.length - 1)];
+        }
+        return returnFace;
     }
 }

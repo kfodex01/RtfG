@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="">
+    <list default="true" id="1cb67419-e262-4283-9395-c8d4ed28fead" name="Default Changelist" comment="Can't move a die to a pool that doesn't match its symbol unless it's wild.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/PhaseStrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/PhaseStrip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,15 +52,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="73" />
-          <entry key="java" value="38499" />
-          <entry key="txt" value="2914" />
+          <entry key="java" value="38988" />
+          <entry key="txt" value="3029" />
           <entry key="xml" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="38499" />
-          <entry key="PLAIN_TEXT" value="2987" />
+          <entry key="JAVA" value="38988" />
+          <entry key="PLAIN_TEXT" value="3102" />
           <entry key="XML" value="105" />
         </counts>
       </usages-collector>
@@ -78,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="715" column="45" selection-start-line="715" selection-start-column="45" selection-end-line="715" selection-end-column="45" />
+            <state relative-caret-position="517">
+              <caret line="751" column="89" selection-start-line="751" selection-start-column="89" selection-end-line="751" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -87,11 +88,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/PhaseStrip.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+            <state relative-caret-position="451">
+              <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
               <folding>
-                <element signature="e#3911#3912#0" expanded="true" />
-                <element signature="e#3973#3974#0" expanded="true" />
+                <element signature="e#4011#4012#0" expanded="true" />
+                <element signature="e#4069#4070#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,11 +117,13 @@
       <find>name =</find>
       <find>thisPlayer.setupPlayer(factionTile, homeWorldTile, (DevelopTile) developGameTile[0], (SettleTile) settleGameTile[1]);</find>
       <find>setupPlayer</find>
+      <find>assignWildDie</find>
     </findStrings>
     <replaceStrings>
       <replace>firstTile = new DevelopTile(GameTile</replace>
       <replace>.getPlanetColor</replace>
       <replace>setStartingTableau</replace>
+      <replace>assignDie</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -183,8 +186,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/Game.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/player/PlayerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/player/Player.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/PhaseStrip.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java" />
       </list>
     </option>
   </component>
@@ -304,7 +307,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538350650085" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538351511590" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -440,13 +443,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533066133973</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Refactored tiles.">
-      <created>1537415431980</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1537415431980</updated>
     </task>
     <task id="LOCAL-00040" summary="Added private constructor for TileFactory.">
       <created>1537415547695</created>
@@ -784,16 +780,17 @@
       <option name="project" value="LOCAL" />
       <updated>1538350392935</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Renamed method.">
+      <created>1538350706502</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1538350706502</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2018.09.30 at 16h 19m 25s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2018.09.30 at 16h 23m 05s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Tests - 2018.09.30 at 16h 24m 32s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
@@ -816,6 +813,12 @@
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_Tests - 2018.09.30 at 18h 32m 40s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2018.09.30 at 18h 48m 40s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2018.09.30 at 18h 51m 29s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -841,7 +844,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -850,7 +853,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.329718" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.329718" />
-      <window_info anchor="bottom" id="SonarLint" order="11" weight="0.329718" />
+      <window_info anchor="bottom" id="SonarLint" order="11" visible="true" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
@@ -923,8 +926,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added Alien Rosetta Stone World tile effect." />
-    <MESSAGE value="Added Space Mall tile effect." />
     <MESSAGE value="Added Wormhole Station tile effect." />
     <MESSAGE value="Added The Last of the Gnarssh tile effect." />
     <MESSAGE value="Added Space Piracy tile effect." />
@@ -948,7 +949,9 @@
     <MESSAGE value="Added tests for Settle to other dice pools." />
     <MESSAGE value="Added tests for Produce to other dice pools." />
     <MESSAGE value="Added tests for Ship to other dice pools." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests for Ship to other dice pools." />
+    <MESSAGE value="Renamed method." />
+    <MESSAGE value="Can't move a die to a pool that doesn't match its symbol unless it's wild." />
+    <option name="LAST_COMMIT_MESSAGE" value="Can't move a die to a pool that doesn't match its symbol unless it's wild." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1190,19 +1193,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/austincreations/rollforthegalaxy/PhaseStrip.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+        <state relative-caret-position="451">
+          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
           <folding>
-            <element signature="e#3911#3912#0" expanded="true" />
-            <element signature="e#3973#3974#0" expanded="true" />
+            <element signature="e#4011#4012#0" expanded="true" />
+            <element signature="e#4069#4070#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/austincreations/rollforthegalaxy/PhaseStripTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="715" column="45" selection-start-line="715" selection-start-column="45" selection-end-line="715" selection-end-column="45" />
+        <state relative-caret-position="517">
+          <caret line="751" column="89" selection-start-line="751" selection-start-column="89" selection-end-line="751" selection-end-column="89" />
         </state>
       </provider>
     </entry>
