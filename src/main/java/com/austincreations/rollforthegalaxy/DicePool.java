@@ -10,7 +10,7 @@ public class DicePool {
     private HashMap<DieColor, ArrayList<Die>> diceByColor;
 
     public DicePool() {
-        diceByColor = new HashMap<DieColor, ArrayList<Die>>();
+        diceByColor = new HashMap<>();
     }
 
     public boolean addDie(Die thisDie) {
@@ -21,7 +21,7 @@ public class DicePool {
         if (diceByColor.containsKey(thisDie.getColor())) {
             diceByColor.get(thisDie.getColor()).add(thisDie);
         } else {
-            ArrayList<Die> listOfDiceForThisColor = new ArrayList<Die>();
+            ArrayList<Die> listOfDiceForThisColor = new ArrayList<>();
             listOfDiceForThisColor.add(thisDie);
             diceByColor.put(thisDie.getColor(), listOfDiceForThisColor);
         }
@@ -29,7 +29,7 @@ public class DicePool {
     }
 
     public DieColor[] getContentsByDieColor() {
-        ArrayList<DieColor> diceInPoolByDieColor = new ArrayList<DieColor>();
+        ArrayList<DieColor> diceInPoolByDieColor = new ArrayList<>();
 
         Set<DieColor> allColorsInPool = diceByColor.keySet();
         for (DieColor currentColor : allColorsInPool) {
