@@ -46,7 +46,8 @@ public class DicePool {
 
     public Die removeDie(DieColor thisDieColor) {
         if (diceByColor.containsKey(thisDieColor)) {
-            return diceByColor.get(thisDieColor).remove(0);
+            ArrayList<Die> diceOfThisColor = diceByColor.get(thisDieColor);
+            return diceOfThisColor.remove(diceOfThisColor.size() - 1);
         } else {
             return new Die();
         }
