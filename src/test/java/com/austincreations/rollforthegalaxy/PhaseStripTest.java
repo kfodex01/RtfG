@@ -741,7 +741,7 @@ public class PhaseStripTest {
         DieColor dieColor = getRandomDiceColor();
         DieFace dieFace = getAnyOtherRandomDieFace(DieFace.WILD);
         firstDie = mock(Die.class);
-        when(firstDie.getCurrentFace()).thenReturn((dieFace));
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
         when(firstDie.getColor()).thenReturn(dieColor);
         DieFace destinationPool = getAnyOtherRandomDieFace(dieFace);
 
@@ -758,9 +758,9 @@ public class PhaseStripTest {
         DieColor dieColor = getRandomDiceColor();
         firstDie = mock(Die.class);
         secondDie = mock(Die.class);
-        when(firstDie.getCurrentFace()).thenReturn((DieFace.EXPLORE));
+        when(firstDie.getCurrentFace()).thenReturn(DieFace.EXPLORE);
         when(firstDie.getColor()).thenReturn(dieColor);
-        when(secondDie.getCurrentFace()).thenReturn((DieFace.WILD));
+        when(secondDie.getCurrentFace()).thenReturn(DieFace.WILD);
         when(secondDie.getColor()).thenReturn(dieColor);
         DieFace destinationPool = getAnyOtherRandomDieFace(DieFace.EXPLORE);
 
@@ -774,8 +774,180 @@ public class PhaseStripTest {
         assertThat(thisPhaseStrip.getDiceByColorFromPool(DieFace.EXPLORE)[0]).as("Explore pool die has the right color").isEqualTo(dieColor);
     }
 
+    @Test
+    public void selectPhase_ExplorePhase_CorrectPhaseChosenDiePoolEmpty() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.selectPhase(DieFace.EXPLORE, dieFace, dieColor);
+
+        assertThat(wasSuccessful).as("Select phase method successful").isEqualTo(true);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is correct").isEqualTo(DieFace.EXPLORE);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Random dice pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void selectPhase_DevelopPhase_CorrectPhaseChosenDiePoolEmpty() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.selectPhase(DieFace.DEVELOP, dieFace, dieColor);
+
+        assertThat(wasSuccessful).as("Select phase method successful").isEqualTo(true);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is correct").isEqualTo(DieFace.DEVELOP);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Random dice pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void selectPhase_SettlePhase_CorrectPhaseChosenDiePoolEmpty() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.selectPhase(DieFace.SETTLE, dieFace, dieColor);
+
+        assertThat(wasSuccessful).as("Select phase method successful").isEqualTo(true);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is correct").isEqualTo(DieFace.SETTLE);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Random dice pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void selectPhase_ProducePhase_CorrectPhaseChosenDiePoolEmpty() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.selectPhase(DieFace.PRODUCE, dieFace, dieColor);
+
+        assertThat(wasSuccessful).as("Select phase method successful").isEqualTo(true);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is correct").isEqualTo(DieFace.PRODUCE);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Random dice pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void selectPhase_ShipPhase_CorrectPhaseChosenDiePoolEmpty() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.selectPhase(DieFace.SHIP, dieFace, dieColor);
+
+        assertThat(wasSuccessful).as("Select phase method successful").isEqualTo(true);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is correct").isEqualTo(DieFace.SHIP);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Random dice pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(dieColor);
+    }
+
+    @Test
+    public void selectPhase_PhaseSelectedWithEmptyPool_NoPhaseSelected() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace phaseToSelect = getRandomDiceFace();
+        DieFace dieFace = getRandomDiceFace();
+
+        boolean wasSuccessful = thisPhaseStrip.selectPhase(phaseToSelect, dieFace, dieColor);
+
+        assertThat(wasSuccessful).as("Select phase method failed").isEqualTo(false);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is null").isNull();
+    }
+
+    @Test
+    public void selectPhase_WildSelected_NoPhaseSelected() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.selectPhase(DieFace.WILD, dieFace, dieColor);
+
+        assertThat(wasSuccessful).as("Select phase method failed").isEqualTo(false);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is null").isNull();
+    }
+
+    @Test
+    public void selectPhase_PhaseSelectedTwice_CorrectPhaseSelectedAndFirstDieReturnedToCorrectPool() {
+        DieColor firstDieColor = getRandomDiceColor();
+        DieFace firstDieFace = getRandomDiceFace();
+        DieColor secondDieColor = getRandomDiceColor();
+        DieFace secondDieFace = getAnyOtherRandomDieFace(firstDieFace);
+        DieFace firstPhaseSelected = getAnyOtherRandomDieFace(DieFace.WILD);
+        DieFace secondPhaseSelected = getAnyOtherRandomDieFace(DieFace.WILD);
+        while (secondPhaseSelected == firstPhaseSelected) {
+            secondPhaseSelected = getAnyOtherRandomDieFace(DieFace.WILD);
+        }
+        firstDie = mock(Die.class);
+        secondDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(firstDieFace);
+        when(firstDie.getColor()).thenReturn(firstDieColor);
+        when(secondDie.getCurrentFace()).thenReturn(secondDieFace);
+        when(secondDie.getColor()).thenReturn(secondDieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie, secondDie});
+        boolean firstWasSuccessful = thisPhaseStrip.selectPhase(firstPhaseSelected, firstDieFace, firstDieColor);
+        boolean secondWasSuccessful = thisPhaseStrip.selectPhase(secondPhaseSelected, secondDieFace, secondDieColor);
+
+        assertThat(firstWasSuccessful).as("First select phase method successful").isEqualTo(true);
+        assertThat(secondWasSuccessful).as("Second select phase method successful").isEqualTo(true);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is correct").isEqualTo(secondPhaseSelected);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(firstDieFace).length).as("First dice pool has one die").isEqualTo(1);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(firstDieFace)[0]).as("First dice pool has the correct color die").isEqualTo(firstDieColor);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(secondDieFace).length).as("Second dice pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(secondDieColor);
+    }
+
+    @Test
+    public void selectPhase_PhaseSelectedTwiceWhenTheSecondDicePoolIsEmpty_PhaseAndDieStillContainOriginal() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        DieFace invalidDieFace = getAnyOtherRandomDieFace(dieFace);
+        DieFace firstPhaseSelected = getAnyOtherRandomDieFace(DieFace.WILD);
+        DieFace secondPhaseSelected = getAnyOtherRandomDieFace(DieFace.WILD);
+        while (secondPhaseSelected == firstPhaseSelected) {
+            secondPhaseSelected = getAnyOtherRandomDieFace(DieFace.WILD);
+        }
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean firstWasSuccessful = thisPhaseStrip.selectPhase(firstPhaseSelected, dieFace, dieColor);
+        boolean secondWasSuccessful = thisPhaseStrip.selectPhase(secondPhaseSelected, invalidDieFace, dieColor);
+
+        assertThat(firstWasSuccessful).as("First select phase method successful").isEqualTo(true);
+        assertThat(secondWasSuccessful).as("Second select phase method failed").isEqualTo(false);
+        assertThat(thisPhaseStrip.getSelectedPhase()).as("Selected phase is correct").isEqualTo(firstPhaseSelected);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Random dice pool is empty").isEqualTo(0);
+        assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(dieColor);
+    }
+
     private DieColor getRandomDiceColor() {
         return ALL_DIE_COLORS[randomNumberGenerator.nextInt(ALL_DIE_COLORS.length - 1)];
+    }
+
+    private DieFace getRandomDiceFace() {
+        return ALL_DIE_FACES[randomNumberGenerator.nextInt(ALL_DIE_FACES.length - 1)];
     }
 
     private DieFace getAnyOtherRandomDieFace(DieFace thisFace) {

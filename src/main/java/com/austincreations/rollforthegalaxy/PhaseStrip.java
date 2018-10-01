@@ -2,12 +2,25 @@ package com.austincreations.rollforthegalaxy;
 
 public class PhaseStrip {
 
-    private DicePool explorePool = new DicePool();
-    private DicePool developPool = new DicePool();
-    private DicePool settlePool = new DicePool();
-    private DicePool producePool = new DicePool();
-    private DicePool shipPool = new DicePool();
-    private DicePool unassignedPool = new DicePool();
+    private DicePool explorePool;
+    private DicePool developPool;
+    private DicePool settlePool;
+    private DicePool producePool;
+    private DicePool shipPool;
+    private DicePool unassignedPool;
+    private Die phaseSelectionDie;
+    private DieFace selectedPhase;
+
+    public PhaseStrip() {
+        explorePool = new DicePool();
+        developPool = new DicePool();
+        settlePool = new DicePool();
+        producePool = new DicePool();
+        shipPool = new DicePool();
+        unassignedPool = new DicePool();
+        phaseSelectionDie = null;
+        selectedPhase = null;
+    }
 
     public boolean addDice(Die[] dice) {
         if (dice.length == 0) {
@@ -129,5 +142,52 @@ public class PhaseStrip {
 
     public void assignDie(DieColor dieColor, DieFace dieface) {
         assignDie(dieColor, DieFace.WILD, dieface);
+    }
+
+    public boolean selectPhase(DieFace selectedPhase, DieFace dicePoolToTakeFrom, DieColor dieColor) {
+        Die phaseSelectionDie = null;
+        if (selectedPhase == DieFace.WILD) {
+            return false;
+        }
+        switch (dicePoolToTakeFrom) {
+            case EXPLORE:
+                phaseSelectionDie = explorePool.removeDie(dieColor);
+                break;
+            case DEVELOP:
+                phaseSelectionDie = developPool.removeDie(dieColor);
+                break;
+            case SETTLE:
+                phaseSelectionDie = settlePool.removeDie(dieColor);
+                break;
+            case PRODUCE:
+                phaseSelectionDie = producePool.removeDie(dieColor);
+                break;
+            case SHIP:
+                phaseSelectionDie = shipPool.removeDie(dieColor);
+                break;
+            case WILD:
+                phaseSelectionDie = unassignedPool.removeDie(dieColor);
+                break;
+            default:
+                break;
+        }
+        if (phaseSelectionDie.getColor() != null) {
+            this.selectedPhase = selectedPhase;
+            if (this.phaseSelectionDie != null) {
+                addDice(new Die[]{this.phaseSelectionDie});
+            }
+            this.phaseSelectionDie = phaseSelectionDie;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public DieFace getSelectedPhase() {
+        return selectedPhase;
+    }
+
+    public Die getSelectionDie() {
+        return phaseSelectionDie;
     }
 }
