@@ -10,6 +10,9 @@ public class PhaseStrip {
     private DicePool unassignedPool;
     private Die phaseSelectionDie;
     private DieFace selectedPhase;
+    private Die reassignDie;
+    private Die reassignedDie;
+    private DieFace reassignFace;
 
     public PhaseStrip() {
         explorePool = new DicePool();
@@ -20,6 +23,9 @@ public class PhaseStrip {
         unassignedPool = new DicePool();
         phaseSelectionDie = null;
         selectedPhase = null;
+        reassignDie = null;
+        reassignedDie = null;
+        reassignFace = null;
     }
 
     public boolean addDice(Die[] dice) {
@@ -59,6 +65,34 @@ public class PhaseStrip {
         }
     }
 
+    private Die removeDieFromPool(DieColor dieColor, DieFace fromPool) {
+        Die thisDie;
+        switch (fromPool) {
+            case EXPLORE:
+                thisDie = explorePool.removeDie(dieColor);
+                break;
+            case DEVELOP:
+                thisDie = developPool.removeDie(dieColor);
+                break;
+            case SETTLE:
+                thisDie = settlePool.removeDie(dieColor);
+                break;
+            case PRODUCE:
+                thisDie = producePool.removeDie(dieColor);
+                break;
+            case SHIP:
+                thisDie = shipPool.removeDie(dieColor);
+                break;
+            case WILD:
+                thisDie = unassignedPool.removeDie(dieColor);
+                break;
+            default:
+                thisDie = null;
+                break;
+        }
+        return thisDie;
+    }
+
     public DieColor[] getDiceByColorFromPool(DieFace thisDieFace) {
         DieColor[] diceByColorInPool = {};
         switch (thisDieFace) {
@@ -89,29 +123,7 @@ public class PhaseStrip {
             return;
         }
         Die thisDie;
-        switch (fromPool) {
-            case EXPLORE:
-                thisDie = explorePool.removeDie(dieColor);
-                break;
-            case DEVELOP:
-                thisDie = developPool.removeDie(dieColor);
-                break;
-            case SETTLE:
-                thisDie = settlePool.removeDie(dieColor);
-                break;
-            case PRODUCE:
-                thisDie = producePool.removeDie(dieColor);
-                break;
-            case SHIP:
-                thisDie = shipPool.removeDie(dieColor);
-                break;
-            case WILD:
-                thisDie = unassignedPool.removeDie(dieColor);
-                break;
-            default:
-                thisDie = null;
-                break;
-        }
+        thisDie = removeDieFromPool(dieColor, fromPool);
         if (thisDie.getCurrentFace() != DieFace.WILD) {
             this.addDice(new Die[]{thisDie});
             return;
@@ -189,5 +201,37 @@ public class PhaseStrip {
 
     public Die getSelectionDie() {
         return phaseSelectionDie;
+    }
+
+    public boolean reassignDie(DieFace reassignDiePool, DieColor reassignDieColor, DieFace reassignedFromDiePool, DieColor reassignedDieColor, DieFace reassignToFace) {
+        if (reassignToFace == DieFace.WILD) {
+            return false;
+        }
+        reassignDie = removeDieFromPool(reassignDieColor, reassignDiePool);
+        if (reassignDie.getColor() == null) {
+            reassignDie = null;
+            return false;
+        }
+        reassignedDie = removeDieFromPool(reassignedDieColor, reassignedFromDiePool);
+        if (reassignedDie.getColor() == null) {
+            addDice(new Die[]{reassignDie});
+            reassignDie = null;
+            reassignedDie = null;
+            return false;
+        }
+        reassignFace = reassignToFace;
+        return true;
+    }
+
+    public Die getReassignDie() {
+        return reassignDie;
+    }
+
+    public Die getReassignedDie() {
+        return reassignedDie;
+    }
+
+    public DieFace getReassignedDieAssignedFace() {
+        return reassignFace;
     }
 }

@@ -942,6 +942,95 @@ public class PhaseStripTest {
         assertThat(thisPhaseStrip.getSelectionDie().getColor()).as("Dice used for selection has correct color").isEqualTo(dieColor);
     }
 
+    @Test
+    public void reassignDie_FirstDieUsedForAssignmentSecondDieReassigned_CorrectDieInReassignAndReassignedWithCorrectFace() {
+        DieColor firstColor = getRandomDiceColor();
+        DieFace firstFace = getRandomDiceFace();
+        DieColor secondColor = getRandomDiceColor();
+        DieFace secondFace = getAnyOtherRandomDieFace(firstFace);
+        DieFace reassignFace = getAnyOtherRandomDieFace(DieFace.WILD);
+        firstDie = mock(Die.class);
+        secondDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(firstFace);
+        when(firstDie.getColor()).thenReturn(firstColor);
+        when(secondDie.getCurrentFace()).thenReturn(secondFace);
+        when(secondDie.getColor()).thenReturn(secondColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie, secondDie});
+        boolean wasSuccessful = thisPhaseStrip.reassignDie(firstFace, firstColor, secondFace, secondColor, reassignFace);
+
+        assertThat(wasSuccessful).as("Reassignment Successful").isEqualTo(true);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(firstFace).length).as("First dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getReassignDie().getCurrentFace()).as("Reassign Die has correct face").isEqualTo(firstFace);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(secondFace).length).as("Second dice pool has no dice").isEqualTo(0);
+        assertThat(thisPhaseStrip.getReassignedDie().getCurrentFace()).as("Reassigned Die has correct face").isEqualTo(secondFace);
+        assertThat(thisPhaseStrip.getReassignedDieAssignedFace()).as("Reassigned Die has correct reassigned face").isEqualTo(reassignFace);
+    }
+
+    @Test
+    public void reassignDie_WildDieAssignment_IsFalseReassignDieReassignedDieAndReassignedFaceAreNull() {
+        DieColor firstColor = getRandomDiceColor();
+        DieFace firstFace = getRandomDiceFace();
+        DieColor secondColor = getRandomDiceColor();
+        DieFace secondFace = getAnyOtherRandomDieFace(firstFace);
+        firstDie = mock(Die.class);
+        secondDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(firstFace);
+        when(firstDie.getColor()).thenReturn(firstColor);
+        when(secondDie.getCurrentFace()).thenReturn(secondFace);
+        when(secondDie.getColor()).thenReturn(secondColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie, secondDie});
+        boolean wasSuccessful = thisPhaseStrip.reassignDie(firstFace, firstColor, secondFace, secondColor, DieFace.WILD);
+
+        assertThat(wasSuccessful).as("Reassignment Successful").isEqualTo(false);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(firstFace).length).as("First dice pool has one dice").isEqualTo(1);
+        assertThat(thisPhaseStrip.getReassignDie()).as("Reassign Die is null").isNull();
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(secondFace).length).as("Second dice pool has one dice").isEqualTo(1);
+        assertThat(thisPhaseStrip.getReassignedDie()).as("Reassigned Die is null").isNull();
+        assertThat(thisPhaseStrip.getReassignedDieAssignedFace()).as("Reassigned Die is null").isNull();
+    }
+
+    @Test
+    public void reassignDie_NoDieInReassignPool_IsFalseReassignDieReassignedDieAndReassignedFaceAreNull() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        DieFace invalidDieFace = getAnyOtherRandomDieFace(dieFace);
+        DieFace reassignFace = getAnyOtherRandomDieFace(DieFace.WILD);
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.reassignDie(invalidDieFace, dieColor, dieFace, dieColor, reassignFace);
+
+        assertThat(wasSuccessful).as("Reassignment Unsuccessful").isEqualTo(false);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Assigned dice pool has one dice").isEqualTo(1);
+        assertThat(thisPhaseStrip.getReassignDie()).as("Reassign Die is null").isNull();
+        assertThat(thisPhaseStrip.getReassignedDie()).as("Reassigned Die is null").isNull();
+        assertThat(thisPhaseStrip.getReassignedDieAssignedFace()).as("Reassigned Die is null").isNull();
+    }
+
+    @Test
+    public void reassignDie_NoDieInReassignedFromPool_IsFalseReassignDieReassignedDieAndReassignedFaceAreNull() {
+        DieColor dieColor = getRandomDiceColor();
+        DieFace dieFace = getRandomDiceFace();
+        DieFace invalidDieFace = getAnyOtherRandomDieFace(dieFace);
+        DieFace reassignFace = getAnyOtherRandomDieFace(DieFace.WILD);
+        firstDie = mock(Die.class);
+        when(firstDie.getCurrentFace()).thenReturn(dieFace);
+        when(firstDie.getColor()).thenReturn(dieColor);
+
+        thisPhaseStrip.addDice(new Die[]{firstDie});
+        boolean wasSuccessful = thisPhaseStrip.reassignDie(dieFace, dieColor, invalidDieFace, dieColor, reassignFace);
+
+        assertThat(wasSuccessful).as("Reassignment Unsuccessful").isEqualTo(false);
+        assertThat(thisPhaseStrip.getDiceByColorFromPool(dieFace).length).as("Reassigned dice pool has one dice").isEqualTo(1);
+        assertThat(thisPhaseStrip.getReassignDie()).as("Reassign Die is null").isNull();
+        assertThat(thisPhaseStrip.getReassignedDie()).as("Reassigned Die is null").isNull();
+        assertThat(thisPhaseStrip.getReassignedDieAssignedFace()).as("Reassigned Die is null").isNull();
+    }
+
     private DieColor getRandomDiceColor() {
         return ALL_DIE_COLORS[randomNumberGenerator.nextInt(ALL_DIE_COLORS.length - 1)];
     }
